@@ -1,0 +1,23 @@
+{
+  "name": "youarehungry",
+  "version": "1.0.0",
+  "description": "Search recipes and create shopping list.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jessicamvs/youarehungry.git"
+  },
+  "author": "Jessica, Patrick, Lillian, Nassir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jessicamvs/youarehungry/issues"
+  },
+  "homepage": "https://github.com/jessicamvs/youarehungry#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
