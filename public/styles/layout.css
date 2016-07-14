@@ -1,0 +1,27 @@
+nav ul {
+  padding: 0;
+  display: none;
+}
+
+a, ul {
+  display:inline;
+  list-style:none;
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.7;
+}
+
+@media screen and (min-width: 600px) {
+  .icon-spoon-knife {
+    display: none;
+  }
+
+  nav ul {
+    display: unset;
+  }
+}
+
+footer {
+  margin-top: 5em;
+}

@@ -2,7 +2,7 @@ var express = require('express'),
   port = process.env.PORT || 3000,
   app = express();
 
-app.use(express.static('./'));
+app.use(express.static(__dirname + '/public/'));
 
 app.get('*', function(request, response) {
   console.log('New request:', request.url);
