@@ -9,6 +9,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <title>You Are Hungry!</title>
+
+    <script id="search-results" type="text/x-handlebars-template">
+
+      <article class="">
+        <h1>{{recipeName}}</h1>
+        <section>{{sourceDisplayName}}</section>
+        <a href="/search/{{id}}"><img src="{{imageUrlsBySize}}" target="_blank"></a>
+        <!-- smallImageUrl or smallImageUrls, add anything to anchor tag or use img src? -->
+      </article>
+
+    </script>
   </head>
 
   <body>
@@ -43,6 +54,10 @@
               <input type="submit">
             </form>
           </div>
+      </section>
+
+      <section id="print-results">
+
       </section>
 
       <section id="list" class="tab-content">
