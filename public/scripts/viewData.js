@@ -1,4 +1,13 @@
+var viewData = {};
+
 $("#searchBox").on("submit", function(e) {
   e.preventDefault();
-  console.log(this.search.value);
-})
+  var result = this.search.value;
+  getData.runSearch(result);
+});
+
+viewData.printResults = function(data) {
+  data.matches.forEach(function(ele) {
+    console.log(ele);
+  });
+}
