@@ -10,6 +10,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script src="vendors/scripts/page.js"></script>
     <title>You Are Hungry!</title>
+
+    <script id="search-results" type="text/x-handlebars-template">
+
+      <article class="">
+        <h1>{{recipeName}}</h1>
+        <section>{{sourceDisplayName}}</section>
+        <a href="/search/{{id}}"><img src="{{smallImageUrls}}" target="_blank"></a>
+      </article>
+
+    </script>
   </head>
 
   <body>
@@ -40,12 +50,14 @@
           <div>
             <h3>Search Recipes</h3>
             <p>Simple text box with placeholder text. Should enable 'enter/return' key to search. Return recipes that meet criteria.</p>
-            <form>
-              <input type="search" name="search" placeholder="apple pie">
+            <form id="searchBox">
+              <input name="search" type="text" placeholder="apple pie">
               <input type="submit">
             </form>
           </div>
+          <section id="print-results"></section>
       </section>
+
 
       <section id="list" class="tab-content">
         <div>
@@ -66,11 +78,12 @@
       <a href="./">&copy; 2016 You Are Hungry!</a>
       <a class="icon-github" title="You Are Hungry Github Repo" href="https://github.com/jessicamvs/youarehungry"></a>
     </footer>
-    <!-- TODO scripts here -->
     <script src="scripts/homeController.js"></script>
     <script src="scripts/searchController.js"></script>
     <script src="scripts/listController.js"></script>
     <script src="scripts/myRecipesController.js"></script>
+    <script src="/scripts/getdata.js"></script>
+    <script src="/scripts/viewData.js"></script>
     <script src="scripts/routes.js"></script>
   </body>
 </html>
