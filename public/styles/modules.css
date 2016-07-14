@@ -6,3 +6,37 @@
 select {
   background-color: transparent;
 }
+
+form {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.search-box {
+  padding: 12px 60px 12px 8px;
+  font-size: 16px;
+  text-align: left;
+  color: #303030;
+  background-color: transparent;
+  border: 1px solid #303030;
+  cursor: pointer;
+}
+
+.search-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #303030;
+  border: 1px solid #303030;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  opacity: 0.7;
+}
+
+.search-button:focus {
+  opacity: 0.7;
+}
