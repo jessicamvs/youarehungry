@@ -15,7 +15,7 @@
       <article class="">
         <h1>{{recipeName}}</h1>
         <section>{{sourceDisplayName}}</section>
-        <a href="{{smallImageUrls}}" target="_blank"></a>
+        <a href="/search/{{id}}"><img src="{{imageUrlsBySize}}" target="_blank"></a>
         <!-- smallImageUrl or smallImageUrls, add anything to anchor tag or use img src? -->
       </article>
 
@@ -54,6 +54,10 @@
               <input type="submit">
             </form>
           </div>
+      </section>
+
+      <section id="print-results">
+
       </section>
 
       <section id="list" class="tab-content">
