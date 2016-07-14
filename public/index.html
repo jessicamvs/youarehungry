@@ -1,15 +1,71 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/modules.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <title>You Are Hungry!</title>
   </head>
+
   <body>
-    <p>
-      Nassir is HUNGRY!
-    </p>
-    <p>
-      Patrick test push
-    </p>
+    <div class="icon-spoon-knife"></div>
+
+    <header>
+      <h1><a href="/">You Are Hungry!</a></h1>
+
+      <nav>
+        <ul>
+          <li class="nav"><a href="search">SEARCH</a></li>
+          <li class="nav"><a href="list">SHOPPING LIST</a></li>
+          <li class="nav"><a href="saved-recipes">(MY SAVED RECIPES)</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="tab-content">
+        <div>
+          <h3>This is the home page.</h3>
+          <p>Idea was to have links shown for search, shopping list, and saved recipes - good on mobile, but unnecessary on desktop as you'll be able to see the nav items.</p>
+        </div>
+      </section>
+
+      <section id="search" class="tab-content">
+          <div>
+            <h3>Search Recipes</h3>
+            <p>Simple text box with placeholder text. Should enable 'enter/return' key to search. Return recipes that meet criteria.</p>
+            <form>
+              <input type="search" name="search" placeholder="apple pie">
+              <input type="submit">
+            </form>
+          </div>
+      </section>
+
+      <section id="list" class="tab-content">
+        <div>
+          <h3>Shopping List</h3>
+          <p>Items will populate from event handler on recipe page to 'add ingredients to list'.</p>
+        </div>
+      </section>
+
+      <section id="saved-recipes" class="tab-content">
+        <div>
+          <h3>STRETCH: My Saved Recipes</h3>
+          <p>Recipe photo, title, and source for later use. Goes to recipe page which will allow you to 'add ingredients to list'.</p>
+        </div>
+      </section>
+
+    </main>
+    <footer>
+      <a href="./">&copy; 2016 You Are Hungry!</a>
+      <a class="icon-github" title="You Are Hungry Github Repo" href="https://github.com/jessicamvs/youarehungry"></a>
+    </footer>
+    <!-- TODO scripts here -->
+    <script src="vendors/scripts/page.js"></script>
+    <script src="scripts/routes.js"></script>
   </body>
 </html>
