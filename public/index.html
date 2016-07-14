@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="vendors/scripts/page.js"></script>
     <title>You Are Hungry!</title>
   </head>
 
@@ -19,9 +20,10 @@
 
       <nav>
         <ul>
-          <li class="nav"><a href="search">SEARCH</a></li>
-          <li class="nav"><a href="list">SHOPPING LIST</a></li>
-          <li class="nav"><a href="saved-recipes">(MY SAVED RECIPES)</a></li>
+          <li class="nav"><a href="/">HOME</a></li>
+          <li class="nav"><a href="/search">SEARCH</a></li>
+          <li class="nav"><a href="/list">SHOPPING LIST</a></li>
+          <li class="nav"><a href="/myRecipes">(MY SAVED RECIPES)</a></li>
         </ul>
       </nav>
     </header>
@@ -52,7 +54,7 @@
         </div>
       </section>
 
-      <section id="saved-recipes" class="tab-content">
+      <section id="myRecipes" class="tab-content">
         <div>
           <h3>STRETCH: My Saved Recipes</h3>
           <p>Recipe photo, title, and source for later use. Goes to recipe page which will allow you to 'add ingredients to list'.</p>
@@ -65,7 +67,10 @@
       <a class="icon-github" title="You Are Hungry Github Repo" href="https://github.com/jessicamvs/youarehungry"></a>
     </footer>
     <!-- TODO scripts here -->
-    <script src="vendors/scripts/page.js"></script>
+    <script src="scripts/homeController.js"></script>
+    <script src="scripts/searchController.js"></script>
+    <script src="scripts/listController.js"></script>
+    <script src="scripts/myRecipesController.js"></script>
     <script src="scripts/routes.js"></script>
   </body>
 </html>
