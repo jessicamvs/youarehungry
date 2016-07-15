@@ -20,6 +20,18 @@
       </article>
 
     </script>
+
+    <script id="recipe-selection" type="text/x-handlebars-template">
+      <article class="">
+        <section>{{recipeName}}</section>
+        <!-- <section>{{name}}</section> OTHER POSSIBLE KEY FOR recipe name -->
+        <section>{{sourceDisplayName}}</section>
+        <section>{{sourceSiteUrl}}</section>
+        <section>{{ingredients}}</section>
+        <section>Directions:<span>{{sourceSiteUrl}}</span></section>
+        <section>Rating:<span>{{rating}}</span></section>
+
+    </script>
   </head>
 
   <body>
@@ -28,7 +40,7 @@
         <a href="#menu" class="menu-link"><i class="icon ion-android-restaurant"></i></a>
 
         <header>
-          <h1><a href="/">YAH! sandbox</a></h1>
+          <h1><a href="/">You Are Hungry</a></h1>
           <nav id="menu" role="navigation">
             <ul>
               <li><a class="icon ion-android-home" href="/">  HOME</a></li>
@@ -47,6 +59,18 @@
                 <p>Idea was to have links shown for search, shopping list, and saved recipes - good on mobile, but unnecessary on desktop as you'll be able to see the nav items.</p>
               </div>
             </section>
+
+      <section id="search" class="tab-content">
+          <div>
+            <h3>Search Recipes</h3>
+            <form id="searchBox">
+              <input name="search" type="text" class="search-box" placeholder="APPLE PIE">
+              <button type="submit" class="search-button">SUBMIT</button>
+            </form>
+          </div>
+          <section id="print-results"></section>
+          <section id="print-selection"></section>
+      </section>
 
             <section id="search" class="tab-content">
                 <div>
