@@ -6,6 +6,8 @@ page('/list', listController.index);
 
 page('/myRecipes', myRecipesController.index);
 
+page('/recipe', recipeController.index);
+
 page();
 
 // page('/search/:searchResults',
