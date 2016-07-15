@@ -3,7 +3,7 @@ var express = require('express'),
   app = express();
 var pg = require('pg');
 
-app.get('/db', function (request, response) {
+app.get('/public/db', function (request, response) {
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     client.query('SELECT * FROM users', function(err, result) {
       done();
