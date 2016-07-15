@@ -5,7 +5,7 @@ $(document).ready(function() {
     $menulink = $('.menu-link'),
     $wrap = $('#wrap');
 
-  $menulink.click(function() {
+  $menu.on('click', function() {
     $menulink.toggleClass('active');
     $wrap.toggleClass('active');
     return false;

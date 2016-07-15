@@ -23,12 +23,34 @@
   </head>
 
   <body>
+    <section>
+      <!-- Log In (existing users) -->
+      <form id="login-page">
+        <input name="Name" type="text" class="name-email-box" placeholder="Name">
+        <input name="Email" type="text" class="name-email-box" placeholder="Email">
+        <button type="submit" class="submit-button">LOG IN</button>
+        <p class="forgot-password"><a href="">Forgot Password</a></p>
+        <p class="login-message">Don't have an account? <span><a href="">SIGN UP</a></span></p>
+      </form>
+
+      <!-- Sign Up (new users) -->
+      <form id="sign-up-page">
+        <input name="Name" type="text" class="name-email-box" placeholder="Name">
+        <input name="Email" type="text" class="name-email-box" placeholder="Email">
+        <input type="password" class="name-email-box" name="name" value="" placeholder="Password">
+        <button type="submit" class="submit-button">JOIN</button>
+        <p class="login-message">Already have an account? <span><a href="">SIGN IN</a></span></p>
+      </form>
+
+    </section>
+
+
     <div id="pattern" class="pattern">
       <div class="wrap" id="wrap">
-        <a href="#menu" class="menu-link"><i class="icon ion-android-restaurant"></i></a>
+        <a href="" class="menu-link"><i id="menu" class="icon ion-android-restaurant"></i></a>
 
         <header>
-          <h1><a href="/">You Are Hungry</a></h1>
+          <h1><a href="/">You Are Hungry!</a></h1>
           <nav id="menu" role="navigation">
             <ul>
               <li><a class="icon ion-android-home" href="/">  HOME</a></li>
