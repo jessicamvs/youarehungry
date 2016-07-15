@@ -69,6 +69,7 @@
               <li><a class="icon ion-android-search" href="/search">  SEARCH</a></li>
               <li><a class="icon ion-ios-list" href="/list">  SHOPPING LIST</a></li>
               <li><a class="icon ion-android-folder" href="/myRecipes">  (MY SAVED RECIPES)</a></li>
+              <li><a href="/recipe">  (Single Recipe Page)</a></li>
             </ul>
           </nav>
         </header>
@@ -108,6 +109,27 @@
               </div>
             </section>
 
+            <section id="recipe" class="tab-content">
+              <div>
+                <h3>Single Recipe Page</h3>
+                <p>Single recipe that shows photo, title, sourcename/url, ingredients, button to add ingredients to shopping list, and a button to the sourceurl to view instructions (goes to third party site). This needs handlebars.</p>
+                  <div class="module">
+                    <header>
+                      <h3>Recipe</h3>
+                    </header>
+                  </div>
+                  <p><i>by Recipe Source</i></p>
+                  <a class="icon ion-android-add-circle" href="#">  ADD TO SHOPPING LIST</a>
+                  <br>
+                  <p>Ingredient</p>
+                  <p>Ingredient</p>
+                  <p>Ingredient</p>
+                  <p>Ingredient</p>
+                  <button type="submit" class="read-instructions">Click here to read the instructions</button>
+              </div>
+
+            </section>
+
           </main>
           <footer>
             <a href="./">&copy; 2016 You Are Hungry!</a>
@@ -125,6 +147,7 @@
     <script src="scripts/loginController.js"></script>
     <script src="scripts/signupController.js"></script>
     <script src="scripts/myRecipesController.js"></script>
+    <script src="scripts/recipeController.js"></script>
     <script src="/scripts/getdata.js"></script>
     <script src="/scripts/viewData.js"></script>
     <script src="/scripts/viewSelection.js"></script>
