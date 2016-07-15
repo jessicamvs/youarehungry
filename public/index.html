@@ -14,10 +14,22 @@
     <script id="search-results" type="text/x-handlebars-template">
 
       <article class="">
-        <h1>{{recipeName}}</h1>
+        <a href="/{{id}}"><h1>{{recipeName}}</h1></a>
         <section>{{sourceDisplayName}}</section>
         <a href="/search/{{id}}"><img src="{{smallImageUrls}}" target="_blank"></a>
       </article>
+
+    </script>
+
+    <script id="recipe-selection" type="text/x-handlebars-template">
+      <article class="">
+        <section>{{recipeName}}</section>
+        <!-- <section>{{name}}</section> OTHER POSSIBLE KEY FOR recipe name -->
+        <section>{{sourceDisplayName}}</section>
+        <section>{{sourceSiteUrl}}</section>
+        <section>{{ingredients}}</section>
+        <section>Directions:<span>{{sourceSiteUrl}}</span></section>
+        <section>Rating:<span>{{rating}}</span></section>
 
     </script>
   </head>
@@ -70,6 +82,18 @@
               </div>
             </section>
 
+      <section id="search" class="tab-content">
+          <div>
+            <h3>Search Recipes</h3>
+            <form id="searchBox">
+              <input name="search" type="text" class="search-box" placeholder="APPLE PIE">
+              <button type="submit" class="search-button">SUBMIT</button>
+            </form>
+          </div>
+          <section id="print-results"></section>
+          <section id="print-selection"></section>
+      </section>
+
             <section id="search" class="tab-content">
                 <div>
                   <h3>Search Recipes</h3>
@@ -112,6 +136,7 @@
     <script src="scripts/myRecipesController.js"></script>
     <script src="/scripts/getdata.js"></script>
     <script src="/scripts/viewData.js"></script>
+    <script src="/scripts/viewSelection.js"></script>
     <script src="scripts/routes.js"></script>
   </body>
 </html>

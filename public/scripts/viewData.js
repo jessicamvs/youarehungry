@@ -12,8 +12,7 @@ $('#searchBox').on('submit', function(e) {
 var render = Handlebars.compile($('#search-results').html());
 
 viewData.printResults = function(data) {
-  data.matches.forEach(function(ele) {
-    console.log(ele);
+  data.forEach(function(ele) {
     $('#print-results').append(render(ele));
   });
 };
