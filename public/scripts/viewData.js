@@ -2,16 +2,18 @@ var viewData = {};
 
 $('#searchBox').on('submit', function(e) {
   e.preventDefault();
-  var result = this.search.value;
-  getData.runSearch(result);
+  if(this.search.value) {
+    $('#print-results').children().remove();
+    var searchTerms = this.search.value;
+    getData.runSearch(searchTerms);
+  };
 });
 
-var template = $('#search-results').html();
-var render = Handlebars.compile(template);
+var render = Handlebars.compile($('#search-results').html());
 
 viewData.printResults = function(data) {
   data.matches.forEach(function(ele) {
-      console.log(ele);
-      $("#print-results").append(render(ele));
+    console.log(ele);
+    $('#print-results').append(render(ele));
   });
-}
+};
