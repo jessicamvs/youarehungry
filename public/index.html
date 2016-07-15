@@ -35,28 +35,30 @@
   </head>
 
   <body>
-    <h1><i class="icon ion-android-restaurant"></i></h1>
+    <div id="pattern" class="pattern">
+      <div class="wrap" id="wrap">
+        <a href="#menu" class="menu-link"><i class="icon ion-android-restaurant"></i></a>
 
-    <header>
-      <h1><a href="/">You Are Hungry!</a></h1>
+        <header>
+          <h1><a href="/">You Are Hungry</a></h1>
+          <nav id="menu" role="navigation">
+            <ul>
+              <li><a class="icon ion-android-home" href="/">  HOME</a></li>
+              <li><a class="icon ion-android-search" href="/search">  SEARCH</a></li>
+              <li><a class="icon ion-ios-list" href="/list">  SHOPPING LIST</a></li>
+              <li><a class="icon ion-android-folder" href="/myRecipes">  (MY SAVED RECIPES)</a></li>
+            </ul>
+          </nav>
+        </header>
 
-      <nav>
-        <ul>
-          <li class="nav"><a class="icon ion-android-home" href="/"> HOME</a></li>
-          <li class="nav"><a class="icon ion-android-search" href="/search"> SEARCH</a></li>
-          <li class="nav"><a class="icon ion-ios-list" href="/list"> SHOPPING LIST</a></li>
-          <li class="nav"><a class="icon ion-android-folder" href="/myRecipes"> (MY SAVED RECIPES)</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>
-      <section id="home" class="tab-content">
         <div>
-          <h3>This is the home page.</h3>
-          <p>Idea was to have links shown for search, shopping list, and saved recipes - good on mobile, but unnecessary on desktop as you'll be able to see the nav items.</p>
-        </div>
-      </section>
+          <main>
+            <section id="home" class="tab-content">
+              <div>
+                <h3>This is the home page.</h3>
+                <p>Idea was to have links shown for search, shopping list, and saved recipes - good on mobile, but unnecessary on desktop as you'll be able to see the nav items.</p>
+              </div>
+            </section>
 
       <section id="search" class="tab-content">
           <div>
@@ -70,26 +72,43 @@
           <section id="print-selection"></section>
       </section>
 
+            <section id="search" class="tab-content">
+                <div>
+                  <h3>Search Recipes</h3>
+                  <form id="searchBox">
+                    <input name="search" type="text" class="search-box" placeholder="APPLE PIE">
+                    <button type="submit" class="search-button">SUBMIT</button>
+                  </form>
+                </div>
+                <section id="print-results"></section>
+            </section>
+>>>>>>> 39f400854988696d76497701949b6af179ee5900
 
-      <section id="list" class="tab-content">
-        <div>
-          <h3>Shopping List</h3>
-          <p>Items will populate from event handler on recipe page to 'add ingredients to list'.</p>
+            <section id="list" class="tab-content">
+              <div>
+                <h3>Shopping List</h3>
+                <p>Items will populate from event handler on recipe page to 'add ingredients to list'.</p>
+              </div>
+            </section>
+
+            <section id="myRecipes" class="tab-content">
+              <div>
+                <h3>STRETCH: My Saved Recipes</h3>
+                <p>Recipe photo, title, and source for later use. Goes to recipe page which will allow you to 'add ingredients to list'.</p>
+              </div>
+            </section>
+
+          </main>
+          <footer>
+            <a href="./">&copy; 2016 You Are Hungry!</a>
+            <a class="icon ion-social-github" title="You Are Hungry Github Repo" href="https://github.com/jessicamvs/youarehungry"></a>
+          </footer>
+
         </div>
-      </section>
+      </div>
+    </div>
 
-      <section id="myRecipes" class="tab-content">
-        <div>
-          <h3>STRETCH: My Saved Recipes</h3>
-          <p>Recipe photo, title, and source for later use. Goes to recipe page which will allow you to 'add ingredients to list'.</p>
-        </div>
-      </section>
-
-    </main>
-    <footer>
-      <a href="./">&copy; 2016 You Are Hungry!</a>
-      <a class="icon ion-social-github" title="You Are Hungry Github Repo" href="https://github.com/jessicamvs/youarehungry"></a>
-    </footer>
+    <script src="scripts/nav.js"></script>
     <script src="scripts/homeController.js"></script>
     <script src="scripts/searchController.js"></script>
     <script src="scripts/listController.js"></script>
