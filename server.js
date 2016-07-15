@@ -1,7 +1,7 @@
+var pg = require('pg');
 var express = require('express'),
   port = process.env.PORT || 3000,
   app = express();
-var pg = require('pg');
 
 app.get('/public/db', function (request, response) {
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
