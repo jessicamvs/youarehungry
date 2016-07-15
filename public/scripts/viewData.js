@@ -2,9 +2,11 @@ var viewData = {};
 
 $('#searchBox').on('submit', function(e) {
   e.preventDefault();
-  $('#print-results').children().remove();
-  var searchTerms = this.search.value;
-  getData.runSearch(searchTerms);
+  if(this.search.value) {
+    $('#print-results').children().remove();
+    var searchTerms = this.search.value;
+    getData.runSearch(searchTerms);
+  };
 });
 
 var render = Handlebars.compile($('#search-results').html());
