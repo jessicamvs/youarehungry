@@ -26,9 +26,9 @@ footer {
 .wrap.active {
   left: 16em;
 }
+
 a.menu-link {
-    display: block;
-    font-size: 2em;
+  font-size: 2em;
 }
 nav[role=navigation] {
   background: transparent;
@@ -43,45 +43,15 @@ nav[role=navigation] {
   left: -16em;
 }
 nav[role=navigation] ul {
-  /*margin: 0;
-  padding: 0;*/
-  /*border-top: 1px solid #808080;*/
+
 }
 nav[role=navigation] li a {
   display: block;
   text-align: right;
   padding: 0em 0.8em 0.8em 0.8em;
   color: #303030;
-  /*border-bottom: 1px solid #fff;*/
 }
 
 @media screen and (min-width: 41.25em) {
-  a.menu-link {
-     /*display: none;*/
-  }
 
-  header h1 a {
-     display: block;
-  }
-
-  .js nav[role=navigation] {
-    max-width: none;
-    position: static;
-    width: auto;
-  }
-  .wrap.active {
-    left: 0;
-  }
-  nav[role=navigation] ul {
-    margin: 0;
-    border: 0;
-  }
-
-  nav[role=navigation]  li {
-    display: inline-block;
-    margin: 0 0.25em;
-  }
-  nav[role=navigation] li a {
-    border: 0;
-    }
   }

@@ -14,7 +14,7 @@
     <script id="search-results" type="text/x-handlebars-template">
 
       <article class="">
-        <h1>{{recipeName}}</h1>
+        <a href="/{{id}}"><h1>{{recipeName}}</h1></a>
         <section>{{sourceDisplayName}}</section>
         <a href="/search/{{id}}"><img src="{{smallImageUrls}}" target="_blank"></a>
       </article>
@@ -35,12 +35,34 @@
   </head>
 
   <body>
+    <section id="login-signup">
+      <!-- Log In (existing users) -->
+      <form id="login-page">
+        <input name="Name" type="text" class="name-email-box" placeholder="Name">
+        <input name="Email" type="text" class="name-email-box" placeholder="Email">
+        <button type="submit" class="submit-button">LOG IN</button>
+        <p class="forgot-password"><a href="">Forgot Password</a></p>
+        <p class="login-message">Don't have an account? <span><a href="/signup">SIGN UP</a></span></p>
+      </form>
+
+      <!-- Sign Up (new users) -->
+      <form id="sign-up-page">
+        <input name="Name" type="text" class="name-email-box" placeholder="Name">
+        <input name="Email" type="text" class="name-email-box" placeholder="Email">
+        <input type="password" class="name-email-box" name="name" value="" placeholder="Password">
+        <button type="submit" class="submit-button">JOIN</button>
+        <p class="login-message">Already have an account? <span><a href="/login">SIGN IN</a></span></p>
+      </form>
+
+    </section>
+
+
     <div id="pattern" class="pattern">
       <div class="wrap" id="wrap">
-        <a href="#menu" class="menu-link"><i class="icon ion-android-restaurant"></i></a>
+        <a href="" class="menu-link"><i id="menu" class="icon ion-android-restaurant"></i></a>
 
         <header>
-          <h1><a href="/">You Are Hungry</a></h1>
+          <h1><a href="/">You Are Hungry!</a></h1>
           <nav id="menu" role="navigation">
             <ul>
               <li><a class="icon ion-android-home" href="/">  HOME</a></li>
@@ -60,18 +82,6 @@
               </div>
             </section>
 
-      <section id="search" class="tab-content">
-          <div>
-            <h3>Search Recipes</h3>
-            <form id="searchBox">
-              <input name="search" type="text" class="search-box" placeholder="APPLE PIE">
-              <button type="submit" class="search-button">SUBMIT</button>
-            </form>
-          </div>
-          <section id="print-results"></section>
-          <section id="print-selection"></section>
-      </section>
-
             <section id="search" class="tab-content">
                 <div>
                   <h3>Search Recipes</h3>
@@ -81,6 +91,7 @@
                   </form>
                 </div>
                 <section id="print-results"></section>
+                <section id="print-selection"></section>
             </section>
 
             <section id="list" class="tab-content">
@@ -111,9 +122,12 @@
     <script src="scripts/homeController.js"></script>
     <script src="scripts/searchController.js"></script>
     <script src="scripts/listController.js"></script>
+    <script src="scripts/loginController.js"></script>
+    <script src="scripts/signupController.js"></script>
     <script src="scripts/myRecipesController.js"></script>
     <script src="/scripts/getdata.js"></script>
     <script src="/scripts/viewData.js"></script>
+    <script src="/scripts/viewSelection.js"></script>
     <script src="scripts/routes.js"></script>
   </body>
 </html>
