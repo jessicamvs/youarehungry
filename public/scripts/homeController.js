@@ -22,9 +22,9 @@
     $.getJSON('/data', function (result) {
       console.log('Scott was here');
       result.rows.forEach(function(item) {
-        if (item.category){
+        if (item.list){
           console.log('if state');
-          item.category = JSON.parse(item.category);
+          item.list = JSON.parse(item.list);
         }
         console.log('else');
       });
