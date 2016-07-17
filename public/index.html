@@ -24,12 +24,12 @@
         <!-- <section>{{recipeName}}</section> -->
         <section><img id="splash-image" src="null"></section>
         <section id="recipe-name">{{name}}</section>
-        <section id="sourceDisplayName">{{sourceDisplayName}}</section>
-        <section id="sourceSiteUrl">{{source.sourceRecipeUrl}}</section>
+        <section id="sourceDisplayName"><a href="{{source.sourceRecipeUrl}}">{{source.sourceDisplayName}}</a></section>
+        <section id="sourceSiteUrl"></section>
         <section>
           <ul id="ingredients-list"></ul>
         </section>
-        <section id="directions">Directions:<span>{{sourceSiteUrl}}</span></section>
+        <section id="directions">Directions: <span>{{source.sourceRecipeUrl}}</span></section>
         <section id="rating">Rating: <span>{{rating}}</span> out of 5</section>
     </script>
   </head>
