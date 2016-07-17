@@ -23,6 +23,7 @@ app.get('/data', function (req, res) {
 });
 
 app.get('/adduser', function (req, res) {
+  console.log('adding user');
   var connectionString = process.env.DATABASE_URL;
 
   var client = new pg.Client(connectionString);
@@ -31,7 +32,7 @@ app.get('/adduser', function (req, res) {
       return console.error('could not connect to postgres');
     }
 
-    client.query('INSERT INTO users (username, password, list) VALUES (' + name + ', ' + pass + ', ' + list + ')', function(err, result) {
+    client.query('INSERT INTO users (username, password) VALUES (' + name + ', ' + pass + ')', function(err, result) {
       if(err) {
         return console.error('error running query', err);
       }
