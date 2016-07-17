@@ -58,106 +58,103 @@
     </div>
 
     <div id="pattern" class="pattern">
-      <div class="wrap" id="wrap">
-        <a href="" class="menu-link"><i id="menu" class="icon ion-android-restaurant"></i></a>
+  <div class="wrap" id="wrap">
+    <a href="" class="menu-link"><i id="menu" class="icon ion-android-restaurant"></i></a>
 
-        <header>
-          <h1><a href="/">You Are Hungry!</a></h1>
-          <nav id="menu" role="navigation">
-            <ul>
-              <li><a class="icon ion-android-home" href="/"> HOME</a></li>
-              <li><a class="icon ion-android-search" href="/search"> SEARCH</a></li>
-              <li><a class="icon ion-ios-list" href="/list"> SHOPPING LIST</a></li>
-              <li><a class="icon ion-android-folder" href="/myRecipes"> (MY SAVED RECIPES)</a></li>
+    <header>
+      <h1><a href="/">You Are Hungry!</a></h1>
+      <nav id="menu" role="navigation">
+        <ul>
+          <li><a class="icon ion-android-home" href="/"> HOME</a></li>
+          <li><a class="icon ion-android-search" href="/search"> SEARCH</a></li>
+          <li><a class="icon ion-ios-list" href="/list"> SHOPPING LIST</a></li>
+          <li><a class="icon ion-android-folder" href="/myRecipes"> (MY SAVED RECIPES)</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <main>
+        <section id="home" class="tab-content">
+          <div>
+            <h3>This is the home page when you log in.</h3>
+            <p>Idea was to have links shown for search, shopping list, and saved recipes - good on mobile, but not sure if we need it. What else can we show?</p>
+          </div>
+        </section>
+
+        <section id="search" class="tab-content">
+          <div>
+            <h3>Search Recipes</h3>
+            <form id="searchBox">
+              <input name="search" type="text" class="search-box" placeholder="apple pie">
+              <button type="submit" class="search-button">Search</button>
+            </form>
+          <section id="print-results"></section>
+          </div>
+        </section>
+        <section id="print-selection"></section>
+        <section id="list" class="tab-content">
+          <div>
+            <h3>Shopping List</h3>
+            <p>
+              <input id="new-item" type="text">
+              <button id="add-button" class="add">+ Add Item</button>
+            </p>
+            <ul id="to-get">
+              <li>
+                <input type="checkbox">
+                <label>napkins</label>
+                <input type="text">
+                  <button class="delete">Delete</button>
+              </li>
             </ul>
-          </nav>
-        </header>
+            <!-- Populate recipe ingredients below?? -->
+            <ul id="">
+              <li>
+                <input type="checkbox">
+                <label>(recipe ingredient)</label>
+                <input type="text">
+                  <button class="delete">Delete</button>
+              </li>
+            </ul>
+            <ul id="bought">
+              <li>
+                <input type="checkbox" checked>
+                <label>juice</label>
+                <input type="text">
+                  <button class="delete">Delete</button>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section id="myRecipes" class="tab-content">
+          <div>
+            <h3>STRETCH: My Saved Recipes</h3>
+            <p>Recipe photo, title, and source for later use. Goes to recipe page which will allow you to 'add ingredients to list'.</p>
+          </div>
+        </section>
 
-        <div class="container">
-          <main>
-            <section id="home" class="tab-content">
-              <div>
-                <h3>This is the home page when you log in.</h3>
-                <p>Idea was to have links shown for search, shopping list, and saved recipes - good on mobile, but not sure if we need it. What else can we show?</p>
-              </div>
-            </section>
+        </main>
+        <footer>
+          <a href="./">&copy; 2016 You Are Hungry!</a>
+          <a class="icon ion-social-github" title="You Are Hungry Github Repo" href="https://github.com/jessicamvs/youarehungry"></a>
+        </footer>
 
-            <section id="search" class="tab-content">
-              <div>
-                <h3>Search Recipes</h3>
-                <form id="searchBox">
-                  <input name="search" type="text" class="search-box" placeholder="apple pie">
-                  <button type="submit" class="search-button">Search</button>
-                </form>
-              <section id="print-results"></section>
-              </div>
-            </section>
-
-            <section id="print-selection"></section>
-
-            <section id="list" class="tab-content">
-              <div>
-                <h3>Shopping List</h3>
-                <p>
-                  <input id="new-item" type="text">
-                  <button id="add-button" class="add">+ Add Item</button>
-                </p>
-                <ul id="to-get">
-                  <li>
-                    <input type="checkbox">
-                    <label>napkins</label>
-                    <input type="text">
-                      <button class="delete">Delete</button>
-                  </li>
-                </ul>
-                <!-- Populate recipe ingredients below?? -->
-                <ul id="">
-                  <li>
-                    <input type="checkbox">
-                    <label>(recipe ingredient)</label>
-                    <input type="text">
-                      <button class="delete">Delete</button>
-                  </li>
-                </ul>
-                <ul id="bought">
-                  <li>
-                    <input type="checkbox" checked>
-                    <label>juice</label>
-                    <input type="text">
-                      <button class="delete">Delete</button>
-                  </li>
-                </ul>
-              </div>
-            </section>
-
-            <section id="myRecipes" class="tab-content">
-              <div>
-                <h3>STRETCH: My Saved Recipes</h3>
-                <p>Recipe photo, title, and source for later use. Goes to recipe page which will allow you to 'add ingredients to list'.</p>
-              </div>
-            </section>
-
-          </main>
-          <footer>
-            <a href="./">&copy; 2016 You Are Hungry!</a>
-            <a class="icon ion-social-github" title="You Are Hungry Github Repo" href="https://github.com/jessicamvs/youarehungry"></a>
-          </footer>
-
-        </div>
       </div>
     </div>
+  </div>
 
-    <script src="scripts/nav.js"></script>
-    <script src="scripts/homeController.js"></script>
-    <script src="scripts/searchController.js"></script>
-    <script src="scripts/listController.js"></script>
-    <script src="scripts/loginController.js"></script>
-    <script src="scripts/signupController.js"></script>
-    <script src="scripts/myRecipesController.js"></script>
-    <script src="scripts/list.js"></script>
-    <script src="/scripts/getdata.js"></script>
-    <script src="/scripts/viewData.js"></script>
-    <script src="/scripts/viewSelection.js"></script>
-    <script src="scripts/routes.js"></script>
-  </body>
+  <script src="scripts/nav.js"></script>
+  <script src="scripts/homeController.js"></script>
+  <script src="scripts/searchController.js"></script>
+  <script src="scripts/listController.js"></script>
+  <script src="scripts/loginController.js"></script>
+  <script src="scripts/signupController.js"></script>
+  <script src="scripts/myRecipesController.js"></script>
+  <script src="scripts/list.js"></script>
+  <script src="/scripts/getdata.js"></script>
+  <script src="/scripts/viewData.js"></script>
+  <script src="/scripts/viewSelection.js"></script>
+  <script src="scripts/routes.js"></script>
+</body>
 </html>
