@@ -11,7 +11,7 @@
       console.log(e.target.Name.value);
       console.log(e.target.Email.value);
       console.log(e.target.password.value);
-      $.post('/adduser', {name: e.target.Name.value, pass: e.target.password.value});
+      $.get('/adduser', {name: e.target.Name.value, pass: e.target.password.value});
     });
   };
 

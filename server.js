@@ -23,9 +23,9 @@ app.get('/data', function (req, res) {
 });
 
 
-app.post('/adduser', function (req, res) {
-  console.log(req.body);
-  var data = {name: req.body.name, pass: req.body.pass};
+app.get('/adduser', function (req, res) {
+  console.log(req.query);
+  var data = {name: req.query.name, pass: req.query.pass};
   console.log(data.name);
   console.log(data.pass);
 
