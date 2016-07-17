@@ -1,7 +1,4 @@
-select {
-  background-color: transparent;
-}
-
+/*================================forms style*/
 form {
   justify-content: center;
   margin: auto;
@@ -11,10 +8,6 @@ form {
   display: block;
 }
 
-#searchBox {
-  display: flex;
-  padding: 40px;
-}
 .name-email-box {
   display: block;
   padding: 12px 8px;
@@ -33,41 +26,22 @@ form {
   padding: 12px 24px;
   margin: 18px auto;
   font-size: 16px;
-  min-width: 360px;
+  /*min-width: 360px;*/
   text-align: center;
   color: #FFFFFF;
   background-color: #303030;
   border: 1px solid #303030;
   cursor: pointer;
 }
-
 .submit-button:hover, .submit-button:active, .submit-button:focus {
   opacity: 0.7;
 }
 
 .search-box {
-  padding: 12px 8px;
-  font-size: 16px;
-  text-align: left;
-  min-width: 228px;
-  color: #303030;
-  background-color: transparent;
-  border: 1px solid #303030;
-  cursor: text;
-}
-
-.search-button {
-  padding: 12px 24px;
-  font-size: 16px;
-  text-align: center;
-  color: #FFFFFF;
-  background-color: #303030;
-  border: 1px solid #303030;
-  cursor: pointer;
-}
-
-.search-button:hover, .search-button:focus, .search-button:active {
-  opacity: 0.7;
+  margin: auto;
+  width: 200px;
+  position: static;
+  align-items: center;
 }
 
 .forgot-password {
@@ -81,4 +55,119 @@ form {
   font-size: .7em;
   text-align: center;
   margin: 60px auto 18px;
+}
+
+/*Search Results*/
+.results-cards {
+  display: block;
+  float: inherit;
+  width: inherit;
+  margin-top: 2em;
+  background-color: #FFF;
+  padding: .5em;
+  border-radius: 4px;
+}
+img.results-cards {
+  align-content: center;
+}
+/*================================shopping list style*/
+.container {
+  display: block;
+  width: 360px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #303030;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li * {
+  float: left;
+}
+
+button {
+  background: none;
+  border: 0px;
+  color: #303030;
+  font-size: 15px;
+  width: 100px;
+  margin: 10px 0 0;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.7;
+}
+
+button.add {
+  color: #0FC57C;
+  float: right;
+}
+button.delete {
+  color: #CF2323;
+  float: right;
+}
+
+h3 {
+  color: #333;
+  border-bottom: 2px solid #333;
+  padding: 30px 0 10px;
+  margin: 0 0 40px;
+}
+
+input[type="text"] {
+  padding: 12px 8px;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: left;
+  /*min-width: 100%;*/
+  color: #303030;
+  background-color: #FFF;
+  border: 1px solid #DDD;
+  cursor: text;
+  margin: 0;
+}
+
+input[type="text"]:focus {
+  color: #333;
+}
+
+input#new-item {
+  width: 66%;
+}
+
+/* Shopping List */
+li {
+  overflow: hidden;
+  word-wrap: break-word;
+  padding: 20px 0;
+  border-bottom: 1px solid #FFF;
+}
+
+li > input[type="checkbox"] {
+  margin: 0 10px;
+  position: relative;
+  top: 15px;
+}
+
+li > label {
+  font-size: 15px;
+  line-height: 40px;
+  width: 55%;
+  padding: 0 0 0 11px;
+}
+
+/* Bought */
+#bought label {
+  text-decoration: line-through;
+  color: #888;
+}
+
+ /*Hide text input */
+ul li input[type=text] {
+  display: none;
 }

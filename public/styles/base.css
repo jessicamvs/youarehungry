@@ -2,11 +2,17 @@ html {
   font-family: 'Helvetica';
   font-size: 1.2em;
   background-color: #E0E0E0;
-  /*margin: 5% 10%;*/
+  height: 100%;
+  box-sizing: border-box;
 }
 
-h1 {
-  color: #303030;
+body {
+  position: relative;
+  min-height: 100%;
+}
+
+footer {
+  margin: 14em auto 0;
 }
 
 a {
