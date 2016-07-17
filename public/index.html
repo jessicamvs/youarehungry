@@ -21,13 +21,16 @@
 
     <script id="recipe-selection" type="text/x-handlebars-template">
       <article class="container">
-        <section>{{recipeName}}</section>
-        <!-- <section>{{name}}</section> OTHER POSSIBLE KEY FOR recipe name -->
-        <section>{{sourceDisplayName}}</section>
-        <section>{{sourceSiteUrl}}</section>
-        <section>{{ingredients}}</section>
-        <section>Directions:<span>{{sourceSiteUrl}}</span></section>
-        <section>Rating:<span>{{rating}}</span></section>
+        <!-- <section>{{recipeName}}</section> -->
+        <section><img id="splash-image" src="null"></section>
+        <section id="recipe-name">{{name}}</section>
+        <section id="sourceDisplayName"><a href="{{source.sourceRecipeUrl}}">{{source.sourceDisplayName}}</a></section>
+        <section id="sourceSiteUrl"></section>
+        <section>
+          <ul id="ingredients-list"></ul>
+        </section>
+        <section id="directions">Directions: <span>{{source.sourceRecipeUrl}}</span></section>
+        <section id="rating">Rating: <span>{{rating}}</span> out of 5</section>
     </script>
   </head>
 
@@ -56,7 +59,7 @@
 
     <div id="pattern" class="pattern">
   <div class="wrap" id="wrap">
-    <a href="" class="menu-link">MENUTEST</a>
+    <a href="" class="menu-link"><i id="menu" class="icon ion-android-restaurant"></i></a>
 
     <header>
       <h1><a href="/">You Are Hungry!</a></h1>
@@ -87,10 +90,9 @@
               <button type="submit" class="search-button">Search</button>
             </form>
           <section id="print-results"></section>
-          <section id="print-selection"></section>
           </div>
         </section>
-
+        <section id="print-selection"></section>
         <section id="list" class="tab-content">
           <div>
             <h3>Shopping List</h3>
@@ -106,33 +108,31 @@
                   <button class="delete">Delete</button>
               </li>
             </ul>
-
             <!-- Populate recipe ingredients below?? -->
-              <ul id="">
-                <li>
-                  <input type="checkbox">
-                  <label>(recipe ingredient)</label>
-                  <input type="text">
-                    <button class="delete">Delete</button>
-                </li>
-              </ul>
-              <ul id="bought">
-                <li>
-                  <input type="checkbox" checked>
-                  <label>juice</label>
-                  <input type="text">
-                    <button class="delete">Delete</button>
-                </li>
-              </ul>
-            </div>
-          </section>
-
-          <section id="myRecipes" class="tab-content">
-            <div>
-              <h3>STRETCH: My Saved Recipes</h3>
-              <p>Recipe photo, title, and source for later use. Goes to recipe page which will allow you to 'add ingredients to list'.</p>
-            </div>
-          </section>
+            <ul id="">
+              <li>
+                <input type="checkbox">
+                <label>(recipe ingredient)</label>
+                <input type="text">
+                  <button class="delete">Delete</button>
+              </li>
+            </ul>
+            <ul id="bought">
+              <li>
+                <input type="checkbox" checked>
+                <label>juice</label>
+                <input type="text">
+                  <button class="delete">Delete</button>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section id="myRecipes" class="tab-content">
+          <div>
+            <h3>STRETCH: My Saved Recipes</h3>
+            <p>Recipe photo, title, and source for later use. Goes to recipe page which will allow you to 'add ingredients to list'.</p>
+          </div>
+        </section>
 
         </main>
         <footer>
