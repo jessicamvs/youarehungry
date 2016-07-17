@@ -23,6 +23,7 @@
       console.log('Scott was here');
       result.rows.forEach(function(item) {
         if (item.category){
+          console.log('if state');
           item.category = JSON.parse(item.category);
         }
         console.log('else');
