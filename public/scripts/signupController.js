@@ -15,7 +15,7 @@
         type: 'POST',
         url: '/adduser',
         data: {
-          name: e.targer.Name.value,
+          name: e.target.Name.value,
           pass: e.target.password.value,
         },
         // success: success,
