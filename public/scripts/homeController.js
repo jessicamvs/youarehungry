@@ -21,13 +21,16 @@
   homeController.fetchAll = function(){
     $.getJSON('/data', function (result) {
       console.log('Scott was here');
-      result.rows.forEach(function(item) {
-        if (item.list){
-          console.log('if state');
-          item.list = JSON.parse(item.list);
-        }
-        console.log('else');
-      });
+      console.log(results);
+      console.log(results.row);
+
+      // result.rows.forEach(function(item) {
+      //   if (item.list){
+      //     console.log('if state');
+      //     item.list = JSON.parse(item.list);
+      //   }
+      //   console.log('else');
+      // });
     });
   };
   homeController.fetchAll();
