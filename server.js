@@ -45,7 +45,7 @@ app.get('/adduser', function (req, res) {
     });
   });
 
-  res.redirect('/');
+  res.send('/public/index.html');
 });
 
 app.use(express.static(__dirname + '/public/'));
