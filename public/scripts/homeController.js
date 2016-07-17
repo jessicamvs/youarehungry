@@ -21,8 +21,8 @@
   homeController.fetchAll = function(){
     $.getJSON('/data', function (result) {
       console.log('Scott was here');
-      console.log(results);
-      console.log(results.row);
+      console.log(result);
+      console.log(result.row);
 
       // result.rows.forEach(function(item) {
       //   if (item.list){
