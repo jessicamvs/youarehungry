@@ -11,16 +11,7 @@
       console.log(e.target.Name.value);
       console.log(e.target.Email.value);
       console.log(e.target.password.value);
-      $.ajax({
-        type: 'POST',
-        url: '/adduser',
-        data: {
-          name: e.target.Name.value,
-          pass: e.target.password.value,
-        },
-        // success: success,
-        // dataType: dataType
-      });
+      $.post('/adduser', {name: e.target.Name.value, pass: e.target.password.value});
     });
   };
 
