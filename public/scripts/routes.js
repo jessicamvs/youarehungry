@@ -10,6 +10,8 @@ page('/list', listController.index);
 
 page('/myRecipes', myRecipesController.index);
 
+page('/:id', viewSelection.index);
+
 page();
 
 // page('/search/:searchResults',

@@ -4,7 +4,6 @@ var express = require('express'),
   app = express();
 
 app.get('/data', function (req, res) {
-
   var connectionString = process.env.DATABASE_URL;
 
   var client = new pg.Client(connectionString);
