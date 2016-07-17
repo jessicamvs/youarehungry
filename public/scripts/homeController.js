@@ -13,7 +13,7 @@
       });
     });
   };
-  homeController.fetchAll();
+  homeController.dbTest();
 
   module.homeController = homeController;
 })(window);
