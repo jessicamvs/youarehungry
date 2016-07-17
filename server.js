@@ -1,6 +1,26 @@
+var pg = require('pg');
 var express = require('express'),
   port = process.env.PORT || 3000,
   app = express();
+
+app.get('/data', function (req, res) {
+  var connectionString = process.env.DATABASE_URL;
+
+  var client = new pg.Client(connectionString);
+  client.connect(function(err) {
+    if(err) {
+      return console.error('could not connect to postgres');
+    }
+    client.query('select * from users', function(err, result) {
+      if(err) {
+        return console.error('error running query', err);
+      }
+      res.send(result);
+      client.end();
+    });
+  });
+
+});
 
 app.use(express.static(__dirname + '/public/'));
 
