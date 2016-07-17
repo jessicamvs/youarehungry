@@ -1,9 +1,3 @@
-// var viewSelection = {};
-//
-// viewSelection.initSelectionPage = function() {
-//   var template = Handlebars.compile($('#print-selection').text());
-// };
-
 var viewSelection = {};
 
 viewSelection.index = function(ctx) {
@@ -22,6 +16,7 @@ viewSelection.pullRecipe = function(ctx) {
   }).done(function(data) {
     console.log(data);
     viewSelection.initSelectionPage(data);
+    viewSelection.buttonFunction(data);
   });
 };
 
@@ -44,4 +39,17 @@ viewSelection.ingredientsList = function(data) {
     // console.log(newUl);
     $('#ingredients-list').append(newLi);
   }
+};
+
+viewSelection.buttonFunction = function(data) {
+  var ingredientArray = data.ingredientLines;
+  // console.log('array', ingredientArray);
+  $('#ingredients-button').on('click', function(e) {
+    e.preventDefault();
+    console.log('button clicked');
+    for (var i = 0; i < ingredientArray.length; i++) {
+      populateList(ingredientArray[i]);
+    }
+    $('#ingredients-button').text('Ingredients were added to Shopping List').unbind('click');
+  });
 };

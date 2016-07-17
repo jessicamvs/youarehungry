@@ -1,8 +1,3 @@
-
-// var allowedIngredient = "allowedIngredient[]";
-// var excludedIngredient = "excludedIngredient[]";
-// var excludedCuisine = "excludedCuisine[]";
-
 var getData = {};
 
 getData.runSearch = function(searchPhrase) {
@@ -29,14 +24,3 @@ getData.transformImg = function(data) {
   // console.log(newData);
   viewData.printResults(newData);
 };
-
-// getData.pullImage = function(recipeId) {
-//   $.getJSON({
-//     url: 'http://api.yummly.com/v1/api/recipe/' + recipeId,
-//   },{
-//     _app_id: '3049d607',
-//     _app_key: '847fa96c28cfa82d101425ab83cba017',
-//   }).done(function(data) {
-//     console.log(data);
-//   });
-// };

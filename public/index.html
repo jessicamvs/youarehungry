@@ -15,18 +15,18 @@
       <article class="results-cards">
         <a href="/{{id}}"><h1>{{recipeName}}</h1></a>
         <section>by {{sourceDisplayName}}</section>
-        <a href="/search/{{id}}"><img src="{{smallImageUrls}}" target="_blank"></a>
+        <a href="/{{id}}"><img src="{{smallImageUrls}}" target="_blank"></a>
       </article>
     </script>
 
     <script id="recipe-selection" type="text/x-handlebars-template">
       <article class="container">
-        <!-- <section>{{recipeName}}</section> -->
         <section><img id="splash-image" src="null"></section>
         <section id="recipe-name">{{name}}</section>
         <section id="sourceDisplayName"><a href="{{source.sourceRecipeUrl}}">{{source.sourceDisplayName}}</a></section>
         <section id="sourceSiteUrl"></section>
-        <section>
+        <section id="ingredients-results">
+          <button id="ingredients-button" type="button">Add Ingredients to Shopping List</button>
           <ul id="ingredients-list"></ul>
         </section>
         <section id="directions">Directions: <span>{{source.sourceRecipeUrl}}</span></section>

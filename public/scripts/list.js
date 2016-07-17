@@ -4,7 +4,7 @@ var toGetHolder = document.getElementById('to-get');
 var boughtHolder = document.getElementById('bought');
 
 // create new list item
-var createNewItemElement = function(itemString){
+var createNewItemElement = function(itemString) {
   var listItem = document.createElement('li');
   var checkbox = document.createElement('input');
   var label = document.createElement('label');
@@ -29,7 +29,7 @@ var createNewItemElement = function(itemString){
 };
 
 //add a new item
-var addItem = function(){
+var addItem = function() {
 	//create a new li with the input text from new item
   var listItem = createNewItemElement(itemInput.value);
 
@@ -40,8 +40,14 @@ var addItem = function(){
     toGetHolder.appendChild(listItem);
     bindItemEvents(listItem, itemBought);
   }
+};
 
-  itemInput.value = '';
+//new function to handle list population from recipe page. Can we DRY it?
+var populateList = function(item) {
+	//create a new li with the input text from new item
+  var listItem = createNewItemElement(item);
+  toGetHolder.appendChild(listItem);
+  bindItemEvents(listItem, itemBought);
 };
 
 //delete an existing item
@@ -66,7 +72,7 @@ var itemToGet = function(){
   bindItemEvents(listItem, itemBought);
 };
 
-var bindItemEvents = function(ListItem, checkboxEventHandler){
+var bindItemEvents = function(ListItem, checkboxEventHandler) {
   var checkbox = ListItem.querySelector('input[type=checkbox]');
   var deleteButton = ListItem.querySelector('button.delete');
 
@@ -90,11 +96,11 @@ itemInput.addEventListener('keypress', function(event) {
 });
 
 //cycle over toGetHolder ul list items
-for (var i = 0; i < toGetHolder.children.length; i++){
+for (var i = 0; i < toGetHolder.children.length; i++) {
   bindItemEvents(toGetHolder.children[i], itemBought);
-}
+};
 
 //cycle over boughtHolder ul list items
 for (var i = 0; i < boughtHolder.children.length; i++) {
   bindItemEvents(boughtHolder.children[i], itemToGet);
-}
+};
