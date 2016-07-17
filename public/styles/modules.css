@@ -60,7 +60,6 @@ form {
 /*Search Results*/
 .results-cards {
   display: block;
-  float: inherit;
   width: inherit;
   margin-top: 2em;
   background-color: #FFF;
