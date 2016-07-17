@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/bower_components/ionicons/css/ionicons.css">
+    <link rel="stylesheet" href="styles/icon.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script src="vendors/scripts/page.js"></script>
@@ -15,18 +15,18 @@
       <article class="results-cards">
         <a href="/{{id}}"><h1>{{recipeName}}</h1></a>
         <section>by {{sourceDisplayName}}</section>
-        <a href="/search/{{id}}"><img src="{{smallImageUrls}}" target="_blank"></a>
+        <a href="/{{id}}"><img src="{{smallImageUrls}}" target="_blank"></a>
       </article>
     </script>
 
     <script id="recipe-selection" type="text/x-handlebars-template">
       <article class="container">
-        <!-- <section>{{recipeName}}</section> -->
         <section><img id="splash-image" src="null"></section>
         <section id="recipe-name">{{name}}</section>
         <section id="sourceDisplayName"><a href="{{source.sourceRecipeUrl}}">{{source.sourceDisplayName}}</a></section>
         <section id="sourceSiteUrl"></section>
-        <section>
+        <section id="ingredients-results">
+          <button id="ingredients-button" type="button">Add Ingredients to Shopping List</button>
           <ul id="ingredients-list"></ul>
         </section>
         <section id="directions">Directions: <span>{{source.sourceRecipeUrl}}</span></section>
@@ -50,7 +50,7 @@
         <form id="sign-up-page">
           <input name="Name" type="text" class="name-email-box" placeholder="Name">
           <input name="Email" type="text" class="name-email-box" placeholder="Email">
-          <input type="password" class="name-email-box" name="name" value="" placeholder="Password">
+          <input type="password" class="name-email-box" name="password" value="" placeholder="Password">
           <button type="submit" class="submit-button">JOIN</button>
           <p class="login-message">Already have an account? <span><a href="/login">SIGN IN</a></span></p>
         </form>
@@ -59,16 +59,16 @@
 
     <div id="pattern" class="pattern">
   <div class="wrap" id="wrap">
-    <a href="" class="menu-link"><i id="menu" class="icon ion-android-restaurant"></i></a>
+    <a href="" class="menu-link"><i class="icon-spoon-knife"></i></a>
 
     <header>
       <h1><a href="/">You Are Hungry!</a></h1>
       <nav id="menu" role="navigation">
         <ul>
-          <li><a class="icon ion-android-home" href="/"> HOME</a></li>
-          <li><a class="icon ion-android-search" href="/search"> SEARCH</a></li>
-          <li><a class="icon ion-ios-list" href="/list"> SHOPPING LIST</a></li>
-          <li><a class="icon ion-android-folder" href="/myRecipes"> (MY SAVED RECIPES)</a></li>
+          <li><a href="/"> HOME</a></li>
+          <li><a href="/search"> SEARCH</a></li>
+          <li><a href="/list"> SHOPPING LIST</a></li>
+          <li><a href="/myRecipes"> (MY SAVED RECIPES)</a></li>
         </ul>
       </nav>
     </header>
@@ -137,7 +137,7 @@
         </main>
         <footer>
           <a href="./">&copy; 2016 You Are Hungry!</a>
-          <a class="icon ion-social-github" title="You Are Hungry Github Repo" href="https://github.com/jessicamvs/youarehungry"></a>
+          <a class="icon-github" title="You Are Hungry Github Repo" href="https://github.com/jessicamvs/youarehungry"></a>
         </footer>
 
       </div>

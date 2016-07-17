@@ -1,9 +1,3 @@
-// var viewSelection = {};
-//
-// viewSelection.initSelectionPage = function() {
-//   var template = Handlebars.compile($('#print-selection').text());
-// };
-
 var viewSelection = {};
 
 viewSelection.index = function(ctx) {
@@ -15,13 +9,14 @@ viewSelection.index = function(ctx) {
 
 viewSelection.pullRecipe = function(ctx) {
   $.getJSON({
-    url: 'http://api.yummly.com/v1/api/recipe/' + ctx.params.id,
+    url: 'https://api.yummly.com/v1/api/recipe/' + ctx.params.id,
   },{
     _app_id: '3049d607',
     _app_key: '847fa96c28cfa82d101425ab83cba017',
   }).done(function(data) {
     console.log(data);
     viewSelection.initSelectionPage(data);
+    viewSelection.buttonFunction(data);
   });
 };
 
@@ -44,4 +39,17 @@ viewSelection.ingredientsList = function(data) {
     // console.log(newUl);
     $('#ingredients-list').append(newLi);
   }
+};
+
+viewSelection.buttonFunction = function(data) {
+  var ingredientArray = data.ingredientLines;
+  // console.log('array', ingredientArray);
+  $('#ingredients-button').on('click', function(e) {
+    e.preventDefault();
+    console.log('button clicked');
+    for (var i = 0; i < ingredientArray.length; i++) {
+      populateList(ingredientArray[i]);
+    }
+    $('#ingredients-button').text('Ingredients were added to Shopping List').unbind('click');
+  });
 };
