@@ -5,19 +5,37 @@
 
 var getData = {};
 
-getData.runSearch = function(recipe) {
-  var recipeSearch = "q";
-  var searchObject = {
-    _app_id: "3049d607",
-    _app_key: "847fa96c28cfa82d101425ab83cba017",
+getData.runSearch = function(searchPhrase) {
+  $.getJSON('http://api.yummly.com/v1/api/recipes', {
+    _app_id: '3049d607',
+    _app_key: '847fa96c28cfa82d101425ab83cba017',
     requirePictures: true,
-  };
-  searchObject[recipeSearch] = recipe;
-  getData.pullData(searchObject);
-}
+    q: searchPhrase
+  }).done(function(data) {
+    getData.transformImg(data);
+  });
+};
 
-getData.pullData = function(searchObject) {
-    $.getJSON('http://api.yummly.com/v1/api/recipes', searchObject).done(function(data) {
-      viewData.printResults(data);
-      });
-}
+getData.transformImg = function(data) {
+  var newData = data.matches.map(function(ele) {
+    return {
+      recipeName: ele.recipeName,
+      sourceDisplayName: ele.sourceDisplayName,
+      smallImageUrls: ele.smallImageUrls[0].replace('=s90', '=s360'),
+      id: ele.id
+    };
+  });
+  // console.log(newData);
+  viewData.printResults(newData);
+};
+
+getData.pullImage = function(recipeId) {
+  $.getJSON({
+    url: 'http://api.yummly.com/v1/api/recipe/' + recipeId,
+  },{
+    _app_id: '3049d607',
+    _app_key: '847fa96c28cfa82d101425ab83cba017',
+  }).done(function(data) {
+    console.log(data);
+  });
+};

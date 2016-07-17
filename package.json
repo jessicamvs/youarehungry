@@ -19,5 +19,6 @@
   "homepage": "https://github.com/jessicamvs/youarehungry#readme",
   "dependencies": {
     "express": "^4.14.0"
-  }
+  },
+  "devDependencies": {}
 }
