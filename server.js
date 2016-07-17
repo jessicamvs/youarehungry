@@ -22,6 +22,32 @@ app.get('/data', function (req, res) {
 
 });
 
+
+app.get('/adduser', function (req, res) {
+  console.log(req.query);
+  var data = {name: req.query.name, pass: req.query.pass};
+  console.log(data.name);
+  console.log(data.pass);
+
+  var connectionString = process.env.DATABASE_URL;
+
+  var client = new pg.Client(connectionString);
+  client.connect(function(err) {
+    if(err) {
+      return console.error('could not connect to postgres');
+    }
+
+    client.query('INSERT INTO users (username, password) VALUES ($1, $2)', [data.name, data.pass], function(err, result) {
+      if(err) {
+        return console.error('error running query', err);
+      }
+      client.end();
+    });
+  });
+
+  res.sendFile('/public/index.html', { root: '.' }); //not redirecting
+});
+
 app.use(express.static(__dirname + '/public/'));
 
 app.get('*', function(request, response) {
