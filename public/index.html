@@ -21,13 +21,16 @@
 
     <script id="recipe-selection" type="text/x-handlebars-template">
       <article class="container">
-        <section>{{recipeName}}</section>
-        <!-- <section>{{name}}</section> OTHER POSSIBLE KEY FOR recipe name -->
-        <section>{{sourceDisplayName}}</section>
-        <section>{{sourceSiteUrl}}</section>
-        <section>{{ingredients}}</section>
-        <section>Directions:<span>{{sourceSiteUrl}}</span></section>
-        <section>Rating:<span>{{rating}}</span></section>
+        <!-- <section>{{recipeName}}</section> -->
+        <section><img id="splash-image" src="null"></section>
+        <section id="recipe-name">{{name}}</section>
+        <section id="sourceDisplayName">{{sourceDisplayName}}</section>
+        <section id="sourceSiteUrl">{{source.sourceRecipeUrl}}</section>
+        <section>
+          <ul id="ingredients-list"></ul>
+        </section>
+        <section id="directions">Directions:<span>{{sourceSiteUrl}}</span></section>
+        <section id="rating">Rating: <span>{{rating}}</span> out of 5</section>
     </script>
   </head>
 
@@ -87,9 +90,10 @@
                   <button type="submit" class="search-button">Search</button>
                 </form>
               <section id="print-results"></section>
-              <section id="print-selection"></section>
               </div>
             </section>
+
+            <section id="print-selection"></section>
 
             <section id="list" class="tab-content">
               <div>

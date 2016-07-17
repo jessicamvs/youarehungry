@@ -7,18 +7,20 @@
 var viewSelection = {};
 
 viewSelection.index = function(ctx) {
-  $('#main').children().hide();
+  console.log(ctx.params.id);
+  $('#print-selection').show().siblings().hide();
+  $('#login-signup').hide();
   viewSelection.pullRecipe(ctx);
 };
 
 viewSelection.pullRecipe = function(ctx) {
-  console.log(ctx.params.id);
   $.getJSON({
     url: 'http://api.yummly.com/v1/api/recipe/' + ctx.params.id,
   },{
     _app_id: '3049d607',
     _app_key: '847fa96c28cfa82d101425ab83cba017',
   }).done(function(data) {
+    console.log(data);
     viewSelection.initSelectionPage(data);
   });
 };
@@ -26,5 +28,20 @@ viewSelection.pullRecipe = function(ctx) {
 var render2 = Handlebars.compile($('#recipe-selection').html());
 
 viewSelection.initSelectionPage = function(data) {
-  $('#main').append(render2(data));
+  $('#print-selection').empty();
+  $('#print-selection').append(render2(data));
+  $('#splash-image').attr('src', data.images[0].hostedLargeUrl);
+  viewSelection.ingredientsList(data);
+};
+
+viewSelection.ingredientsList = function(data) {
+  console.log('data', data);
+  var list = data.ingredientLines;
+  console.log('list', list);
+  for (var i = 0; i < list.length; i++) {
+    var newLi = document.createElement('li');
+    newLi.textContent = list[i];
+    // console.log(newUl);
+    $('#ingredients-list').append(newLi);
+  }
 };
