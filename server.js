@@ -4,6 +4,7 @@ var express = require('express'),
   app = express();
 
 app.get('/data', function (req, res) {
+  console.log(req.query.email);
   var connectionString = process.env.DATABASE_URL;
 
   var client = new pg.Client(connectionString);
@@ -11,7 +12,7 @@ app.get('/data', function (req, res) {
     if(err) {
       return console.error('could not connect to postgres');
     }
-    client.query('select * from users', function(err, result) {
+    client.query('select * from users where email=$1', [req.query.email], function(err, result) {
       if(err) {
         return console.error('error running query', err);
       }
@@ -25,8 +26,8 @@ app.get('/data', function (req, res) {
 
 app.get('/adduser', function (req, res) {
   console.log(req.query);
-  var data = {name: req.query.name, pass: req.query.pass};
-  console.log(data.name);
+  var data = {email: req.query.email, pass: req.query.pass};
+  console.log(data.email);
   console.log(data.pass);
 
   var connectionString = process.env.DATABASE_URL;
@@ -37,7 +38,7 @@ app.get('/adduser', function (req, res) {
       return console.error('could not connect to postgres');
     }
 
-    client.query('INSERT INTO users (username, password) VALUES ($1, $2)', [data.name, data.pass], function(err, result) {
+    client.query('INSERT INTO users (email, password) VALUES ($1, $2)', [data.email, data.pass], function(err, result) {
       if(err) {
         return console.error('error running query', err);
       }
