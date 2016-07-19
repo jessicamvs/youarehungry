@@ -6,7 +6,7 @@
     $('#login-signup').hide();
   };
 
-  homeController.dbTest = function(){
+  listController.dbTest = function(){
     $.getJSON('/ingredients', function (result) {
       result.rows.forEach(function(item) {
         console.log(item);
