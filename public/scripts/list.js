@@ -52,6 +52,7 @@ var addItem = function() {
 
 var populateList = function() {
   $.getJSON('/ingredients', function(results) {
+    console.log('fired!');
     console.log('results', results);
     results.rows.forEach(function(item) {
       var listItem = createNewItemElement(item.ingredient);
