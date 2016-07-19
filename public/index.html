@@ -39,17 +39,16 @@
       <section id="login-signup">
         <!-- Log In (existing users) -->
         <form id="login-page">
-          <input name="Name" type="text" class="name-email-box" placeholder="Name">
-          <input name="Email" type="text" class="name-email-box" placeholder="Email">
+          <input name="email" type="text" class="name-email-box" placeholder="Email">
+          <input type="password" class="name-email-box" name="password" value="" placeholder="Password">
           <button type="submit" class="submit-button">LOG IN</button>
-          <p class="forgot-password"><a href="">Forgot Password</a></p>
           <p class="login-message">Don't have an account? <span><a href="/signup">SIGN UP</a></span></p>
         </form>
 
         <!-- Sign Up (new users) -->
         <form id="sign-up-page">
-          <input name="Name" type="text" class="name-email-box" placeholder="Name">
-          <input name="Email" type="text" class="name-email-box" placeholder="Email">
+          <input name="name" type="text" class="name-email-box" placeholder="Name">
+          <input name="email" type="text" class="name-email-box" placeholder="Email">
           <input type="password" class="name-email-box" name="password" value="" placeholder="Password">
           <button type="submit" class="submit-button">JOIN</button>
           <p class="login-message">Already have an account? <span><a href="/login">SIGN IN</a></span></p>
@@ -58,91 +57,82 @@
     </div>
 
     <div id="pattern" class="pattern">
-  <div class="wrap" id="wrap">
-    <a href="" class="menu-link"><i class="icon-spoon-knife"></i></a>
+      <div class="wrap" id="wrap">
 
-    <header>
-      <h1><a href="/">You Are Hungry!</a></h1>
-      <nav id="menu" role="navigation">
-        <ul>
-          <li><a href="/"> HOME</a></li>
-          <li><a href="/search"> SEARCH</a></li>
-          <li><a href="/list"> SHOPPING LIST</a></li>
-          <li><a href="/myRecipes"> (MY SAVED RECIPES)</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <div class="container">
-      <main>
-        <section id="home" class="tab-content">
-          <div>
-            <h3>This is the home page when you log in.</h3>
-            <p>Idea was to have links shown for search, shopping list, and saved recipes - good on mobile, but not sure if we need it. What else can we show?</p>
-          </div>
-        </section>
-
-        <section id="search" class="tab-content">
-          <div>
-            <h3>Search Recipes</h3>
-            <form id="searchBox">
-              <input name="search" type="text" class="search-box" placeholder="apple pie">
-              <button type="submit" class="search-button">Search</button>
-            </form>
-          <section id="print-results"></section>
-          </div>
-        </section>
-        <section id="print-selection"></section>
-        <section id="list" class="tab-content">
-          <div>
-            <h3>Shopping List</h3>
-            <p>
-              <input id="new-item" type="text">
-              <button id="add-button" class="add">+ Add Item</button>
-            </p>
-            <ul id="to-get">
-              <li>
-                <input type="checkbox">
-                <label>napkins</label>
-                <input type="text">
-                  <button class="delete">Delete</button>
-              </li>
+        <header id="mainNav">
+          <a href="" class="menu-link"><i class="icon-spoon-knife"></i></a>
+          <h1><a href="/">You Are Hungry!</a></h1>
+          <nav id="menu" role="navigation">
+            <ul>
+              <li><a href="/"> HOME</a></li>
+              <li><a href="/search"> SEARCH</a></li>
+              <li><a href="/list"> SHOPPING LIST</a></li>
+              <li><a href="/myRecipes"> (MY SAVED RECIPES)</a></li>
+              <li id="logout-nav-button"><a href=""> LOG OUT</a></li>
             </ul>
-            <!-- Populate recipe ingredients below?? -->
-            <ul id="">
-              <li>
-                <input type="checkbox">
-                <label>(recipe ingredient)</label>
-                <input type="text">
-                  <button class="delete">Delete</button>
-              </li>
-            </ul>
-            <ul id="bought">
-              <li>
-                <input type="checkbox" checked>
-                <label>juice</label>
-                <input type="text">
-                  <button class="delete">Delete</button>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <section id="myRecipes" class="tab-content">
-          <div>
-            <h3>STRETCH: My Saved Recipes</h3>
-            <p>Recipe photo, title, and source for later use. Goes to recipe page which will allow you to 'add ingredients to list'.</p>
-          </div>
-        </section>
+          </nav>
+        </header>
 
-        </main>
-        <footer>
-          <a href="./">&copy; 2016 You Are Hungry!</a>
-          <a class="icon-github" title="You Are Hungry Github Repo" href="https://github.com/jessicamvs/youarehungry"></a>
-        </footer>
+        <div class="container">
+          <main>
+            <section id="home" class="tab-content">
+              <div>
+                <h3>This is the home page when you log in.</h3>
+                <p>Idea was to have links shown for search, shopping list, and saved recipes - good on mobile, but not sure if we need it. What else can we show?</p>
+              </div>
+            </section>
 
+            <section id="search" class="tab-content">
+              <div>
+                <h3>Search Recipes</h3>
+                <form id="searchBox">
+                  <input name="search" type="text" class="search-box" placeholder="apple pie">
+                  <button type="submit" class="search-button">Search</button>
+                </form>
+                <section id="print-results"></section>
+              </div>
+            </section>
+            <section id="print-selection"></section>
+            <section id="list" class="tab-content">
+              <div>
+                <h3>Shopping List</h3>
+                <p>
+                  <input id="new-item" type="text">
+                  <button id="add-button" class="add">+ Add Item</button>
+                </p>
+                <ul id="to-get">
+                  <!-- <li>
+                    <input type="checkbox">
+                    <label>napkins</label>
+                    <input type="text">
+                    <button class="delete">Delete</button>
+                  </li> -->
+                </ul>
+                <ul id="bought">
+                  <!-- <li>
+                    <input type="checkbox" checked>
+                    <label>juice</label>
+                    <input type="text">
+                    <button class="delete">Delete</button>
+                  </li> -->
+                </ul>
+              </div>
+            </section>
+            <section id="myRecipes" class="tab-content">
+              <div>
+                <h3>STRETCH: My Saved Recipes</h3>
+                <p>Recipe photo, title, and source for later use. Goes to recipe page which will allow you to 'add ingredients to list'.</p>
+              </div>
+            </section>
+          </main>
+          <footer>
+            <a href="./">&copy; 2016 You Are Hungry!</a>
+            <a class="icon-github" title="You Are Hungry Github Repo" href="https://github.com/jessicamvs/youarehungry" target="_blank"></a>
+          </footer>
+
+        </div>
       </div>
     </div>
-  </div>
 
   <script src="scripts/nav.js"></script>
   <script src="scripts/homeController.js"></script>

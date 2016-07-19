@@ -1,17 +1,16 @@
 $(document).ready(function() {
   $('body').addClass('js');
 
-  var $menu = $('.icon-spoon-knife'),
-    $menulink = $('.menu-link'),
-    $wrap = $('#wrap');
-
-  $menu.on('click', function() {
-    $menulink.toggleClass('active');
-    $wrap.toggleClass('active');
+  $('#mainNav').on('click', 'a', function() {
+    $('.menu-link').toggleClass('active');
+    $('#wrap').toggleClass('active');
   });
 
-$('#menu').on('click', 'li', function() {
-  $menulink.toggleClass('active');
-  $wrap.toggleClass('active');
-})
+  $('#logout-nav-button').on('click', function(e) {
+    e.preventDefault();
+    window.location.replace('/login');
+    localStorage.removeItem('userData');
+    console.log('localStorage userData removed');
+  });
+
 });

@@ -40,6 +40,7 @@ var addItem = function() {
     toGetHolder.appendChild(listItem);
     bindItemEvents(listItem, itemBought);
   }
+  itemInput.value = '';
 };
 
 //new function to handle list population from recipe page. Can we DRY it?

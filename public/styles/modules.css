@@ -44,12 +44,12 @@ form {
   align-items: center;
 }
 
-.forgot-password {
+/*.forgot-password {
   font-size: .7em;
   text-align: center;
   margin: 12px;
   color: #303030;
-}
+}*/
 
 .login-message {
   font-size: .7em;
