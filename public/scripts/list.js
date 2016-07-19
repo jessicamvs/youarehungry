@@ -53,9 +53,11 @@ var addItem = function() {
 var populateList = function() {
   $.getJSON('/ingredients', function(results) {
     console.log('results', results);
-    var listItem = createNewItemElement(results);
-    toGetHolder.appendChild(listItem);
-    bindItemEvents(listItem, itemBought);
+    results.rows.forEach(function(item) {
+      var listItem = createNewItemElement(item.ingredient);
+      toGetHolder.appendChild(listItem);
+      bindItemEvents(listItem, itemBought);
+    });
   });
 };
 
