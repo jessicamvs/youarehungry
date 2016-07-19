@@ -1,14 +1,10 @@
 (function(module) {
   var loginController = {};
 
-  var tempUsers = [
-   {id: 1, username: "nassir", password: "password"},
-   {id: 2, username: "notnassir", password: "P_assword123"},
-   {id: 3, username: "lilz", password: "passpass"},
-   {id: 4, username: "cups", password: "cups"},
-   {id: 5, username: "dan", password: "dan"},
-   {id: 6, username: "TestLillian", password: "TestLillian"}
-  ]
+  // var tempUsers = [
+  // //  {id: 1, email: "patrick@email.com", password: "password1"}
+  // //  {id: 2, email: "jessca@email.com", password: "dfjlkdsjflkdsjflkdsjflk"}
+  // ]
 
   loginController.index = function() {
     $('#login-page').show().siblings().hide().parent().parent().siblings().hide();
@@ -19,9 +15,19 @@
       e.preventDefault();
       console.log(e.target.email.value);
       console.log(e.target.password.value);
-      // if ()
-    })
-  }
+      $.getJSON('/data', {email: e.target.email.value}, function(result) {
+        console.log(result);
+        // if (tempUsers.length === 0) {
+        //   alert('database says you do not exist');
+        // } else {
+        //   localStorage.setItem('userInfo', JSON.stringify(tempUsers[0]));
+        //   console.log(tempUsers[0]);
+        //   page('/');
+        // }
+      });
+    });
+  };
+
   loginController.verifyuser();
 
   module.loginController = loginController;
