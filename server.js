@@ -43,7 +43,6 @@ app.get('/adduser', function (req, res) {
         return console.error('error running query', err);
       }
       client.end();
-      page('/')
     });
   });
 
