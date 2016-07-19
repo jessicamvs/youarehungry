@@ -12,7 +12,7 @@
 
   loginController.verifyuser = function() {
     $('#login-page').on('submit', function(e) {
-      e.preventDefault();
+      // e.preventDefault();
       console.log(e.target.email.value);
       console.log(e.target.password.value);
       $.getJSON('/data', {email: e.target.email.value}, function(result) {
