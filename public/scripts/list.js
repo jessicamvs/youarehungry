@@ -56,6 +56,8 @@ var populateList = function() {
     console.log('fired!');
     console.log('results', result);
     result.rows.forEach(function(item) {
+      console.log(item);
+      console.log(item.ingredient);
       var listItem = createNewItemElement(item.ingredient);
       toGetHolder.appendChild(listItem);
       bindItemEvents(listItem, itemBought);
