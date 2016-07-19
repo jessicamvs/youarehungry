@@ -51,6 +51,7 @@ var addItem = function() {
 // };
 
 var populateList = function() {
+  console.log('it is here');
   $.getJSON('/ingredients', function(results) {
     console.log('fired!');
     console.log('results', results);
