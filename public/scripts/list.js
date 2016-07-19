@@ -52,6 +52,7 @@ var addItem = function() {
 
 var populateList = function() {
   $.getJSON('/ingredients', function(results) {
+    console.log(results);
     var listItem = createNewItemElement(results);
     toGetHolder.appendChild(listItem);
     bindItemEvents(listItem, itemBought);
