@@ -5,4 +5,12 @@ $(document).ready(function() {
     $('.menu-link').toggleClass('active');
     $('#wrap').toggleClass('active');
   });
+
+  $('#logout-nav-button').on('click', function(e) {
+    e.preventDefault();
+    window.location.replace('/login');
+    localStorage.removeItem('userData');
+    console.log('localStorage userData removed');
+  });
+
 });
