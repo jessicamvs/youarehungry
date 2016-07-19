@@ -50,20 +50,21 @@ var addItem = function() {
 //   bindItemEvents(listItem, itemBought);
 // };
 
-var populateList = function() {
-  console.log('it is here');
-  $.getJSON('/ingredients', function(result) {
-    console.log('fired!');
-    console.log('results', result);
-    result.rows.forEach(function(item) {
-      console.log(item);
-      console.log(item.ingredient);
-      var listItem = createNewItemElement(item.ingredient);
-      toGetHolder.appendChild(listItem);
-      bindItemEvents(listItem, itemBought);
-    });
-  });
-};
+//Nassir
+// var populateList = function() {
+//   console.log('it is here');
+//   $.getJSON('/ingredients', function(result) {
+//     console.log('fired!');
+//     console.log('results', result);
+//     result.rows.forEach(function(item) {
+//       console.log(item);
+//       console.log(item.ingredient);
+//       var listItem = createNewItemElement(item.ingredient);
+//       toGetHolder.appendChild(listItem);
+//       bindItemEvents(listItem, itemBought);
+//     });
+//   });
+// };
 
 //delete an existing item
 var deleteItem = function(){

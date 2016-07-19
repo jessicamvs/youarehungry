@@ -1,4 +1,4 @@
-var userIdTest = 10; // merely a test!
+// var userIdTest = 10; // merely a test!
 
 var pg = require('pg');
 var express = require('express'),
@@ -48,27 +48,31 @@ app.get('/adduser', function (req, res) {
     });
   });
 
-//nassir added this, will it work? WHO KNOWS!
-  app.get('/ingredients', function (req, res) {
-    var connectionString = process.env.DATABASE_URL;
-
-    var client = new pg.Client(connectionString);
-    client.connect(function(err) {
-      if(err) {
-        return console.error('could not connect to postgres');
-      }
-      client.query('SELECT ingredient FROM ingredients WHERE userid=$1', [userIdTest], function(err, result) {
-        if(err) {
-          return console.error('error running query', err);
-        }
-        res.send(result);
-        client.end();
-      });
-    });
-  });
-
   res.sendFile('/public/index.html', { root: '.' }); //not redirecting
 });
+
+//nassir added this, will it work? WHO KNOWS!
+  // app.get('/ingredients', function (req, res) {
+  //   var connectionString = process.env.DATABASE_URL;
+  //
+  //   var client = new pg.Client(connectionString);
+  //   client.connect(function(err) {
+  //     if(err) {
+  //       return console.error('could not connect to postgres');
+  //     }
+  //     client.query('SELECT ingredient FROM ingredients WHERE userid=$1', [userIdTest], function(err, result) {
+  //       if(err) {
+  //         return console.error('error running query', err);
+  //       }
+  //       res.send(result);
+  //       client.end();
+  //     });
+  //   });
+  //
+  // });
+
+//   res.sendFile('/public/index.html', { root: '.' }); //not redirecting
+// });
 
 app.use(express.static(__dirname + '/public/'));
 
