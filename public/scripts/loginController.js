@@ -17,11 +17,11 @@
       console.log(e.target.password.value);
       $.getJSON('/data', {email: e.target.email.value}, function(result) {
         console.log(result);
-        console.log(result.row);
-        if (result.row.length === 0) {
+        console.log(result.rows);
+        if (result.rows.length === 0) {
           alert('database says you do not exist');
         } else {
-          localStorage.setItem('userInfo', JSON.stringify(result.row[0]));
+          localStorage.setItem('userInfo', JSON.stringify(result.rows[0]));
           page('/');
         }
       });
