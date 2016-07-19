@@ -10,8 +10,8 @@ $(document).ready(function() {
     $wrap.toggleClass('active');
   });
 
-$('#menu').on('click', 'li', function() {
-  $menulink.toggleClass('active');
-  $wrap.toggleClass('active');
-})
+  $('#menu').on('click', 'li', function() {
+    $menulink.toggleClass('active');
+    $wrap.toggleClass('active');
+  });
 });

@@ -43,11 +43,19 @@ var addItem = function() {
 };
 
 //new function to handle list population from recipe page. Can we DRY it?
-var populateList = function(item) {
-	//create a new li with the input text from new item
-  var listItem = createNewItemElement(item);
-  toGetHolder.appendChild(listItem);
-  bindItemEvents(listItem, itemBought);
+// var populateList = function(item) {
+// 	//create a new li with the input text from new item
+//   var listItem = createNewItemElement(item);
+//   toGetHolder.appendChild(listItem);
+//   bindItemEvents(listItem, itemBought);
+// };
+
+var populateList = function() {
+  $.getJSON('/ingredients', function(results) {
+    var listItem = createNewItemElement(results);
+    toGetHolder.appendChild(listItem);
+    bindItemEvents(listItem, itemBought);
+  });
 };
 
 //delete an existing item
