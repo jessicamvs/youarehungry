@@ -52,10 +52,10 @@ var addItem = function() {
 
 var populateList = function() {
   console.log('it is here');
-  $.getJSON('/ingredients', function(results) {
+  $.getJSON('/ingredients', function(result) {
     console.log('fired!');
-    console.log('results', results);
-    results.rows.forEach(function(item) {
+    console.log('results', result);
+    result.rows.forEach(function(item) {
       var listItem = createNewItemElement(item.ingredient);
       toGetHolder.appendChild(listItem);
       bindItemEvents(listItem, itemBought);
