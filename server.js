@@ -43,10 +43,11 @@ app.get('/adduser', function (req, res) {
         return console.error('error running query', err);
       }
       client.end();
+      page('/')
     });
   });
 
-  res.sendFile('/public/index.html', { root: '.' }); //not redirecting
+  //res.sendFile('/public/index.html', { root: '.' }); //not redirecting
 });
 
 app.use(express.static(__dirname + '/public/'));
