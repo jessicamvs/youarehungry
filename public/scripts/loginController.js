@@ -12,7 +12,7 @@
 
   loginController.verifyuser = function() {
     $('#login-page').on('submit', function(e) {
-      // e.preventDefault();
+      e.preventDefault();
       console.log(e.target.email.value);
       console.log(e.target.password.value);
       $.getJSON('/data', {email: e.target.email.value}, function(result) {
@@ -21,6 +21,7 @@
         if (result.rows.length === 0) {
           alert('database says you do not exist');
         } else {
+          console.log('rows was not empty ELSE');
           localStorage.setItem('userInfo', JSON.stringify(result.rows[0]));
           page('/');
         }
