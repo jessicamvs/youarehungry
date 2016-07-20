@@ -40,7 +40,7 @@
   <body>
 
     <div class="css-home-login-link">
-      <a href="#" class="css-home-login-link">Log In</a>
+      <a href="/login" class="css-home-login-link">Log In</a>
     </div>
     <a href=""><img src="img/hungry.png" class="css-home-logo"></a>
 
@@ -48,17 +48,21 @@
       <h1>You Are Hungry! is an app developed for the adventurous home cook who is always looking for new recipes...</h1>
 
       <div class="css-home-col1">
-        <i class="icon-search large-icon"></i>
-        <p>Say something about the search feature.</p>
+        <div class="css-center"><i class="icon-search large-icon"></i></div>
+        <p>Enter any keyword or ingredient and You Are Hungry! will show display the top 10 results.</p>
       </div>
       <div class="css-home-col2">
-        <i class="icon-clipboard large-icon"></i>
-        <p>Automagically generated shopping list! Yes, please!</p>
+        <div class="css-center"><i class="icon-clipboard large-icon"></i></div>
+        <p>Automagically generated shopping list! Yes, please! You Are Hungry! remembers your list so you never forget a thing.</p>
+      </div>
+      <div class="">
+        (Need small prompt and button - TRY IT NOW)
       </div>
     </div>
 
 
     <div class="container">
+      <a href=""><img src="img/hungry.png" class="css-home-logo"></a>
       <section id="login-signup">
         <!-- Log In (existing users) -->
         <form id="login-page">
@@ -86,9 +90,9 @@
           <!-- <h1><a href="/">You Are Hungry!</a></h1> -->
           <nav id="menu" role="navigation">
             <ul>
-              <li><a href="/search"> SEARCH</a></li>
-              <li><a href="/list"> SHOPPING LIST</a></li>
-              <li id="logout-nav-button"><a href=""> LOG OUT</a></li>
+              <li class="css-nav-list"><a href="/search"> SEARCH</a></li>
+              <li class="css-nav-list"><a href="/list"> SHOPPING LIST</a></li>
+              <li id="logout-nav-button"  class="css-nav-list"><a href=""> LOG OUT</a></li>
               <!-- <li><a href="/"> HOME</a></li> -->
               <!-- <li><a href="/myRecipes"> (MY SAVED RECIPES)</a></li> -->
             </ul>

@@ -4,7 +4,8 @@ html {
   font-size: 1.2em;
 }
 body {
-  background: linear-gradient(
+  background:
+  linear-gradient(
       rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.8)
     ), url(https://images.unsplash.com/photo-1452251889946-8ff5ea7b27ab?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=ee0e1e6f2902c4b2338bf54ee31ce2ba) no-repeat center center fixed;
@@ -21,17 +22,17 @@ nav[role=navigation] {
 }
 .js nav[role=navigation] {
   width: 14em;
-  height: 100%;
   position: absolute;
   top: 0;
-  left: -14em;
+  left: -18em;
 }
 
 nav[role=navigation] li a {
   display: block;
   float: right;
   padding-right: 1em;
-  color: #303030;
+  color: #FFF;
+  text-decoration: none;
 }
 .wrap {
   position: relative;
@@ -75,9 +76,10 @@ nav[role=navigation] li a {
   max-width: 960px;
   border-radius: 5px;
 }
-.icon-search.large-icon, .icon-clipboard.large-icon {
+i.icon-search.large-icon, i.icon-clipboard.large-icon {
   font-size: 3em;
-  text-align: center;
+  /*TODO center these*/
+
 }
 .css-home-col1 {
   width: 340px;
@@ -100,8 +102,13 @@ a:hover {
 
 a.menu-link {
   font-size: 2em;
+  text-decoration: none;
+  color: #FFF;
 }
-
+.css-center {
+  text-align: center;
+  padding-bottom: 2em;
+}
 h1, h1 a {
   min-height: 120px;
   width: 90%;

@@ -129,6 +129,9 @@ input#new-item {
 }
 
 /* Shopping List */
+.css-nav-list {
+  border: 0px;
+}
 li {
   overflow: hidden;
   word-wrap: break-word;
