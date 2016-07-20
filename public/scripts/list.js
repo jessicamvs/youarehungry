@@ -68,8 +68,10 @@ var deleteItem = function(){
   var ul = listItem.parentNode;
 
   ul.removeChild(listItem);
-  var text = '\'' + $(this).prev().text() + '\'';
+  var text = $(this).prev().text();
+  console.log('In deleteItem function');
   console.log(text);
+  console.log(typeof text);
   listController.deleteIngredients(text);
 };
 
