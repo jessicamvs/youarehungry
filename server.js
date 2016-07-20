@@ -5,7 +5,7 @@ var express = require('express'),
 
 app.get('/data', function (req, res) {
   console.log(req.query.email);
-  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/nassirisaf';
+  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/patrickcolgan';
 
   var client = new pg.Client(connectionString);
   client.connect(function(err) {
@@ -29,7 +29,7 @@ app.get('/adduser', function (req, res) {
   console.log(data.email);
   console.log(data.pass);
 
-  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/nassirisaf';
+  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/patrickcolgan';
 
   var client = new pg.Client(connectionString);
   client.connect(function(err) {
@@ -50,7 +50,7 @@ app.get('/adduser', function (req, res) {
 app.get('/ingredients', function (req, res) {
   console.log(req.query.userid);
   console.log('hello jessica');
-  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/nassirisaf';
+  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/patrickcolgan';
 
   var client = new pg.Client(connectionString);
   client.connect(function(err) {
@@ -77,4 +77,25 @@ app.get('*', function(request, response) {
 
 app.listen(port, function() {
   console.log('Server started on port ' + port + '!');
+});
+
+app.get('/delete', function (req, res) {
+  console.log('ingredient', req.query.ingredient);
+  console.log('delete ingredients');
+  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/patrickcolgan';
+
+  var client = new pg.Client(connectionString);
+  client.connect(function(err) {
+    if(err) {
+      return console.error('could not connect to postgres');
+    }
+    client.query('delete * FROM ingredients WHERE ingredient=$1', [req.query.ingredient], function(err, result) {
+      if(err) {
+        return console.error('error running query', err);
+      }
+      // res.send(result);
+      client.end();
+    });
+  });
+
 });

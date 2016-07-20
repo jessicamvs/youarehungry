@@ -48,16 +48,7 @@
     });
   };
 
-  // loginController.listView = function(ingredientsArray) {
-  //   console.log('in list view');
-  //   ingredientsArray.forEach(function(ele) {
-  //     console.log('in listView for loop');
-  //     console.log(ele);
-  //     var listItem = createNewItemElement(ele);
-  //     toGetHolder.appendChild(listItem);
-  //     bindItemEvents(listItem, itemBought);
-  //   });
-  // };
+
 
 
   module.loginController = loginController;

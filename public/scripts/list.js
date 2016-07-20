@@ -43,10 +43,11 @@ var addItem = function() {
   itemInput.value = '';
 };
 
-var populateFromDatabase = function() {
-  var data = JSON.parse(localStorage.getItem('list'));
-  console.log(data);
+var populateFromDatabase = function(data) {
+  console.log('running populateFromDatabase', data);
+  // var data = JSON.parse(localStorage.getItem('list'));
   data.forEach(function(ele) {
+    console.log(ele);
     var listItem = createNewItemElement(ele);
     toGetHolder.appendChild(listItem);
     bindItemEvents(listItem, itemBought);
@@ -67,6 +68,9 @@ var deleteItem = function(){
   var ul = listItem.parentNode;
 
   ul.removeChild(listItem);
+  var text = '\'' + $(this).prev().text() + '\'';
+  console.log(text);
+  listController.deleteIngredients(text);
 };
 
 //mark item as bought
