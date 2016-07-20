@@ -2,9 +2,12 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/style.css">
+
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/layout.css">
+
     <link rel="stylesheet" href="styles/icon.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
@@ -47,7 +50,6 @@
 
         <!-- Sign Up (new users) -->
         <form id="sign-up-page">
-          <input name="name" type="text" class="name-email-box" placeholder="Name">
           <input name="email" type="email" class="name-email-box" placeholder="Email">
           <input type="password" class="name-email-box" name="password" value="" placeholder="Password">
           <button type="submit" class="submit-button">JOIN</button>
@@ -64,10 +66,10 @@
           <h1><a href="/">You Are Hungry!</a></h1>
           <nav id="menu" role="navigation">
             <ul>
-              <li><a href="/"> HOME</a></li>
+              <!-- <li><a href="/"> HOME</a></li> -->
               <li><a href="/search"> SEARCH</a></li>
               <li><a href="/list"> SHOPPING LIST</a></li>
-              <li><a href="/myRecipes"> (MY SAVED RECIPES)</a></li>
+              <!-- <li><a href="/myRecipes"> (MY SAVED RECIPES)</a></li> -->
               <li id="logout-nav-button"><a href=""> LOG OUT</a></li>
             </ul>
           </nav>
@@ -75,12 +77,12 @@
 
         <div class="container">
           <main>
-            <section id="home" class="tab-content">
+            <!-- <section id="home" class="tab-content">
               <div>
                 <h3>This is the home page when you log in.</h3>
                 <p>Idea was to have links shown for search, shopping list, and saved recipes - good on mobile, but not sure if we need it. What else can we show?</p>
               </div>
-            </section>
+            </section> -->
 
             <section id="search" class="tab-content">
               <div>
@@ -93,6 +95,7 @@
               </div>
             </section>
             <section id="print-selection"></section>
+
             <section id="list" class="tab-content">
               <div>
                 <h3>Shopping List</h3>
@@ -118,12 +121,13 @@
                 </ul>
               </div>
             </section>
-            <section id="myRecipes" class="tab-content">
+
+            <!-- <section id="myRecipes" class="tab-content">
               <div>
                 <h3>STRETCH: My Saved Recipes</h3>
                 <p>Recipe photo, title, and source for later use. Goes to recipe page which will allow you to 'add ingredients to list'.</p>
               </div>
-            </section>
+            </section> -->
           </main>
           <footer>
             <a href="./">&copy; 2016 You Are Hungry!</a>
