@@ -24,7 +24,7 @@
             email: result.rows[0].email
           };
           localStorage.setItem('userData', JSON.stringify(currentUser));
-          loginController.fetchIngredients(result.rows[0].id);
+          loginController.fetchIngredients(currentUser.id);
           window.location.replace('/');
         }
       });
