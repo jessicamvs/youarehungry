@@ -20,6 +20,7 @@
   listController.getId = function() {
     var id = JSON.parse(localStorage.getItem('userData')).id;
     console.log('list controller', id);
+    listController.clearIngredients();
     listController.fetchIngredients(id);
   };
 
@@ -39,7 +40,27 @@
       console.log('line 39',usersIngredients);
       localStorage.setItem('list', JSON.stringify(usersIngredients));
       populateFromDatabase(usersIngredients);
+
+
+      // var pulledIngredients = JSON.stringify(usersIngredients);
+      // var localIngredients = localStorage.getItem('list');
+
+
+      // if (pulledIngredients === localIngredients) {
+      //   console.log('Database matches localStorage');
+      //   populateFromDatabase(JSON.parse(localIngredients));
+      // } else {
+      //   console.log('no local storage detected');
+      //   localStorage.setItem('list', JSON.stringify(usersIngredients));
+      //   populateFromDatabase(usersIngredients);
+      // }
     });
+  };
+
+  listController.clearIngredients = function() {
+    console.log('clearing ingredients!');
+    $('#to-get').empty();
+    $('#bought').empty();
   };
 
   listController.deleteIngredients = function(item) {
