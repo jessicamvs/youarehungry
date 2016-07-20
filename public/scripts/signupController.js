@@ -12,6 +12,7 @@
       console.log(e.target.password.value);
       $.get('/adduser', {email: e.target.email.value, pass: e.target.password.value});
     });
+    window.location.replace('/');
   };
 
   signupController.addUser();

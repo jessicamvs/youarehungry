@@ -43,6 +43,16 @@ var addItem = function() {
   itemInput.value = '';
 };
 
+var populateFromDatabase = function() {
+  var data = JSON.parse(localStorage.getItem('list'));
+  console.log(data);
+  data.forEach(function(ele) {
+    var listItem = createNewItemElement(ele);
+    toGetHolder.appendChild(listItem);
+    bindItemEvents(listItem, itemBought);
+  });
+};
+
 // new function to handle list population from recipe page. Can we DRY it?
 var populateList = function(item) {
 	//create a new li with the input text from new item
