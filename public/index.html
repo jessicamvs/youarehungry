@@ -16,7 +16,7 @@
 
     <script id="search-results" type="text/x-handlebars-template">
       <article class="results-cards">
-        <a href="/{{id}}"><h1>{{recipeName}}</h1></a>
+        <a href="/{{id}}"><h1 class="css-section-header">{{recipeName}}</h1></a>
         <section>by {{sourceDisplayName}}</section>
         <a href="/{{id}}"><img src="{{smallImageUrls}}" target="_blank"></a>
       </article>
@@ -45,7 +45,7 @@
     <a href=""><img src="img/hungry.png" class="css-home-logo"></a>
 
     <div class="css-home-flex-content">
-      <h1>You Are Hungry! is an app developed for the adventurous home cook who is always looking for new recipes...</h1>
+      <h1 class="css-feature-section">You Are Hungry! is an app developed for the adventurous home cook who is always looking for new recipes...</h1>
 
       <div class="css-home-col1">
         <div class="css-center"><i class="icon-search large-icon"></i></div>
@@ -55,8 +55,9 @@
         <div class="css-center"><i class="icon-clipboard large-icon"></i></div>
         <p>Automagically generated shopping list! Yes, please! You Are Hungry! remembers your list so you never forget a thing.</p>
       </div>
-      <div class="">
-        (Need small prompt and button - TRY IT NOW)
+      <div>
+        It's free and easy to use.
+        <button type="button">TRY IT NOW</button>
       </div>
     </div>
 
@@ -113,7 +114,7 @@
                 <h3>Search Recipes</h3>
                 <form id="searchBox">
                   <input name="search" type="text" class="search-box" placeholder="apple pie">
-                  <button type="submit" class="search-button">Search</button>
+                  <button type="submit" class="css-small-button">Search</button>
                 </form>
                 <section id="print-results"></section>
               </div>
@@ -125,7 +126,7 @@
                 <h3>Shopping List</h3>
                 <p>
                   <input id="new-item" type="text">
-                  <button id="add-button" class="add">+ Add Item</button>
+                  <button id="add-button" class="add css-small-button">+ Add Item</button>
                 </p>
                 <ul id="to-get">
                   <!-- <li>
