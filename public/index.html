@@ -12,46 +12,49 @@
     <title>You Are Hungry!</title>
 
     <script id="search-results" type="text/x-handlebars-template">
-      <article class="results-cards">
-        <a href="/{{id}}"><h1>{{recipeName}}</h1></a>
-        <section>by {{sourceDisplayName}}</section>
-        <a href="/{{id}}"><img src="{{smallImageUrls}}" target="_blank"></a>
+      <article class="css-cards">
+        <div class="css-block">
+          <a href="/{{id}}"><h1>{{recipeName}}</h1></a>
+          <section>by {{sourceDisplayName}}</section>
+          <a href="/{{id}}"><img src="{{smallImageUrls}}" target="_blank"></a>
+        <div>
       </article>
     </script>
 
     <script id="recipe-selection" type="text/x-handlebars-template">
-      <article class="container">
-        <section><img id="splash-image" src="null"></section>
-        <section id="recipe-name">{{name}}</section>
-        <section id="sourceDisplayName"><a href="{{source.sourceRecipeUrl}}">{{source.sourceDisplayName}}</a></section>
-        <section id="sourceSiteUrl"></section>
-        <section id="ingredients-results">
-          <button id="ingredients-button" type="button">Add Ingredients to Shopping List</button>
-          <ul id="ingredients-list"></ul>
-        </section>
-        <section id="directions">Directions: <span>{{source.sourceRecipeUrl}}</span></section>
-        <section id="rating">Rating: <span>{{rating}}</span> out of 5</section>
+      <article class="css-cards">
+        <div class="css-block">
+          <section id="recipe-name"><h1>{{name}}</h1></section>
+          <section id="sourceDisplayName"><a href="{{source.sourceRecipeUrl}}">{{source.sourceDisplayName}}</a></section>
+          <section id="sourceSiteUrl"></section>
+          <section id="rating">Rating: <span>{{rating}}</span> out of 5</section>
+          <section><img id="splash-image" src="null"></section>
+          <section id="ingredients-results">
+            <button id="ingredients-button" type="button">Add Ingredients to Shopping List</button>
+            <ul id="ingredients-list"></ul>
+          </section>
+          <button class="css-primary-button"><a href="{{source.sourceRecipeUrl}}" target="_blank">READ INSTRUCTIONS</a></button>
+        </div>
+      </article>
     </script>
   </head>
 
   <body>
-    <div class="container">
+    <div class="css-block">
       <section id="login-signup">
         <!-- Log In (existing users) -->
         <form id="login-page">
-          <input name="email" type="email" class="name-email-box" placeholder="email">
-          <input name="password" type="password" class="name-email-box" placeholder="password">
-          <button type="submit" class="submit-button">LOG IN</button>
-          <p class="login-message">Don't have an account? <span><a href="/signup">SIGN UP</a></span></p>
+          <input name="email" type="email" class="css-user-input" placeholder="Email">
+          <input name="password" type="password" class="css-user-input" placeholder="Password">
+          <button type="submit" class="css-primary-button">LOG IN</button>
+          <p class="css-login-message">Don't have an account? <span><a href="/signup">SIGN UP</a></span></p>
         </form>
-
         <!-- Sign Up (new users) -->
         <form id="sign-up-page">
-          <input name="name" type="text" class="name-email-box" placeholder="Name">
-          <input name="email" type="email" class="name-email-box" placeholder="Email">
-          <input type="password" class="name-email-box" name="password" value="" placeholder="Password">
-          <button type="submit" class="submit-button">JOIN</button>
-          <p class="login-message">Already have an account? <span><a href="/login">SIGN IN</a></span></p>
+          <input name="email" type="email" class="css-user-input" placeholder="Email">
+          <input type="password" class="css-user-input" name="password" value="" placeholder="Password">
+          <button type="submit" class="css-primary-button">JOIN</button>
+          <p class="css-login-message">Already have an account? <span><a href="/login">SIGN IN</a></span></p>
         </form>
       </section>
     </div>
@@ -73,7 +76,7 @@
           </nav>
         </header>
 
-        <div class="container">
+        <div>
           <main>
             <section id="home" class="tab-content">
               <div>
@@ -85,16 +88,16 @@
             <section id="search" class="tab-content">
               <div>
                 <h3>Search Recipes</h3>
-                <form id="searchBox">
-                  <input name="search" type="text" class="search-box" placeholder="apple pie">
-                  <button type="submit" class="search-button">Search</button>
+                <form id="searchBox" class="css-cards">
+                  <input name="search" type="text" class="css-search" placeholder="apple pie">
+                  <!-- <button type="submit">Search</button> -->
+                  <button type="submit"><i class="icon-search search-button"></i></button>
                 </form>
                 <section id="print-results"></section>
               </div>
             </section>
             <section id="print-selection"></section>
             <section id="list" class="tab-content">
-              <div>
                 <h3>Shopping List</h3>
                 <p>
                   <input id="new-item" type="text">
@@ -116,7 +119,7 @@
                     <button class="delete">Delete</button>
                   </li> -->
                 </ul>
-              </div>
+
             </section>
             <section id="myRecipes" class="tab-content">
               <div>

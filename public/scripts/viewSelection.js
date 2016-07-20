@@ -48,7 +48,7 @@ viewSelection.buttonFunction = function(data) {
     e.preventDefault();
     console.log('button clicked');
     for (var i = 0; i < ingredientArray.length; i++) {
-      populateList(ingredientArray[i]);
+      // populateList(ingredientArray[i]);
     }
     $('#ingredients-button').text('Ingredients were added to Shopping List').unbind('click');
   });

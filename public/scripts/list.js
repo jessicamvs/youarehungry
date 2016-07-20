@@ -43,29 +43,29 @@ var addItem = function() {
   itemInput.value = '';
 };
 
-//new function to handle list population from recipe page. Can we DRY it?
-// var populateList = function(item) {
-// 	//create a new li with the input text from new item
-//   var listItem = createNewItemElement(item);
-//   toGetHolder.appendChild(listItem);
-//   bindItemEvents(listItem, itemBought);
-// };
+// new function to handle list population from recipe page. Can we DRY it?
+var populateList = function(item) {
+	//create a new li with the input text from new item
+  var listItem = createNewItemElement(item);
+  toGetHolder.appendChild(listItem);
+  bindItemEvents(listItem, itemBought);
+};
 
-//Nassir
-// var populateList = function() {
-//   console.log('it is here');
-//   $.getJSON('/ingredients', function(result) {
-//     console.log('fired!');
-//     console.log('results', result);
-//     result.rows.forEach(function(item) {
-//       console.log(item);
-//       console.log(item.ingredient);
-//       var listItem = createNewItemElement(item.ingredient);
-//       toGetHolder.appendChild(listItem);
-//       bindItemEvents(listItem, itemBought);
-//     });
-//   });
-// };
+// Nassir
+var populateList = function() {
+  console.log('it is here');
+  $.getJSON('/ingredients', function(result) {
+    console.log('fired!');
+    console.log('results', result);
+    result.rows.forEach(function(item) {
+      console.log(item);
+      console.log(item.ingredient);
+      var listItem = createNewItemElement(item.ingredient);
+      toGetHolder.appendChild(listItem);
+      bindItemEvents(listItem, itemBought);
+    });
+  });
+};
 
 //delete an existing item
 var deleteItem = function(){
