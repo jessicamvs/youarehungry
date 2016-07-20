@@ -44,13 +44,6 @@ form {
   align-items: center;
 }
 
-/*.forgot-password {
-  font-size: .7em;
-  text-align: center;
-  margin: 12px;
-  color: #303030;
-}*/
-
 .login-message {
   font-size: .7em;
   text-align: center;
@@ -74,10 +67,6 @@ img.results-cards {
   display: block;
   width: 360px;
   margin: 0 auto;
-}
-
-h1 {
-  color: #303030;
 }
 
 ul {
@@ -112,10 +101,10 @@ button.delete {
 }
 
 h3 {
-  color: #333;
-  border-bottom: 2px solid #333;
+  color: #FFF;
+  border-bottom: 2px solid #FFF;
   padding: 30px 0 10px;
-  margin: 0 0 40px;
+  margin-bottom: 40px;
 }
 
 input[type="text"] {
