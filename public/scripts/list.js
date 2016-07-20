@@ -39,6 +39,9 @@ var addItem = function() {
 		//append list item to toGetHolder
     toGetHolder.appendChild(listItem);
     bindItemEvents(listItem, itemBought);
+    console.log('ingredient to add: ', itemInput.value);
+    var id = JSON.parse(localStorage.getItem('userData')).id;
+    listController.addIngredients(id, itemInput.value);
   }
   itemInput.value = '';
 };

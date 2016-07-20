@@ -43,8 +43,14 @@
   };
 
   listController.deleteIngredients = function(item) {
-    $.get('/delete', {ingredient: item}).done(function(result) {
-      console.log('deleteIngredients fired');
+    $.get('/deleteFromList', {ingredient: item}).done(function(result) {
+      console.log('deleteFromList fired');
+    });
+  };
+
+  listController.addIngredients = function(id, item) {
+    $.get('/addToList', {userid: id, ingredient: item}).done(function(result) {
+      console.log('addToList fired');
     });
   };
 
