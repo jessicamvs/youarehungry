@@ -39,6 +39,9 @@ var addItem = function() {
 		//append list item to toGetHolder
     toGetHolder.appendChild(listItem);
     bindItemEvents(listItem, itemBought);
+    console.log('ingredient to add: ', itemInput.value);
+    var id = JSON.parse(localStorage.getItem('userData')).id;
+    listController.addIngredients(id, itemInput.value);
   }
   itemInput.value = '';
 };
@@ -68,8 +71,10 @@ var deleteItem = function(){
   var ul = listItem.parentNode;
 
   ul.removeChild(listItem);
-  var text = '\'' + $(this).prev().text() + '\'';
+  var text = $(this).prev().text();
+  console.log('In deleteItem function');
   console.log(text);
+  console.log(typeof text);
   listController.deleteIngredients(text);
 };
 
