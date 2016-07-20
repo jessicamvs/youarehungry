@@ -13,8 +13,4 @@ $(document).ready(function() {
     console.log('localStorage userData removed');
   });
 
-  $('#menu').on('click', 'li', function() {
-    $menulink.toggleClass('active');
-    $wrap.toggleClass('active');
-  });
 });

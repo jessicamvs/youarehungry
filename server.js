@@ -1,5 +1,3 @@
-// var userIdTest = 10; // merely a test!
-
 var pg = require('pg');
 var express = require('express'),
   port = process.env.PORT || 3000,
@@ -7,7 +5,7 @@ var express = require('express'),
 
 app.get('/data', function (req, res) {
   console.log(req.query.email);
-  var connectionString = process.env.DATABASE_URL;
+  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Jessica';
 
   var client = new pg.Client(connectionString);
   client.connect(function(err) {
@@ -25,14 +23,13 @@ app.get('/data', function (req, res) {
 
 });
 
-
 app.get('/adduser', function (req, res) {
   console.log(req.query);
   var data = {email: req.query.email, pass: req.query.pass};
   console.log(data.email);
   console.log(data.pass);
 
-  var connectionString = process.env.DATABASE_URL;
+  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Jessica';
 
   var client = new pg.Client(connectionString);
   client.connect(function(err) {
@@ -50,28 +47,26 @@ app.get('/adduser', function (req, res) {
   res.sendFile('/public/index.html', { root: '.' }); //not redirecting
 });
 
-//nassir added this, will it work? WHO KNOWS!
-  // app.get('/ingredients', function (req, res) {
-  //   var connectionString = process.env.DATABASE_URL;
-  //
-  //   var client = new pg.Client(connectionString);
-  //   client.connect(function(err) {
-  //     if(err) {
-  //       return console.error('could not connect to postgres');
-  //     }
-  //     client.query('SELECT ingredient FROM ingredients WHERE userid=$1', [userIdTest], function(err, result) {
-  //       if(err) {
-  //         return console.error('error running query', err);
-  //       }
-  //       res.send(result);
-  //       client.end();
-  //     });
-  //   });
-  //
-  // });
+app.get('/ingredients', function (req, res) {
+  console.log(req.query.userid);
+  console.log('hello jessica');
+  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Jessica';
 
-//   res.sendFile('/public/index.html', { root: '.' }); //not redirecting
-// });
+  var client = new pg.Client(connectionString);
+  client.connect(function(err) {
+    if(err) {
+      return console.error('could not connect to postgres');
+    }
+    client.query('SELECT ingredient FROM ingredients WHERE userid=$1', [req.query.userid], function(err, result) {
+      if(err) {
+        return console.error('error running query', err);
+      }
+      res.send(result);
+      client.end();
+    });
+  });
+
+});
 
 app.use(express.static(__dirname + '/public/'));
 
