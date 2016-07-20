@@ -130,11 +130,51 @@ h1.css-feature-section {
 
 p {
   width: 100%;
-  max-width: 700px;
   text-align: left;
   margin: 0;
-  padding-bottom: 32px;
-    line-height: 1.6;
+  line-height: 1.6;
+}
+.login-message {
+  font-size: .7em;
+  text-align: center;
+  margin: 60px auto 18px;
+}
+.login-message a {
+  text-decoration: none;
+  color: #303030;
+}
+li * {
+  float: left;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+.add {
+  font-size: 15px;
+  color: #0FC57C;
+  float: right;
+}
+.delete {
+  font-size: 15px;
+  color: #CF2323;
+  float: right;
+}
+
+.css-nav-list {
+  border: 0px;
+}
+
+
+/* Bought */
+#bought label {
+  text-decoration: line-through;
+  color: #888;
+}
+
+ /*Hide text input */
+ul li input[type=text] {
+  display: none;
 }
 
 /* --- */
@@ -191,11 +231,24 @@ textarea {
     resize:vertical;
 }
 
-#css-home-button-dark{
+.css-home-button-dark{
 	width: 100%;
 	border: 0px;
 	background-color: #303030;
 	color:white;
+	font-size:24px;
+	padding:22px 0;
+  margin-top:-4px;
+  box-sizing: border-box;
+  cursor:pointer;
+}
+.css-directions-button a {
+color: #FFF;
+}
+.css-directions-button {
+	width: 100%;
+	border: 0px;
+	background-color: #303030;
 	font-size:24px;
 	padding:22px 0;
   margin-top:-4px;

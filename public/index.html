@@ -23,17 +23,18 @@
     </script>
 
     <script id="recipe-selection" type="text/x-handlebars-template">
-      <article class="container">
-        <section><img id="splash-image" src="null"></section>
+      <article class="results-cards">
         <section id="recipe-name">{{name}}</section>
         <section id="sourceDisplayName"><a href="{{source.sourceRecipeUrl}}">{{source.sourceDisplayName}}</a></section>
         <section id="sourceSiteUrl"></section>
+        <section id="rating">Rating: <span>{{rating}}</span> out of 5</section>
+        <section><img id="splash-image" src="null"></section>
         <section id="ingredients-results">
           <button id="ingredients-button" type="button">Add Ingredients to Shopping List</button>
           <ul id="ingredients-list"></ul>
         </section>
-        <section id="directions">Directions: <span>{{source.sourceRecipeUrl}}</span></section>
-        <section id="rating">Rating: <span>{{rating}}</span> out of 5</section>
+        <!-- <section id="directions">Directions: <span>{{source.sourceRecipeUrl}}</span></section> -->
+        <button class="css-directions-button"><a href="{{source.sourceRecipeUrl}}" target="_blank">READ INSTRUCTIONS</a></button>
     </script>
   </head>
 
@@ -57,7 +58,7 @@
       </div>
       <div>
         It's free and easy to use.
-        <button type="button">TRY IT NOW</button>
+        <button type="button" class="css-home-button-dark">TRY IT NOW</button>
       </div>
     </div>
 
@@ -114,7 +115,7 @@
                 <h3>Search Recipes</h3>
                 <form id="searchBox">
                   <input name="search" type="text" class="search-box" placeholder="apple pie">
-                  <button type="submit" class="css-small-button">Search</button>
+                  <button type="submit">Search</button>
                 </form>
                 <section id="print-results"></section>
               </div>
