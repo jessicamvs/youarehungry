@@ -2,7 +2,10 @@
   var signupController = {};
 
   signupController.index = function() {
-    $('#sign-up-page').show().siblings().hide().parent().parent().siblings().hide();
+
+    $('#sign-up-page').show().siblings().hide();
+    $('#pattern').hide();
+    signupController.addUser();
   };
 
   signupController.addUser = function(){
@@ -21,8 +24,6 @@
       });
     });
   };
-
-  signupController.addUser();
 
   module.signupController = signupController;
 })(window);

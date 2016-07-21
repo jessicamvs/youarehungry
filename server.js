@@ -5,7 +5,7 @@ var express = require('express'),
 
 app.get('/data', function (req, res) {
   console.log(req.query.email);
-  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Jessica';
+  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/skinbiology';
 
   var client = new pg.Client(connectionString);
   client.connect(function(err) {
@@ -29,7 +29,7 @@ app.get('/adduser', function (req, res) {
   console.log(data.email);
   console.log(data.pass);
 
-  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Jessica';
+  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/skinbiology';
 
   var client = new pg.Client(connectionString);
   client.connect(function(err) {
@@ -51,8 +51,8 @@ app.get('/adduser', function (req, res) {
 
 app.get('/ingredients', function (req, res) {
   console.log(req.query.userid);
-  console.log('hello jessica');
-  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Jessica';
+  console.log('hello skinbiology');
+  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/skinbiology';
 
   var client = new pg.Client(connectionString);
   client.connect(function(err) {
@@ -73,7 +73,7 @@ app.get('/ingredients', function (req, res) {
 app.get('/deleteFromList', function (req, res) {
   console.log('DELETING INGREDIENTS');
   console.log('ingredient: ' + req.query.ingredient);
-  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Jessica';
+  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/skinbiology';
 
   var client = new pg.Client(connectionString);
   client.connect(function(err) {
@@ -93,8 +93,9 @@ app.get('/deleteFromList', function (req, res) {
 app.get('/addToList', function (req, res) {
   console.log('/addtolist req', req.query.values);
   console.log('ADDING INGREDIENTS');
-  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Jessica';
+  console.log('ingredient: ' + req.query.ingredient + 'for userid: ' + req.query.userid);
 
+  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/skinbiology';
 
   var client = new pg.Client(connectionString);
   client.connect(function(err) {
