@@ -39,15 +39,33 @@ var addItem = function() {
 		//append list item to toGetHolder
     toGetHolder.appendChild(listItem);
     bindItemEvents(listItem, itemBought);
+    console.log('ingredient to add: ', itemInput.value);
+    var id = JSON.parse(localStorage.getItem('userData')).id;
+    listController.addIngredients(id, itemInput.value);
   }
+  itemInput.value = '';
 };
 
-//new function to handle list population from recipe page. Can we DRY it?
+var populateFromDatabase = function(data) {
+  console.log('running populateFromDatabase', data);
+  // var data = JSON.parse(localStorage.getItem('list'));
+  data.forEach(function(ele) {
+    console.log(ele);
+    var listItem = createNewItemElement(ele);
+    toGetHolder.appendChild(listItem);
+    bindItemEvents(listItem, itemBought);
+  });
+};
+
+// new function to handle list population from recipe page. Can we DRY it?
 var populateList = function(item) {
 	//create a new li with the input text from new item
+  console.log('populateList', item);
   var listItem = createNewItemElement(item);
   toGetHolder.appendChild(listItem);
   bindItemEvents(listItem, itemBought);
+  var id = JSON.parse(localStorage.getItem('userData')).id;
+  listController.addIngredients(id, item);
 };
 
 //delete an existing item
@@ -56,6 +74,11 @@ var deleteItem = function(){
   var ul = listItem.parentNode;
 
   ul.removeChild(listItem);
+  var text = $(this).prev().text();
+  console.log('In deleteItem function');
+  console.log(text);
+  console.log(typeof text);
+  listController.deleteIngredients(text);
 };
 
 //mark item as bought
