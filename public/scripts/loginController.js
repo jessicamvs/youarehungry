@@ -25,7 +25,7 @@
           };
           localStorage.setItem('userData', JSON.stringify(currentUser));
           loginController.fetchIngredients(currentUser.id);
-          window.location.replace('/');
+          window.location.replace('/search');
         }
       });
     });
