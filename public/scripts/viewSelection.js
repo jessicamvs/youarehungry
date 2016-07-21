@@ -43,15 +43,26 @@ viewSelection.ingredientsList = function(data) {
 
 viewSelection.buttonFunction = function(data) {
   var ingredientArray = data.ingredientLines;
-  var id = JSON.parse(localStorage.getItem('userData')).id;
   // console.log('array', ingredientArray);
   $('#ingredients-button').on('click', function(e) {
     e.preventDefault();
-    console.log('button clicked');
-    for (var i = 0; i < ingredientArray.length; i++) {
-      populateList(ingredientArray[i]);
-      listController.addIngredients(id, ingredientArray[i]);
-    }
+    console.log('buttonFunction button clicked');
+    viewSelection.syncUp(ingredientArray);
     $('#ingredients-button').text('Ingredients were added to Shopping List').unbind('click');
   });
+};
+
+viewSelection.syncUp = function(array) {
+  console.log('syncup', array);
+  var id = JSON.parse(localStorage.getItem('userData')).id;
+  var query = '';
+  for (var i = 0; i < array.length; i++) {
+    populateList(array[i]);
+    // listController.addIngredients(id, ingredientArray[i]);
+    query += '(' + id + ', \'' + array[i] + '\'), ';
+  }
+  // console.log('slicepoint', slicePoint);
+  var newQuery = query.slice(0, -2);
+  console.log(newQuery);
+  listController.addIngredients(newQuery);
 };
