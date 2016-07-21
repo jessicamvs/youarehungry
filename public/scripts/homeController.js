@@ -4,6 +4,7 @@
   homeController.index = function() {
     $('#home').show().siblings().hide();
     $('#login-signup').hide();
+    $('#mainNav').hide();
   };
 
   // homeController.dbTest = function(){

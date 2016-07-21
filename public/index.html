@@ -40,34 +40,11 @@
 
   <body>
 
-    <div class="css-home-login-link">
-      <a href="/login" class="css-home-login-link">Log In</a>
-    </div>
-    <a href=""><img src="img/hungry.png" class="css-home-logo"></a>
-
-    <div class="css-home-flex-content">
-      <h1 class="css-feature-section">You Are Hungry! is an app developed for the adventurous home cook who is always looking for new recipes...</h1>
-
-      <div class="css-home-col1">
-        <div class="css-center"><i class="icon-search large-icon"></i></div>
-        <p>Enter any keyword or ingredient and You Are Hungry! will show display the top 10 results.</p>
-      </div>
-      <div class="css-home-col2">
-        <div class="css-center"><i class="icon-clipboard large-icon"></i></div>
-        <p>Automagically generated shopping list! Yes, please! You Are Hungry! remembers your list so you never forget a thing.</p>
-      </div>
-      <div class="css-center">
-        <h2>It's free and easy to use.</h2>
-        <button type="button" class="css-home-cta-button">TRY IT NOW</button>
-      </div>
-    </div>
-
-
     <div class="container">
-      <a href=""><img src="img/hungry.png" class="css-home-logo"></a>
       <section id="login-signup">
         <!-- Log In (existing users) -->
         <form id="login-page">
+          <a href=""><img src="img/hungry.png" class="css-home-logo"></a>
           <input name="email" type="email" class="name-email-box" placeholder="Email">
           <input name="password" type="password" class="name-email-box" placeholder="Password">
           <button type="submit" class="submit-button">LOG IN</button>
@@ -76,6 +53,7 @@
 
         <!-- Sign Up (new users) -->
         <form id="sign-up-page">
+          <a href=""><img src="img/hungry.png" class="css-home-logo"></a>
           <input name="email" type="email" class="name-email-box" placeholder="Email">
           <input type="password" class="name-email-box" name="password" value="" placeholder="Password">
           <button type="submit" class="submit-button">JOIN</button>
@@ -103,6 +81,29 @@
 
         <!-- <div class="container"> -->
           <main>
+            <section id="home">
+              <div class="css-home-login-link">
+                <a href="/login" class="css-home-login-link">Log In</a>
+                <a href=""><img src="img/hungry.png" class="css-home-logo"></a>
+              </div>
+
+              <div class="css-home-flex-content">
+                <h1 class="css-feature-section">You Are Hungry! is an app developed for the adventurous home cook who is always looking for new recipes...</h1>
+
+                <div class="css-home-col1">
+                  <div class="css-center"><i class="icon-search large-icon"></i></div>
+                  <p>Enter any keyword or ingredient and You Are Hungry! will show display the top 10 results.</p>
+                </div>
+                <div class="css-home-col2">
+                  <div class="css-center"><i class="icon-clipboard large-icon"></i></div>
+                  <p>Automagically generated shopping list! Yes, please! You Are Hungry! remembers your list so you never forget a thing.</p>
+                </div>
+                <div class="css-center">
+                  <h2>It's free and easy to use.</h2>
+                  <a href="/signup"><button type="button" class="css-home-cta-button">TRY IT NOW</button></a>
+                </div>
+              </div>
+            </section>
             <!-- <section id="home" class="tab-content">
               <div>
                 <h3>This is the home page when you log in.</h3>
