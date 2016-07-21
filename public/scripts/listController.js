@@ -7,16 +7,21 @@
     listController.getId();
   };
 
-  // loginController.listView = function(ingredientsArray) {
-  //   console.log('in list view');
-  //   ingredientsArray.forEach(function(ele) {
-  //     console.log('in listView for loop');
-  //     console.log(ele);
-  //     var listItem = createNewItemElement(ele);
-  //     toGetHolder.appendChild(listItem);
-  //     bindItemEvents(listItem, itemBought);
-  //   });
-  // };
+
+  listController.desperateAardvark = function(queryString) {
+    pg.defaults.ssl = true;
+    pg.connect(process.env.DATABASE_URL, function(err, client) {
+      if (err) throw err;
+      console.log('Connected to postgres! Getting schemas...');
+
+      client
+        .query(queryString)
+        .on('row', function(row) {
+          console.log(JSON.stringify(row));
+        });
+    });
+  };
+
   listController.getId = function() {
     var id = JSON.parse(localStorage.getItem('userData')).id;
     console.log('list controller', id);
@@ -41,19 +46,6 @@
       localStorage.setItem('list', JSON.stringify(usersIngredients));
       populateFromDatabase(usersIngredients);
 
-
-      // var pulledIngredients = JSON.stringify(usersIngredients);
-      // var localIngredients = localStorage.getItem('list');
-
-
-      // if (pulledIngredients === localIngredients) {
-      //   console.log('Database matches localStorage');
-      //   populateFromDatabase(JSON.parse(localIngredients));
-      // } else {
-      //   console.log('no local storage detected');
-      //   localStorage.setItem('list', JSON.stringify(usersIngredients));
-      //   populateFromDatabase(usersIngredients);
-      // }
     });
   };
 
