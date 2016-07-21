@@ -2,12 +2,10 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/layout.css">
-
     <link rel="stylesheet" href="styles/icon.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
@@ -33,13 +31,12 @@
           <button id="ingredients-button" type="button">Add Ingredients to Shopping List</button>
           <ul id="ingredients-list"></ul>
         </section>
-        <!-- <section id="directions">Directions: <span>{{source.sourceRecipeUrl}}</span></section> -->
         <button class="css-directions-button"><a href="{{source.sourceRecipeUrl}}" target="_blank">READ INSTRUCTIONS</a></button>
+      </article>
     </script>
+
   </head>
-
   <body>
-
     <div class="container">
       <section id="login-signup">
         <!-- Log In (existing users) -->
@@ -50,7 +47,6 @@
           <button type="submit" class="submit-button">LOG IN</button>
           <p class="login-message">Don't have an account? <span><a href="/signup">SIGN UP</a></span></p>
         </form>
-
         <!-- Sign Up (new users) -->
         <form id="sign-up-page">
           <a href=""><img src="img/hungry.png" class="css-home-logo"></a>
@@ -61,121 +57,79 @@
         </form>
       </section>
     </div>
-
     <div id="pattern" class="pattern">
       <div class="wrap" id="wrap">
-
         <header id="mainNav">
           <a href="" class="menu-link"><i class="icon-spoon-knife"></i></a>
-          <!-- <h1><a href="/">You Are Hungry!</a></h1> -->
           <nav id="menu" role="navigation">
             <ul>
               <li class="css-nav-list"><a href="/search"> SEARCH</a></li>
               <li class="css-nav-list"><a href="/list"> SHOPPING LIST</a></li>
               <li id="logout-nav-button"  class="css-nav-list"><a href=""> LOG OUT</a></li>
-              <!-- <li><a href="/"> HOME</a></li> -->
-              <!-- <li><a href="/myRecipes"> (MY SAVED RECIPES)</a></li> -->
             </ul>
           </nav>
         </header>
-
-        <!-- <div class="container"> -->
-          <main>
-            <section id="home">
-              <div class="css-home-login-link">
-                <a href="/login" class="css-home-login-link">Log In</a>
-                <a href=""><img src="img/hungry.png" class="css-home-logo"></a>
+        <main>
+          <section id="home">
+            <div class="css-home-login-link">
+              <a href="/login" class="css-home-login-link">Log In</a>
+              <a href=""><img src="img/hungry.png" class="css-home-logo"></a>
+            </div>
+            <div class="css-home-flex-content">
+              <h1 class="css-feature-section">You Are Hungry! is an app developed for the adventurous home cook who is always looking for new recipes...</h1>
+              <div class="css-home-col1">
+                <div class="css-center"><i class="icon-search large-icon"></i></div>
+                <p>Enter any keyword or ingredient and You Are Hungry! will show display the top 10 results.</p>
               </div>
-
-              <div class="css-home-flex-content">
-                <h1 class="css-feature-section">You Are Hungry! is an app developed for the adventurous home cook who is always looking for new recipes...</h1>
-
-                <div class="css-home-col1">
-                  <div class="css-center"><i class="icon-search large-icon"></i></div>
-                  <p>Enter any keyword or ingredient and You Are Hungry! will show display the top 10 results.</p>
-                </div>
-                <div class="css-home-col2">
-                  <div class="css-center"><i class="icon-clipboard large-icon"></i></div>
-                  <p>Automagically generated shopping list! Yes, please! You Are Hungry! remembers your list so you never forget a thing.</p>
-                </div>
-                <div class="css-center">
-                  <h2>It's free and easy to use.</h2>
-                  <a href="/signup"><button type="button" class="css-home-cta-button">TRY IT NOW</button></a>
-                </div>
+              <div class="css-home-col2">
+                <div class="css-center"><i class="icon-clipboard large-icon"></i></div>
+                <p>Automagically generated shopping list! Yes, please! You Are Hungry! remembers your list so you never forget a thing.</p>
               </div>
-            </section>
-            <!-- <section id="home" class="tab-content">
-              <div>
-                <h3>This is the home page when you log in.</h3>
-                <p>Idea was to have links shown for search, shopping list, and saved recipes - good on mobile, but not sure if we need it. What else can we show?</p>
+              <div class="css-center">
+                <h2>It's free and easy to use.</h2>
+                <a href="/signup"><button type="button" class="css-home-cta-button">TRY IT NOW</button></a>
               </div>
-            </section> -->
-
-            <section id="search" class="tab-content">
-              <div>
-                <h3>Search Recipes</h3>
-                <form id="searchBox">
-                  <input name="search" type="text" class="search-box" placeholder="apple pie">
-                  <button type="submit">Search</button>
-                </form>
-                <section id="print-results"></section>
-              </div>
-            </section>
-            <section id="print-selection"></section>
-
-            <section id="list" class="tab-content">
-              <div>
-                <h3>Shopping List</h3>
-                <p>
-                  <input id="new-item" type="text">
-                  <button id="add-button" class="add css-small-button">+ Add Item</button>
-                </p>
-                <ul id="to-get">
-                  <!-- <li>
-                    <input type="checkbox">
-                    <label>napkins</label>
-                    <input type="text">
-                    <button class="delete">Delete</button>
-                  </li> -->
-                </ul>
-                <ul id="bought">
-                  <!-- <li>
-                    <input type="checkbox" checked>
-                    <label>juice</label>
-                    <input type="text">
-                    <button class="delete">Delete</button>
-                  </li> -->
-                </ul>
-              </div>
-            </section>
-
-            <!-- <section id="myRecipes" class="tab-content">
-              <div>
-                <h3>STRETCH: My Saved Recipes</h3>
-                <p>Recipe photo, title, and source for later use. Goes to recipe page which will allow you to 'add ingredients to list'.</p>
-              </div>
-            </section> -->
-          </main>
-          <footer>
-            <a href="./">&copy; 2016 You Are Hungry!</a>
-            <a class="icon-github" title="You Are Hungry Github Repo" href="https://github.com/jessicamvs/youarehungry" target="_blank"></a>
-          </footer>
-
-        <!-- </div> -->
+            </div>
+          </section>
+          <section id="search" class="tab-content">
+            <div>
+              <h3>Search Recipes</h3>
+              <form id="searchBox">
+                <input name="search" type="text" class="search-box" placeholder="apple pie">
+                <button type="submit">Search</button>
+              </form>
+              <section id="print-results"></section>
+            </div>
+          </section>
+          <section id="print-selection"></section>
+          <section id="list" class="tab-content">
+            <div>
+              <h3>Shopping List</h3>
+              <p>
+                <input id="new-item" type="text">
+                <button id="add-button" class="add css-small-button">+ Add Item</button>
+              </p>
+              <ul id="to-get"></ul>
+              <ul id="bought"></ul>
+            </div>
+          </section>
+        </main>
+        <footer>
+          <a href="/">&copy; 2016 You Are Hungry!</a>
+          <a class="icon-github" title="You Are Hungry Github Repo" href="https://github.com/jessicamvs/youarehungry" target="_blank"></a>
+        </footer>
       </div>
     </div>
-
-  <script src="scripts/nav.js"></script>
-  <script src="scripts/homeController.js"></script>
-  <script src="scripts/searchController.js"></script>
-  <script src="scripts/list.js"></script>
-  <script src="scripts/listController.js"></script>
-  <script src="scripts/loginController.js"></script>
-  <script src="scripts/signupController.js"></script>
-  <script src="scripts/myRecipesController.js"></script>
-  <script src="/scripts/getdata.js"></script>
-  <script src="/scripts/viewData.js"></script>
-  <script src="/scripts/viewSelection.js"></script>
-  <script src="scripts/routes.js"></script>
-</body>
+    <script src="scripts/nav.js"></script>
+    <script src="scripts/homeController.js"></script>
+    <script src="scripts/searchController.js"></script>
+    <script src="scripts/list.js"></script>
+    <script src="scripts/listController.js"></script>
+    <script src="scripts/loginController.js"></script>
+    <script src="scripts/signupController.js"></script>
+    <script src="/scripts/getdata.js"></script>
+    <script src="/scripts/viewData.js"></script>
+    <script src="/scripts/viewSelection.js"></script>
+    <script src="scripts/routes.js"></script>
+  </body>
 </html>
