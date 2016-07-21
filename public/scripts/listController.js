@@ -61,8 +61,10 @@
     });
   };
 
-  listController.addIngredients = function(id, item) {
-    $.get('/addToList', {userid: id, ingredient: item}).done(function(result) {
+  listController.addIngredients = function(string) {
+    var query = {values: string};
+    console.log('new query obj', query);
+    $.get('/addToList', query).done(function() {
       console.log('addToList fired');
     });
   };

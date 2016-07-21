@@ -53,9 +53,9 @@ viewSelection.buttonFunction = function(data) {
 };
 
 viewSelection.syncUp = function(array) {
-  console.log(array);
+  console.log('syncup', array);
   var id = JSON.parse(localStorage.getItem('userData')).id;
-  var query = 'INSERT INTO ingredients (userid, ingredient) VALUES ';
+  var query = '';
   for (var i = 0; i < array.length; i++) {
     populateList(array[i]);
     // listController.addIngredients(id, ingredientArray[i]);
@@ -63,4 +63,6 @@ viewSelection.syncUp = function(array) {
   }
   // console.log('slicepoint', slicePoint);
   var newQuery = query.slice(0, -2);
+  console.log(newQuery);
+  listController.addIngredients(newQuery);
 };

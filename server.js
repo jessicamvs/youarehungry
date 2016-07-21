@@ -91,8 +91,9 @@ app.get('/deleteFromList', function (req, res) {
 });
 
 app.get('/addToList', function (req, res) {
+  console.log('/addtolist req', req.query.values);
   console.log('ADDING INGREDIENTS');
-  console.log('ingredient: ' + req.query.ingredient + 'for userid: ' + req.query.userid);
+  // console.log('ingredient: ' + req.query.ingredient + 'for userid: ' + req.query.userid);
   var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/nassirisaf';
 
   var client = new pg.Client(connectionString);
@@ -100,7 +101,7 @@ app.get('/addToList', function (req, res) {
     if(err) {
       return console.error('could not connect to postgres');
     }
-    client.query('INSERT INTO ingredients (userid, ingredient) VALUES ($1, $2)', [req.query.userid, req.query.ingredient], function(err, result) {
+    client.query('INSERT INTO ingredients (userid, ingredient) VALUES ' + req.query.values, function(err, result) {
       if(err) {
         return console.error('error running query', err);
       }
