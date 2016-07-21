@@ -34,9 +34,11 @@ var addItem = function() {
   var listItem = createNewItemElement(itemInput.value);
 
   if (itemInput.value == '') {
+    console.log('RUNNING ADD ITEM NO ENTRY');
     alert('Please enter an item.');
   } else {
 		//append list item to toGetHolder
+    console.log('SENDING TO DB?');
     toGetHolder.appendChild(listItem);
     bindItemEvents(listItem, itemBought);
     console.log('ingredient to add: ', itemInput.value);
@@ -48,7 +50,6 @@ var addItem = function() {
 
 var populateFromDatabase = function(data) {
   console.log('running populateFromDatabase', data);
-  // var data = JSON.parse(localStorage.getItem('list'));
   data.forEach(function(ele) {
     console.log(ele);
     var listItem = createNewItemElement(ele);
@@ -60,6 +61,7 @@ var populateFromDatabase = function(data) {
 // new function to handle list population from recipe page. Can we DRY it?
 var populateList = function(item) {
 	//create a new li with the input text from new item
+  console.log('populateList', item);
   var listItem = createNewItemElement(item);
   toGetHolder.appendChild(listItem);
   bindItemEvents(listItem, itemBought);

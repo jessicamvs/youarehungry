@@ -2,8 +2,8 @@
   var searchController = {};
 
   searchController.index = function() {
+    $('#mainNav').show();
     $('#search').show().siblings().hide();
-    $('#login-signup').hide();
   };
 
   module.searchController = searchController;

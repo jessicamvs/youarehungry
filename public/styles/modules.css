@@ -1,3 +1,4 @@
+
 /*================================forms style*/
 form {
   justify-content: center;
@@ -30,15 +31,14 @@ form {
 /*Search Results*/
 .results-cards {
   display: block;
-  width: inherit;
+  margin: 0 auto;
+  width: 70%;
   margin-top: 2em;
   background-color: #FFF;
   padding: .5em;
   border-radius: 4px;
 }
-img.results-cards {
-  align-content: center;
-}
+
 /*================================shopping list style*/
 .container {
   display: block;
@@ -88,32 +88,6 @@ input[type="text"] {
   /*margin: 0;*/
 }
 
-input[type="text"]:focus {
-  color: #333;
-}
-
 input#new-item {
   width: 50%;
-}
-
-/* Shopping List */
-
-li {
-  overflow: hidden;
-  word-wrap: break-word;
-  padding: 20px 0;
-  border-bottom: 1px solid #FFF;
-}
-
-li > input[type="checkbox"] {
-  margin: 0 10px;
-  position: relative;
-  top: 15px;
-}
-
-li > label {
-  font-size: 15px;
-  line-height: 40px;
-  width: 70%;
-  padding: 0 0 0 11px;
 }

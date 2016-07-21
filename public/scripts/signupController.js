@@ -2,7 +2,8 @@
   var signupController = {};
 
   signupController.index = function() {
-    $('#sign-up-page').show().siblings().hide().parent().parent().siblings().hide();
+    $('#signup').show().siblings().hide();
+    signupController.addUser();
   };
 
   signupController.addUser = function(){
@@ -10,12 +11,20 @@
       e.preventDefault();
       console.log(e.target.email.value);
       console.log(e.target.password.value);
-      $.get('/adduser', {email: e.target.email.value, pass: e.target.password.value});
-      window.location.replace('/');
+      $.get('/adduser', {email: e.target.email.value, pass: e.target.password.value}).done(function() {
+        $.get('/data', {email: e.target.email.value}).done(function(result) {
+          console.log(result.rows);
+          var currentUser = {
+            id: result.rows[0].id,
+            email: result.rows[0].email
+          };
+          localStorage.setItem('userData', JSON.stringify(currentUser));
+          page('/search');
+        });
+      });
     });
   };
 
-  signupController.addUser();
 
   module.signupController = signupController;
 })(window);

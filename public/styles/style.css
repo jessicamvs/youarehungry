@@ -8,7 +8,7 @@ body {
   linear-gradient(
       rgba(0, 0, 0, 0.1),
       rgba(0, 0, 0, 0.8)
-    ), url(https://images.unsplash.com/photo-1452251889946-8ff5ea7b27ab?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=ee0e1e6f2902c4b2338bf54ee31ce2ba) no-repeat center center fixed;
+    ) no-repeat center center fixed, url(https://images.unsplash.com/photo-1452251889946-8ff5ea7b27ab?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=ee0e1e6f2902c4b2338bf54ee31ce2ba) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -76,10 +76,21 @@ nav[role=navigation] li a {
   max-width: 960px;
   border-radius: 5px;
 }
+.css-wide-block-container {
+  display: block;
+  font-family: sans-serif;
+  color: #303030;
+  margin: 40px auto;
+  background: rgba(255,255,255, 0.3);
+  width: 100%;
+  max-width: 800px;
+  border-radius: 5px;
+}
+.css-full-img {
+  width: 100%;
+}
 i.icon-search.large-icon, i.icon-clipboard.large-icon {
   font-size: 3em;
-  /*TODO center these*/
-
 }
 .css-home-col1 {
   width: 340px;
@@ -281,6 +292,29 @@ footer a {
   text-decoration: none;
   padding-right: 10px;
 }
+
+/* Shopping List */
+
+li {
+  overflow: hidden;
+  word-wrap: break-word;
+  padding: 20px 0;
+  border-bottom: 1px solid #FFF;
+}
+
+li > input[type="checkbox"] {
+  margin: 0 10px;
+  position: relative;
+  top: 15px;
+}
+
+li > label {
+  font-size: 15px;
+  line-height: 40px;
+  width: 70%;
+  padding: 0 0 0 11px;
+}
+
 @media only screen and (max-width: 580px) {
 	#css-home-form-div{
     width: 88%;

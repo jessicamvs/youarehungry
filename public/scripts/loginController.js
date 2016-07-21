@@ -2,7 +2,7 @@
   var loginController = {};
 
   loginController.index = function() {
-    $('#login-page').show().siblings().hide().parent().parent().siblings().hide();
+    $('#login').show().siblings().hide();
     loginController.verifyuser();
   };
 
@@ -17,15 +17,13 @@
         if (result.rows.length === 0) {
           alert('database says you do not exist');
         } else {
-          //store userid, email, and list items in local storage then we can add ingredients to localStorage everytime item is added
           console.log('This user is in the DB');
           var currentUser = {
             id: result.rows[0].id,
             email: result.rows[0].email
           };
           localStorage.setItem('userData', JSON.stringify(currentUser));
-          loginController.fetchIngredients(currentUser.id);
-          window.location.replace('/search');
+          page('/search');
         }
       });
     });
@@ -47,9 +45,6 @@
       localStorage.setItem('list', JSON.stringify(usersIngredients));
     });
   };
-
-
-
 
   module.loginController = loginController;
 })(window);
