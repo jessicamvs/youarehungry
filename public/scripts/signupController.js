@@ -2,9 +2,7 @@
   var signupController = {};
 
   signupController.index = function() {
-
-    $('#sign-up-page').show().siblings().hide();
-    $('#pattern').hide();
+    $('#signup').show().siblings().hide();
     signupController.addUser();
   };
 
@@ -13,15 +11,16 @@
       e.preventDefault();
       console.log(e.target.email.value);
       console.log(e.target.password.value);
-      $.get('/adduser', {email: e.target.email.value, pass: e.target.password.value}).done(function(result) {
-        var currentUser = {
-          email: result.rows[0].email,
-          email: result.rows[0].email
-        };
-        localStorage.setItem('userData', JSON.stringify(currentUser));
-        loginController.fetchIngredients(currentUser.id);
-        window.location.replace('/');
-      });
+      $.get('/adduser', {email: e.target.email.value, pass: e.target.password.value});
+      // .done(function(result) {
+        // var currentUser = {
+        //   email: result.rows[0].email,
+        //   password: result.rows[0].password
+        // };
+        // localStorage.setItem('userData', JSON.stringify(currentUser));
+        // window.location.replace('/');
+      // });
+      page('/search');
     });
   };
 
