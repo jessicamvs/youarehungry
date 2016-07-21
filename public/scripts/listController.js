@@ -2,6 +2,7 @@
   var listController = {};
 
   listController.index = function() {
+    $('#mainNav').show();
     $('#list').show().siblings().hide();
     listController.getId();
   };

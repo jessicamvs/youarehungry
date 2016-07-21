@@ -2,6 +2,7 @@
   var searchController = {};
 
   searchController.index = function() {
+    $('#mainNav').show();
     $('#search').show().siblings().hide();
   };
 
