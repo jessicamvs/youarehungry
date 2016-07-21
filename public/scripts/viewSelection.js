@@ -43,14 +43,14 @@ viewSelection.ingredientsList = function(data) {
 
 viewSelection.buttonFunction = function(data) {
   var ingredientArray = data.ingredientLines;
-  var id = JSON.parse(localStorage.getItem('userData')).id;
+  // var id = JSON.parse(localStorage.getItem('userData')).id;
   // console.log('array', ingredientArray);
   $('#ingredients-button').on('click', function(e) {
     e.preventDefault();
-    console.log('button clicked');
+    console.log('buttonFunction button clicked');
     for (var i = 0; i < ingredientArray.length; i++) {
       populateList(ingredientArray[i]);
-      listController.addIngredients(id, ingredientArray[i]);
+      // listController.addIngredients(id, ingredientArray[i]);
     }
     $('#ingredients-button').text('Ingredients were added to Shopping List').unbind('click');
   });

@@ -60,9 +60,12 @@ var populateFromDatabase = function(data) {
 // new function to handle list population from recipe page. Can we DRY it?
 var populateList = function(item) {
 	//create a new li with the input text from new item
+  console.log('populateList', item);
   var listItem = createNewItemElement(item);
   toGetHolder.appendChild(listItem);
   bindItemEvents(listItem, itemBought);
+  var id = JSON.parse(localStorage.getItem('userData')).id;
+  listController.addIngredients(id, item), 500);
 };
 
 //delete an existing item
