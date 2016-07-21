@@ -2,7 +2,10 @@
   var signupController = {};
 
   signupController.index = function() {
-    $('#sign-up-page').show().siblings().hide().parent().parent().siblings().hide();
+
+    $('#sign-up-page').show().siblings().hide();
+    $('#pattern').hide();
+    signupController.addUser();
   };
 
   signupController.addUser = function(){
@@ -11,11 +14,9 @@
       console.log(e.target.email.value);
       console.log(e.target.password.value);
       $.get('/adduser', {email: e.target.email.value, pass: e.target.password.value});
-      window.location.replace('/');
+      window.location.replace('/search');
     });
   };
-
-  signupController.addUser();
 
   module.signupController = signupController;
 })(window);
