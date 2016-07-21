@@ -42,14 +42,14 @@
     <div class="container">
       <section id="login-signup">
         <!-- Log In (existing users) -->
-        <form id="login-page">
+        <form id="login-page" class="css-home-form-div">
           <input name="email" type="email" class="name-email-box" placeholder="Email">
           <input name="password" type="password" class="name-email-box" placeholder="Password">
           <button type="submit" class="submit-button">LOG IN</button>
           <p class="login-message">Don't have an account? <span><a href="/signup">SIGN UP</a></span></p>
         </form>
         <!-- Sign Up (new users) -->
-        <form id="sign-up-page">
+        <form id="sign-up-page" class="css-home-form-div">
           <!-- <a href=""><img src="img/hungry.png" class="css-home-logo"></a> -->
           <input name="email" type="email" class="name-email-box" placeholder="Email">
           <input type="password" class="name-email-box" name="password" value="" placeholder="Password">
@@ -93,20 +93,20 @@
           </section>
           <section id="search" class="tab-content">
             <div class="css-wide-block-container">
-              <div>
-              <h3>Search Recipes</h3>
+              <h3 class="section-titles">Search Recipes</h3>
+              <div class="search-card">
               <form id="searchBox">
                 <input name="search" type="text" class="search-box" placeholder="apple pie">
                 <button type="submit">Search</button>
               </form>
+            </div>
               <section id="print-results"></section>
-              </div>
             </div>
           </section>
           <section id="print-selection"></section>
           <section id="list" class="tab-content">
             <div class="css-wide-block-container">
-              <h3>Shopping List</h3>
+              <h3 class="section-titles">Shopping List</h3>
               <p>
                 <input id="new-item" type="text">
                 <button id="add-button" class="add css-small-button">+ Add Item</button>

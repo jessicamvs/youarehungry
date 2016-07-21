@@ -2,25 +2,10 @@
 /*================================forms style*/
 form {
   justify-content: center;
-  margin: auto;
+  /*margin: auto;*/
 }
 
-#login-page, #sign-up-page {
-  display: block;
-}
 
-.name-email-box {
-  display: block;
-  padding: 12px 8px;
-  font-size: 16px;
-  text-align: left;
-  min-width: 340px;
-  margin: 18px auto;
-  color: #303030;
-  background-color: #FFF;
-  border: 0px;
-  cursor: text;
-}
 
 .search-box {
   margin: auto;
@@ -36,9 +21,18 @@ form {
   margin-top: 2em;
   background-color: #FFF;
   padding: .5em;
-  border-radius: 4px;
+  /*border-radius: 4px;*/
 }
 
+.search-card {
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  margin-top: 2em;
+  background-color: #FFF;
+  padding: .5em;
+  /*border-radius: 4px;*/
+}
 /*================================shopping list style*/
 .container {
   display: block;
@@ -64,11 +58,10 @@ button:hover {
   opacity: 0.7;
 }
 
-h3 {
+.section-titles {
   color: #FFF;
-  border-bottom: 2px solid #FFF;
+  margin: 20px;
   padding: 30px 0 10px;
-  margin-bottom: 40px;
 }
 
 .css-section-header {
@@ -85,7 +78,7 @@ input[type="text"] {
   background-color: #FFF;
   border: 0px;
   cursor: text;
-  /*margin: 0;*/
+  margin: 0;
 }
 
 input#new-item {
