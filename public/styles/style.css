@@ -46,19 +46,20 @@ nav[role=navigation] li a {
   left: 14em;
 }
 .css-home-login-link {
-  display: block;
+  display: flex;
+  float: right;
   text-align: right;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1.1em;
   font-family: sans-serif;
   color: #FFFFFF;
-  margin: 40px auto 0;
+  margin: 30px;
   max-width: 960px;
   padding-bottom: 5px;
 }
 .css-home-logo {
-  margin: 0 auto;
+  padding-bottom: 4em;
   width: 80%;
   max-width: 400px;
 }
