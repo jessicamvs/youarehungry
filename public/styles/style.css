@@ -230,17 +230,33 @@ textarea {
     line-height: 150%;
     resize:vertical;
 }
+/*signup and login buttons*/
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 12px 24px;
+  margin: 18px auto;
+  font-size: 16px;
+  /*min-width: 360px;*/
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #303030;
+  border: 1px solid #303030;
+  cursor: pointer;
+}
+.submit-button:hover, .submit-button:active, .submit-button:focus {
+  opacity: 0.7;
+}
 
-.css-home-button-dark{
-	width: 100%;
+.css-home-cta-button{
+  width: 100%;
 	border: 0px;
-	background-color: #303030;
+	background-color: #e74c3c;
 	color:white;
 	font-size:24px;
-	padding:22px 0;
-  margin-top:-4px;
-  box-sizing: border-box;
-  cursor:pointer;
+	padding:22px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 .css-directions-button a {
 color: #FFF;
@@ -248,7 +264,7 @@ color: #FFF;
 .css-directions-button {
 	width: 100%;
 	border: 0px;
-	background-color: #303030;
+	background-color: #e74c3c;
 	font-size:24px;
 	padding:22px 0;
   margin-top:-4px;
