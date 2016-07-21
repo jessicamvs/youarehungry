@@ -3,7 +3,6 @@
 
   searchController.index = function() {
     $('#search').show().siblings().hide();
-    $('#login-signup').hide();
   };
 
   module.searchController = searchController;

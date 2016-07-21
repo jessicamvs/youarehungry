@@ -3,7 +3,6 @@
 
   listController.index = function() {
     $('#list').show().siblings().hide();
-    $('#login-signup').hide();
     listController.getId();
   };
 

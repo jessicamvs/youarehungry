@@ -8,10 +8,10 @@ $(document).ready(function() {
 
   $('#logout-nav-button').on('click', function(e) {
     e.preventDefault();
-    window.location.replace('/');
     localStorage.removeItem('list');
     localStorage.removeItem('userData');
     console.log('localStorage userData & list removed');
+    page('/');
   });
 
 });

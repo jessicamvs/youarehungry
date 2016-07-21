@@ -18,7 +18,6 @@
         //   password: result.rows[0].password
         // };
         // localStorage.setItem('userData', JSON.stringify(currentUser));
-        // window.location.replace('/');
       // });
       page('/search');
     });
