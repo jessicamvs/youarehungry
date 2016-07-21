@@ -1,3 +1,4 @@
+
 /*================================forms style*/
 form {
   justify-content: center;
@@ -30,15 +31,14 @@ form {
 /*Search Results*/
 .results-cards {
   display: block;
-  width: inherit;
+  margin: 0 auto;
+  width: 70%;
   margin-top: 2em;
   background-color: #FFF;
   padding: .5em;
   border-radius: 4px;
 }
-img.results-cards {
-  align-content: center;
-}
+
 /*================================shopping list style*/
 .container {
   display: block;

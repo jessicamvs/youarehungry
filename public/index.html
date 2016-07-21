@@ -16,7 +16,7 @@
       <article class="results-cards">
         <a href="/{{id}}"><h1 class="css-section-header">{{recipeName}}</h1></a>
         <section>by {{sourceDisplayName}}</section>
-        <a href="/{{id}}"><img src="{{smallImageUrls}}" target="_blank"></a>
+        <a href="/{{id}}"><img src="{{smallImageUrls}}" target="_blank" class="css-full-img"></a>
       </article>
     </script>
 
@@ -26,12 +26,12 @@
         <section id="sourceDisplayName"><a href="{{source.sourceRecipeUrl}}">{{source.sourceDisplayName}}</a></section>
         <section id="sourceSiteUrl"></section>
         <section id="rating">Rating: <span>{{rating}}</span> out of 5</section>
-        <section><img id="splash-image" src="null"></section>
+        <section><img id="splash-image" src="null" class="css-full-img"></section>
         <section id="ingredients-results">
           <button id="ingredients-button" type="button">Add Ingredients to Shopping List</button>
           <ul id="ingredients-list"></ul>
         </section>
-        <button class="css-directions-button"><a href="{{source.sourceRecipeUrl}}" target="_blank">READ INSTRUCTIONS</a></button>
+        <a href="{{source.sourceRecipeUrl}}" target="_blank"><button class="css-directions-button">READ INSTRUCTIONS</button></a>
       </article>
     </script>
 
@@ -92,18 +92,20 @@
             </div>
           </section>
           <section id="search" class="tab-content">
-            <div>
+            <div class="css-wide-block-container">
+              <div>
               <h3>Search Recipes</h3>
               <form id="searchBox">
                 <input name="search" type="text" class="search-box" placeholder="apple pie">
                 <button type="submit">Search</button>
               </form>
               <section id="print-results"></section>
+              </div>
             </div>
           </section>
           <section id="print-selection"></section>
           <section id="list" class="tab-content">
-            <div>
+            <div class="css-wide-block-container">
               <h3>Shopping List</h3>
               <p>
                 <input id="new-item" type="text">

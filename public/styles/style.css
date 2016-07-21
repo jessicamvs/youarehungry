@@ -76,10 +76,21 @@ nav[role=navigation] li a {
   max-width: 960px;
   border-radius: 5px;
 }
+.css-wide-block-container {
+  display: block;
+  font-family: sans-serif;
+  color: #303030;
+  margin: 40px auto;
+  background: rgba(255,255,255, 0.3);
+  width: 100%;
+  max-width: 800px;
+  border-radius: 5px;
+}
+.css-full-img {
+  width: 100%;
+}
 i.icon-search.large-icon, i.icon-clipboard.large-icon {
   font-size: 3em;
-  /*TODO center these*/
-
 }
 .css-home-col1 {
   width: 340px;
