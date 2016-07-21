@@ -35,24 +35,6 @@
   </head>
   <a href=""><img src="img/hungry.png" class="css-home-logo"></a>
   <body>
-    <div class="container">
-      <section id="login-signup">
-        <!-- Log In (existing users) -->
-        <form id="login-page">
-          <input name="email" type="email" class="name-email-box" placeholder="Email">
-          <input name="password" type="password" class="name-email-box" placeholder="Password">
-          <button type="submit" class="submit-button">LOG IN</button>
-          <p class="login-message">Don't have an account? <span><a href="/signup">SIGN UP</a></span></p>
-        </form>
-        <!-- Sign Up (new users) -->
-        <form id="sign-up-page">
-          <input name="email" type="email" class="name-email-box" placeholder="Email">
-          <input type="password" class="name-email-box" name="password" value="" placeholder="Password">
-          <button type="submit" class="submit-button">JOIN</button>
-          <p class="login-message">Already have an account? <span><a href="/login">SIGN IN</a></span></p>
-        </form>
-      </section>
-    </div>
     <div id="pattern" class="pattern">
       <div class="wrap" id="wrap">
         <header id="mainNav">
@@ -66,6 +48,24 @@
           </nav>
         </header>
         <main>
+          <!-- Log In (existing users) -->
+          <section id="login">
+            <form id="login-page">
+              <input name="email" type="email" class="name-email-box" placeholder="Email">
+              <input name="password" type="password" class="name-email-box" placeholder="Password">
+              <button type="submit" class="submit-button">LOG IN</button>
+              <p class="login-message">Don't have an account? <span><a href="/signup">SIGN UP</a></span></p>
+            </form>
+          </section>
+          <!-- Sign Up (new users) -->
+          <section id="signup">
+            <form id="sign-up-page">
+              <input name="email" type="email" class="name-email-box" placeholder="Email">
+              <input type="password" class="name-email-box" name="password" value="" placeholder="Password">
+              <button type="submit" class="submit-button">JOIN</button>
+              <p class="login-message">Already have an account? <span><a href="/login">SIGN IN</a></span></p>
+            </form>
+          </section>
           <section id="home">
             <div class="css-home-login-link">
               <a href="/login" class="css-home-login-link">Log In</a>
