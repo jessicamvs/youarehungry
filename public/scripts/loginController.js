@@ -2,7 +2,8 @@
   var loginController = {};
 
   loginController.index = function() {
-    $('#login-page').show().siblings().hide().parent().parent().siblings().hide();
+    $('#login-page').show().siblings().hide();
+    $('#pattern').hide();
     loginController.verifyuser();
   };
 
