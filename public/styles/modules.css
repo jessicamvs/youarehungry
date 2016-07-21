@@ -88,32 +88,6 @@ input[type="text"] {
   /*margin: 0;*/
 }
 
-input[type="text"]:focus {
-  color: #333;
-}
-
 input#new-item {
   width: 50%;
-}
-
-/* Shopping List */
-
-li {
-  overflow: hidden;
-  word-wrap: break-word;
-  padding: 20px 0;
-  border-bottom: 1px solid #FFF;
-}
-
-li > input[type="checkbox"] {
-  margin: 0 10px;
-  position: relative;
-  top: 15px;
-}
-
-li > label {
-  font-size: 15px;
-  line-height: 40px;
-  width: 70%;
-  padding: 0 0 0 11px;
 }
