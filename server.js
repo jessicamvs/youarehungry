@@ -41,6 +41,7 @@ app.get('/adduser', function (req, res) {
       if(err) {
         return console.error('error running query', err);
       }
+      res.send(result);
       client.end();
     });
   });
