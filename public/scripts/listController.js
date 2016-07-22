@@ -8,20 +8,6 @@
     listController.getId();
   };
 
-  // listController.desperateAardvark = function(queryString) {
-  //   pg.defaults.ssl = true;
-  //   pg.connect(process.env.DATABASE_URL, function(err, client) {
-  //     if (err) throw err;
-  //     console.log('Connected to postgres! Getting schemas...');
-  //
-  //     client
-  //       .query(queryString)
-  //       .on('row', function(row) {
-  //         console.log(JSON.stringify(row));
-  //       });
-  //   });
-  // };
-
   listController.getId = function() {
     var id = JSON.parse(localStorage.getItem('userData')).id;
     console.log('list controller', id);
