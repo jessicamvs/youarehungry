@@ -26,7 +26,7 @@
         <section id="rating">Rating: <span>{{rating}}</span> out of 5</section><br>
         <section><img id="splash-image" src="null" class="css-full-img"></section>
         <section id="ingredients-results">
-          <button id="ingredients-button" type="button">Add Ingredients to Shopping List</button>
+          <button id="ingredients-button" type="button" class="css-flex-small-ingredients-button">Add Ingredients to Shopping List</button>
           <ul id="ingredients-list"></ul>
         </section>
         <a href="{{source.sourceRecipeUrl}}" target="_blank"><button class="css-directions-button">READ INSTRUCTIONS</button></a>
@@ -49,22 +49,20 @@
           </nav>
         </header>
         <main>
-          <!-- Log In (existing users) -->
           <section id="login">
-            <form id="login-page">
+            <form id="login-page" class="css-home-form-div">
               <input name="email" type="email" class="name-email-box" placeholder="Email">
               <input name="password" type="password" class="name-email-box" placeholder="Password">
               <button type="submit" class="submit-button">LOG IN</button>
               <p class="login-message">Don't have an account? <span><a href="/signup">SIGN UP</a></span></p>
             </form>
           </section>
-          <!-- Sign Up (new users) -->
           <section id="signup">
-            <form id="sign-up-page">
+            <form id="sign-up-page" class="css-home-form-div">
               <input name="email" type="email" class="name-email-box" placeholder="Email">
               <input type="password" class="name-email-box" name="password" value="" placeholder="Password">
               <button type="submit" class="submit-button">JOIN</button>
-              <p class="login-message">Already have an account? <span><a href="/login">SIGN IN</a></span></p>
+              <p class="login-message">Already have an account? <span><a href="/login">LOG IN</a></span></p>
             </form>
           </section>
           <section id="home">
@@ -90,7 +88,7 @@
               <div class="search-card">
               <form id="searchBox">
                 <input name="search" type="text" class="search-box" placeholder="apple pie">
-                <button type="submit">Search</button>
+                <button type="submit" class="css-flex-small-search-button">Search</button>
               </form>
             </div>
               <section id="print-results"></section>
@@ -104,7 +102,7 @@
               <div class="list-add-card">
                 <div class="list-items">
                   <input id="new-item" type="text" placeholder="Add Item">
-                  <button id="delete-all-button" class="add css-flex-small-add-button">- Delete All</button>
+                  <button id="delete-all-button" class="css-flex-small-add-button">- Delete All</button>
                   <button id="add-button" class="add css-flex-small-add-button">+ Add Item</button>
                 </div>
                 <div class="list-items">
