@@ -395,7 +395,10 @@ form {
   margin: 1em 0;
 }
 
-
+.css-flex-small-delete-button {
+  float: left;
+  font-style: italic;
+}
 
 
 .css-flex-small-additem-button {
