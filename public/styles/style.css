@@ -191,15 +191,15 @@ ul li input[type=text] {
 
 .css-home-form-div {
 	background-color:rgba(255,255,255,0.3);
-	padding:35px 35px 50px 35px;
-	width: 100%;
-	float: left;
+	padding:35px;
+  width: 40%;
+  margin: auto;
+	/*float: left;
 	left: 50%;
-	position: relative;
+	position: absolute;
   margin-top:30px;
-	margin-left: -260px;
+	margin-left: -240px;*/
 }
-
 /*signup and login buttons*/
 .submit-button {
   display: block;
