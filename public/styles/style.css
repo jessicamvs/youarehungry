@@ -46,19 +46,20 @@ nav[role=navigation] li a {
   left: 14em;
 }
 .css-home-login-link {
-  display: block;
+  display: flex;
+  float: right;
   text-align: right;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1.1em;
   font-family: sans-serif;
   color: #FFFFFF;
-  margin: 40px auto 0;
+  margin: 30px;
   max-width: 960px;
   padding-bottom: 5px;
 }
 .css-home-logo {
-  margin: 0 auto;
+  padding-bottom: 4em;
   width: 80%;
   max-width: 400px;
 }
@@ -74,7 +75,7 @@ nav[role=navigation] li a {
   background: rgba(255,255,255, 0.3);
   width: 100%;
   max-width: 960px;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
 }
 .css-wide-block-container {
   display: block;
@@ -84,7 +85,8 @@ nav[role=navigation] li a {
   background: rgba(255,255,255, 0.3);
   width: 100%;
   max-width: 800px;
-  border-radius: 5px;
+  border-bottom: 20px;
+  padding-bottom: 60px;
 }
 .css-full-img {
   width: 100%;
@@ -122,9 +124,7 @@ a.menu-link {
   text-align: center;
   padding-bottom: 2em;
 }
-/*h1, h1 a {
 
-}*/
 h1.css-feature-section {
   min-height: 120px;
   width: 90%;
@@ -146,13 +146,13 @@ p {
   line-height: 1.6;
 }
 .login-message {
-  font-size: .7em;
+  font-size: .8em;
   text-align: center;
   margin: 60px auto 18px;
 }
 .login-message a {
   text-decoration: none;
-  color: #303030;
+  color: #FFF;
 }
 li * {
   float: left;
@@ -165,17 +165,18 @@ ul {
   font-size: 15px;
   color: #0FC57C;
   float: right;
+  padding-top: 10px;
 }
 .delete {
   font-size: 15px;
   color: #CF2323;
   float: right;
+  padding-top: 10px;
 }
 
 .css-nav-list {
   border: 0px;
 }
-
 
 /* Bought */
 #bought label {
@@ -188,59 +189,17 @@ ul li input[type=text] {
   display: none;
 }
 
-/* --- */
-#css-home-feedback-page{
-	text-align:center;
-}
-
-#css-home-form-main{
-	width:100%;
-	float:left;
-	padding-top:0px;
-}
-
-#css-home-form-div {
+.css-home-form-div {
 	background-color:rgba(255,255,255,0.3);
 	padding:35px 35px 50px 35px;
-	width: 450px;
+	width: 100%;
 	float: left;
 	left: 50%;
 	position: relative;
   margin-top:30px;
 	margin-left: -260px;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
 }
 
-.css-home-feedback-input {
-	color:#3c3c3c;
-	font-size: 18px;
-	line-height: 22px;
-	background-color: #fbfbfb;
-	padding: 13px;
-	margin-bottom: 10px;
-	width:100%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
-  border: 3px solid rgba(0,0,0,0);
-}
-
-.css-home-feedback-input:focus{
-	background: #fff;
-	box-shadow: 0;
-	border: 3px solid #3498db;
-	color: #3498db;
-	outline: none;
-}
-
-textarea {
-    width: 100%;
-    height: 150px;
-    line-height: 150%;
-    resize:vertical;
-}
 /*signup and login buttons*/
 .submit-button {
   display: block;
@@ -251,13 +210,54 @@ textarea {
   /*min-width: 360px;*/
   text-align: center;
   color: #FFFFFF;
-  background-color: #303030;
-  border: 1px solid #303030;
+  background-color: #e74c3c;
   cursor: pointer;
+}
+
+.search-box {
+  display: flex;
+  padding: 12px 8px;
+  font-size: 16px;
+  text-align: left;
+  flex: auto;
+  margin: 18px auto;
+  color: #303030;
+  background-color: #FFF;
+  /*border: 0px;*/
+  cursor: text;
+}
+
+.name-email-box {
+  display: block;
+  padding: 12px 8px;
+  font-size: 16px;
+  text-align: left;
+  width: 340px;
+  margin: 18px auto;
+  color: #303030;
+  background-color: #FFF;
+  border: 0px;
+  cursor: text;
 }
 .submit-button:hover, .submit-button:active, .submit-button:focus {
   opacity: 0.7;
 }
+.section-titles {
+  color: #FFF;
+  margin: 20px;
+  padding: 30px 0 10px;
+}
+
+.css-section-header {
+  color: #303030;
+  font-size: 1.6em;
+}
+.css-recipe-header {
+  color: #303030;
+  font-size: 1.6em;
+  margin: 10px auto;
+}
+
 
 .css-home-cta-button{
   width: 100%;
@@ -311,12 +311,12 @@ li > input[type="checkbox"] {
 li > label {
   font-size: 15px;
   line-height: 40px;
-  width: 70%;
+  width: inherit;
   padding: 0 0 0 11px;
 }
 
 @media only screen and (max-width: 580px) {
-	#css-home-form-div{
+	.css-home-form-div{
     width: 88%;
 		left: 3%;
     margin-left: 0;

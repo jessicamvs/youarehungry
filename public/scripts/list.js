@@ -50,7 +50,6 @@ var addItem = function() {
 
 var populateFromDatabase = function(data) {
   console.log('running populateFromDatabase', data);
-  // var data = JSON.parse(localStorage.getItem('list'));
   data.forEach(function(ele) {
     console.log(ele);
     var listItem = createNewItemElement(ele);
@@ -66,8 +65,6 @@ var populateList = function(item) {
   var listItem = createNewItemElement(item);
   toGetHolder.appendChild(listItem);
   bindItemEvents(listItem, itemBought);
-  // var id = JSON.parse(localStorage.getItem('userData')).id;
-  // listController.addIngredients(id, item);
 };
 
 //delete an existing item

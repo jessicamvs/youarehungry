@@ -45,8 +45,6 @@ app.get('/adduser', function (req, res) {
       client.end();
     });
   });
-
-  res.sendFile('/public/index.html', { root: '.' }); //not redirecting
 });
 
 app.get('/ingredients', function (req, res) {

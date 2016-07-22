@@ -21,6 +21,5 @@ getData.transformImg = function(data) {
       id: ele.id
     };
   });
-  // console.log(newData);
   viewData.printResults(newData);
 };
