@@ -31,6 +31,13 @@
         <a href="{{source.sourceRecipeUrl}}" target="_blank"><button class="css-directions-button">READ INSTRUCTIONS</button></a>
       </article>
     </script>
+    <script id="listItem-template" type="text/x-handlebars-template">
+      <li>
+        <input type="checkbox">
+        <label>{{item}}</label>
+        <button class="delete">Delete</button>
+      </li>
+    </script>
   </head>
   <img src="img/hungry.png" class="css-home-logo">
   <a href="/login" class="css-home-login-link">Log In</a>
