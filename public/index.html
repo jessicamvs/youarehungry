@@ -14,7 +14,7 @@
 
     <script id="search-results" type="text/x-handlebars-template">
       <article class="results-cards">
-        <a href="/{{id}}"><h1 class="css-section-header">{{recipeName}}</h1></a>
+        <a href="/{{id}}"><h1 class="css-recipe-header">{{recipeName}}</h1></a>
         <section>by {{sourceDisplayName}}</section>
         <a href="/{{id}}"><img src="{{smallImageUrls}}" target="_blank" class="css-full-img"></a>
       </article>
@@ -22,10 +22,10 @@
 
     <script id="recipe-selection" type="text/x-handlebars-template">
       <article class="results-cards">
-        <section id="recipe-name">{{name}}</section>
+        <section id="recipe-name"><h1 class="css-recipe-header">{{name}}</h1></section>
         <section id="sourceDisplayName"><a href="{{source.sourceRecipeUrl}}">{{source.sourceDisplayName}}</a></section>
         <section id="sourceSiteUrl"></section>
-        <section id="rating">Rating: <span>{{rating}}</span> out of 5</section>
+        <section id="rating">Rating: <span>{{rating}}</span> out of 5</section><br>
         <section><img id="splash-image" src="null" class="css-full-img"></section>
         <section id="ingredients-results">
           <button id="ingredients-button" type="button">Add Ingredients to Shopping List</button>
