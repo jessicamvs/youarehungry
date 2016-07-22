@@ -20,12 +20,16 @@
           alert('database says you do not exist');
         } else {
           console.log('This user is in the DB');
-          var currentUser = {
-            id: result.rows[0].id,
-            email: result.rows[0].email
-          };
-          localStorage.setItem('userData', JSON.stringify(currentUser));
-          page('/search');
+          if (result.rows[0].password === e.target.password.value) {
+            var currentUser = {
+              id: result.rows[0].id,
+              email: result.rows[0].email
+            };
+            localStorage.setItem('userData', JSON.stringify(currentUser));
+            page('/search');
+          } else {
+            alert('Email and password do not match');
+          }
         }
       });
     });
