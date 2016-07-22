@@ -123,6 +123,7 @@ a.menu-link {
 .css-center {
   text-align: center;
   padding-bottom: 2em;
+  width: 100%;
 }
 
 h1.css-feature-section {
@@ -189,11 +190,14 @@ ul li input[type=text] {
   display: none;
 }
 
+input {
+  box-sizing: border-box;
+}
 .css-home-form-div {
 	background-color:rgba(255,255,255,0.3);
 	padding:35px;
-  width: 40%;
-  margin: auto;
+  width: 360px;
+  margin: 0 auto;
 	/*float: left;
 	left: 50%;
 	position: absolute;
@@ -232,7 +236,7 @@ ul li input[type=text] {
   padding: 12px 8px;
   font-size: 16px;
   text-align: left;
-  width: 340px;
+  width: 100%;
   margin: 18px auto;
   color: #303030;
   background-color: #FFF;
@@ -269,13 +273,12 @@ ul li input[type=text] {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-.css-directions-button a {
-color: #FFF;
-}
+
 .css-directions-button {
 	width: 100%;
 	border: 0px;
 	background-color: #e74c3c;
+  color: #FFF;
 	font-size:24px;
 	padding:22px 0;
   margin-top:-4px;
@@ -292,7 +295,9 @@ footer a {
   text-decoration: none;
   padding-right: 10px;
 }
-
+footer {
+  padding-top: 40px;
+}
 /* Shopping List */
 
 li {
@@ -317,11 +322,6 @@ li > label {
 
 @media only screen and (max-width: 580px) {
 	.css-home-form-div{
-    width: 88%;
-		left: 3%;
-    margin-left: 0;
-    margin-right: 3%;
-		padding-left: 3%;
-		padding-right: 3%;
+    box-sizing: border-box;
 	}
 }
