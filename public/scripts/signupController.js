@@ -3,6 +3,8 @@
 
   signupController.index = function() {
     $('#signup').show().siblings().hide();
+    $('.css-home-login-link').hide();
+    $('#mainNav').hide();
     signupController.addUser();
   };
 

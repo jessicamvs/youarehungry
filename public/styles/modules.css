@@ -1,71 +1,125 @@
-
-/*================================forms style*/
-form {
-  /*justify-content: center;*/
-  /*margin: auto;*/
-}
-/*Search Results*/
-.results-cards {
-  display: block;
+h1.css-feature-section {
+  width: 90%;
   margin: 0 auto;
-  width: 70%;
-  margin-top: 2em;
-  background-color: #FFF;
-  padding: .5em;
+  padding: 70px 50px 40px 50px;
+  line-height: 1.6em;
+  text-align: center;
+  color: #FFFFFF;
 }
-
-.search-card, .list-add-card {
-  display: block;
-  margin: 1em auto;
-  width: 90%;
-  background-color: #FFF;
-  padding: .5em;
-}
-.list-items {
-  display: block;
-  margin: 1em auto;
-  width: 90%;
-  background-color: #FFF;
-  padding: .5em;
-}
-/*================================shopping list style*/
-.container {
-  display: block;
+.css-home-form-div {
+	background-color:rgba(255,255,255,0.3);
+	padding:35px;
   width: 360px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
-
-.css-flex-small-add-button {
-  display: flex;
-  /*color: #FFF;
-  font-size: 15px;
-  width: auto;*/
+.login-message {
+  font-size: .8em;
+  text-align: center;
+  margin: 20px auto 18px;
 }
-button {
+.login-message a {
+  text-decoration: none;
+  color: #FFF;
+}
+.name-email-box {
   display: block;
-  background: none;
-  border: 0px;
-  /*margin: 10px 0 0;*/
-  cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.7;
-}
-
-
-input[type="text"] {
   padding: 12px 8px;
   font-size: 16px;
-  line-height: 18px;
   text-align: left;
-  min-width: 50%;
+  width: 100%;
+  margin: 18px auto;
   color: #303030;
-  background-color: #FFF;
+  background-color: #FFFFFF;
+  border: 0px;
   cursor: text;
-  margin: 0;
 }
-
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 12px 24px;
+  margin: 60px auto 18px;
+  font-size: 16px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #e74c3c;
+  cursor: pointer;
+}
+.submit-button:hover, .submit-button:active, .submit-button:focus {
+  opacity: 0.7;
+}
+.css-home-cta-button{
+	border: 0 auto;
+	background-color: #e74c3c;
+	color:white;
+	font-size:24px;
+	padding:22px;
+  margin: 40px auto;
+}
+.search-box {
+  display: flex;
+  float: left;
+  padding: 12px 60px 12px 8px;
+  font-size: 16px;
+  text-align: left;
+  color: #303030;
+  background-color: transparent;
+  border: 1px solid #303030;
+  cursor: text;
+}
+.search-button {
+  padding: 12px 24px;
+  float: right;
+  font-size: 16px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #303030;
+  border: 1px solid #303030;
+  cursor: pointer;
+}
+.css-directions-button {
+	width: 100%;
+	border: 0px;
+	background-color: #e74c3c;
+  color: #FFF;
+	font-size:24px;
+	padding:22px 0;
+  margin-top:-4px;
+  box-sizing: border-box;
+  cursor:pointer;
+}
+.css-flex-small-ingredients-button {
+  display: flex;
+  font-size: 1em;
+  width: auto;
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  margin: 2em 0;
+  padding: .5em;
+}
+.css-flex-small-delete-button {
+  float: left;
+  font-style: italic;
+  color: #CF2323;
+  font-size: 15px;
+  padding-top: 10px;
+}
+.add {
+  font-size: 15px;
+  color: #0FC57C;
+  float: right;
+  padding-top: 10px;
+}
+.delete {
+  font-size: 15px;
+  color: #CF2323;
+  float: right;
+  padding-top: 10px;
+}
+#bought label {
+  text-decoration: line-through;
+  color: #888;
+}
 #new-item {
   width: 50%;
 }

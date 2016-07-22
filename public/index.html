@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/layout.css">
@@ -26,14 +25,14 @@
         <section id="rating">Rating: <span>{{rating}}</span> out of 5</section><br>
         <section><img id="splash-image" src="null" class="css-full-img"></section>
         <section id="ingredients-results">
-          <button id="ingredients-button" type="button">Add Ingredients to Shopping List</button>
+          <button id="ingredients-button" type="button" class="css-flex-small-ingredients-button">Add Ingredients to Shopping List</button>
           <ul id="ingredients-list"></ul>
         </section>
         <a href="{{source.sourceRecipeUrl}}" target="_blank"><button class="css-directions-button">READ INSTRUCTIONS</button></a>
       </article>
     </script>
   </head>
-  <a href=""><img src="img/hungry.png" class="css-home-logo"></a>
+  <img src="img/hungry.png" class="css-home-logo">
   <a href="/login" class="css-home-login-link">Log In</a>
   <body>
     <div id="pattern" class="pattern">
@@ -44,39 +43,39 @@
             <ul>
               <li class="css-nav-list"><a href="/search"> SEARCH</a></li>
               <li class="css-nav-list"><a href="/list"> SHOPPING LIST</a></li>
-              <li id="logout-nav-button"  class="css-nav-list"><a href=""> LOG OUT</a></li>
+              <li id="logout-nav-button" class="css-nav-list"><a href=""> LOG OUT</a></li>
             </ul>
           </nav>
         </header>
         <main>
-          <!-- Log In (existing users) -->
           <section id="login">
-            <form id="login-page">
+            <form id="login-page" class="css-home-form-div">
+              <h1 class="css-login-header">Log In</h1>
               <input name="email" type="email" class="name-email-box" placeholder="Email">
               <input name="password" type="password" class="name-email-box" placeholder="Password">
               <button type="submit" class="submit-button">LOG IN</button>
               <p class="login-message">Don't have an account? <span><a href="/signup">SIGN UP</a></span></p>
             </form>
           </section>
-          <!-- Sign Up (new users) -->
           <section id="signup">
-            <form id="sign-up-page">
+            <form id="sign-up-page" class="css-home-form-div">
+              <h1 class="css-signup-header">Sign Up</h1>
               <input name="email" type="email" class="name-email-box" placeholder="Email">
               <input type="password" class="name-email-box" name="password" value="" placeholder="Password">
               <button type="submit" class="submit-button">JOIN</button>
-              <p class="login-message">Already have an account? <span><a href="/login">SIGN IN</a></span></p>
+              <p class="login-message">Already have an account? <span><a href="/login">LOG IN</a></span></p>
             </form>
           </section>
           <section id="home">
             <div class="css-home-flex-content">
               <h1 class="css-feature-section">You Are Hungry! is an app developed for the adventurous home cook who is always looking for new recipes...</h1>
-              <div class="css-home-col1">
+              <div class="css-home-column">
                 <div class="css-center"><i class="icon-search large-icon"></i></div>
-                <p>Enter any keyword or ingredient and You Are Hungry! will show display the top 10 results.</p>
+                <p>Enter any ingredient, recipe name, or keyword and You Are Hungry! will display the top 10 results.</p>
               </div>
-              <div class="css-home-col2">
+              <div class="css-home-column">
                 <div class="css-center"><i class="icon-clipboard large-icon"></i></div>
-                <p>Automagically generated shopping list! Yes, please! You Are Hungry! remembers your list so you never forget a thing.</p>
+                <p>Automagically generated shopping list!? Yes, please! You Are Hungry! remembers your list so you never forget a thing.</p>
               </div>
               <div class="css-center">
                 <h2>It's free and easy to use.</h2>
@@ -84,15 +83,16 @@
               </div>
             </div>
           </section>
+
           <section id="search" class="tab-content">
             <div class="css-wide-block-container">
               <h3 class="section-titles">Search Recipes</h3>
               <div class="search-card">
-              <form id="searchBox">
-                <input name="search" type="text" class="search-box" placeholder="apple pie">
-                <button type="submit">Search</button>
-              </form>
-            </div>
+                <form id="searchBox">
+                  <input name="search" type="text" class="search-box" placeholder="apple pie">
+                  <button type="submit" class="search-button">Search</button>
+                </form>
+              </div>
               <section id="print-results"></section>
             </div>
           </section>
@@ -104,7 +104,10 @@
               <div class="list-add-card">
                 <div class="list-items">
                   <input id="new-item" type="text" placeholder="Add Item">
-                  <button id="add-button" class="add css-flex-small-add-button">+ Add Item</button>
+                  <button id="add-button" class="add">+ Add Item</button>
+                  <div class="">
+                    <button id="delete-all-button" class="css-flex-small-delete-button"> Delete List</button>
+                  </div>
                 </div>
                 <div class="list-items">
                   <ul id="to-get"></ul>

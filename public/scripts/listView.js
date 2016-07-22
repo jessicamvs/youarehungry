@@ -4,8 +4,10 @@
 
   var $itemInput = $('#new-item');
   var $addButton = $('#add-button');
+  var $deleteAllButton = $('#delete-all-button');
   var $toGetHolder = $('#to-get');
   var $boughtHolder = $('#bought');
+
 
   // create new list item
   listView.createNewItemElement = function(itemString) {
@@ -85,6 +87,12 @@
     listController.deleteIngredients(text);
   };
 
+  listView.deleteAll = function() {
+    var id = JSON.parse(localStorage.getItem('userData')).id;
+    listController.deleteAllIngredients(id);
+    listController.clearIngredients();
+  };
+
   //mark item as bought
   listView.itemBought = function(){
     var listItem = this.parentNode;
@@ -113,6 +121,8 @@
   //set click event to the addItem function
   $addButton.on('click', listView.addItem);
 
+  $deleteAllButton.on('click', listView.deleteAll);
+
   //press 'enter' to trigger add button
   $itemInput.on('keypress', function(event) {
     if (event.keyCode == 13) {
@@ -131,6 +141,6 @@
   $boughtHolder.children().each(function(ele) {
     listView.bindItemEvents(ele, listView.itemToGet);
   });
-  
+
   module.listView = listView;
 })(window);
