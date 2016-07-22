@@ -88,10 +88,29 @@ app.get('/deleteFromList', function (req, res) {
 
 });
 
+app.get('/deleteAllFromList', function (req, res) {
+  console.log('DELETING ALL INGREDIENTS');
+  console.log('id: ' + req.query.id);
+  var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/nassirisaf';
+
+  var client = new pg.Client(connectionString);
+  client.connect(function(err) {
+    if(err) {
+      return console.error('could not connect to postgres');
+    }
+    client.query('DELETE FROM ingredients WHERE userid=$1', [req.query.id], function(err, result) {
+      if(err) {
+        return console.error('error running query', err);
+      }
+      client.end();
+    });
+  });
+
+});
+
 app.get('/addToList', function (req, res) {
   console.log('/addtolist req', req.query.values);
   console.log('ADDING INGREDIENTS');
-  console.log('ingredient: ' + req.query.ingredient + 'for userid: ' + req.query.userid);
 
   var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/nassirisaf';
 
