@@ -45,16 +45,16 @@ nav[role=navigation] li a {
   left: 14em;
 }
 .css-home-login-link {
-  display: flex;
-  float: right;
+  position: absolute;
+  right: -1px;
+  width: 80%;
   text-align: right;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1.1em;
   font-family: sans-serif;
   color: #FFFFFF;
-  margin: 30px;
-  max-width: 960px;
+  margin: 3%;
   padding-bottom: 5px;
 }
 .css-home-logo {
@@ -193,6 +193,7 @@ input {
 	padding:35px;
   width: 360px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 .submit-button {
   display: block;
@@ -393,7 +394,7 @@ input[type="text"] {
 }
 
 @media only screen and (max-width: 580px) {
-	.css-home-form-div{
-    box-sizing: border-box;
-	}
-}
+  .css-home-login-link {
+      margin: 4.5%;
+    }
+  }
