@@ -36,14 +36,12 @@ viewSelection.ingredientsList = function(data) {
   for (var i = 0; i < list.length; i++) {
     var newLi = document.createElement('li');
     newLi.textContent = list[i];
-    // console.log(newUl);
     $('#ingredients-list').append(newLi);
   }
 };
 
 viewSelection.buttonFunction = function(data) {
   var ingredientArray = data.ingredientLines;
-  // console.log('array', ingredientArray);
   $('#ingredients-button').on('click', function(e) {
     e.preventDefault();
     console.log('buttonFunction button clicked');
@@ -58,10 +56,8 @@ viewSelection.syncUp = function(array) {
   var query = '';
   for (var i = 0; i < array.length; i++) {
     populateList(array[i]);
-    // listController.addIngredients(id, ingredientArray[i]);
     query += '(' + id + ', \'' + array[i] + '\'), ';
   }
-  // console.log('slicepoint', slicePoint);
   var newQuery = query.slice(0, -2);
   console.log(newQuery);
   listController.addIngredients(newQuery);

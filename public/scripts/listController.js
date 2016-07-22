@@ -2,11 +2,10 @@
   var listController = {};
 
   listController.index = function() {
+    $('#mainNav').show();
     $('#list').show().siblings().hide();
-    $('#login-signup').hide();
     listController.getId();
   };
-
 
   listController.desperateAardvark = function(queryString) {
     pg.defaults.ssl = true;
@@ -29,13 +28,11 @@
     listController.fetchIngredients(id);
   };
 
-
   listController.fetchIngredients = function(id) {
     console.log('FETCHING INGREDIENTS NOW');
     var usersIngredients = [];
     $.get('/ingredients', {userid: id}).done(function(result) {
       console.log(result.rows);
-
 
       result.rows.forEach(function(item) {
         console.log(item.ingredient);
@@ -45,7 +42,6 @@
       console.log('line 39',usersIngredients);
       localStorage.setItem('list', JSON.stringify(usersIngredients));
       populateFromDatabase(usersIngredients);
-
     });
   };
 
@@ -68,7 +64,6 @@
       console.log('addToList fired');
     });
   };
-
 
   module.listController = listController;
 })(window);
