@@ -15,7 +15,7 @@ body {
 }
 nav[role=navigation] {
   background: rgba(255, 255, 255, 0.3);
-  clear: both;
+  clear: both;;
   overflow: hidden;
   border: 0px;
 }
@@ -95,14 +95,14 @@ i.icon-search.large-icon, i.icon-clipboard.large-icon {
 .css-home-col1 {
   width: 340px;
   margin: 0 auto;
-  padding: 2em;
+  padding: 1.5em;
   font-size: 1.2em;
   text-shadow: 0 1px 0 black;
 }
 .css-home-col2 {
   width: 340px;
   margin: 0 auto;
-  padding: 2em;
+  padding: 1.5em;
   font-size: 1.2em;
   text-shadow: 0 1px 0 black;
 }
@@ -120,23 +120,18 @@ a.menu-link {
   padding-left: .85em;
 }
 .css-center {
-  text-align: center;
   padding-bottom: 2em;
   width: 100%;
+  text-align: center;
 }
 
 h1.css-feature-section {
-  min-height: 120px;
   width: 90%;
-  max-width: 700px;
-  line-height: 1.6em;
-  vertical-align: middle;
-  text-align: center;
   margin: 0 auto;
-  text-decoration: none;
+  padding: 70px 50px 40px 50px;
+  line-height: 1.6em;
+  text-align: center;
   color: #FFFFFF;
-  padding-top: 80px;
-  padding-bottom: 60px;
 }
 
 p {
@@ -213,7 +208,7 @@ input {
 }
 
 .search-box {
-  display: flex;
+  /*display: flex;
   padding: 12px 8px;
   font-size: 16px;
   text-align: left;
@@ -221,8 +216,40 @@ input {
   margin: 18px auto;
   color: #303030;
   background-color: #FFF;
+  cursor: text;*/
+}
+
+.search-box {
+  display: flex;
+  float: left;
+  padding: 12px 60px 12px 8px;
+  font-size: 16px;
+  text-align: left;
+  color: #303030;
+  background-color: transparent;
+  border: 1px solid #303030;
   cursor: text;
 }
+
+.search-button {
+  padding: 12px 24px;
+  float: right;
+  font-size: 16px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #303030;
+  border: 1px solid #303030;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
 
 .name-email-box {
   display: block;
@@ -315,13 +342,21 @@ form {
 .results-cards {
   display: block;
   margin: 0 auto;
-  width: 70%;
+  width: 90%;
+  max-width: 800px;
   margin-top: 2em;
   background-color: #FFF;
   padding: .5em;
 }
 
-.search-card, .list-add-card {
+.search-card {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  background-color: transparent;
+  padding-bottom: 2em;
+}
+.list-add-card {
   display: block;
   margin: 1em auto;
   width: 90%;
@@ -385,7 +420,8 @@ input[type="text"] {
   font-size: 16px;
   line-height: 18px;
   text-align: left;
-  min-width: 50%;
+  max-width: 90%;
+  width: 260px;
   color: #303030;
   background-color: #FFF;
   cursor: text;
