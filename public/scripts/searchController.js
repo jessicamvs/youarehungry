@@ -27,8 +27,8 @@
       _app_key: '847fa96c28cfa82d101425ab83cba017',
     }).done(function(data) {
       console.log(data);
-      viewSelection.initSelectionPage(data);
-      viewSelection.buttonFunction(data);
+      recipeView.initSelectionPage(data);
+      recipeView.buttonFunction(data);
     });
   };
 
