@@ -45,6 +45,12 @@
     });
   };
 
+  listController.deleteAllIngredients = function(item) {
+    $.get('/deleteAllFromList', {id: item}).done(function(result) {
+      console.log('deleteAllFromList fired');
+    });
+  };
+
   listController.addIngredients = function(string) {
     var query = {values: string};
     console.log('new query obj', query);

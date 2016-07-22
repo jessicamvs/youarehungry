@@ -2,6 +2,7 @@ var listView = {};
 
 var itemInput = document.getElementById('new-item');
 var addButton = document.getElementById('add-button');
+var deleteAllButton = document.getElementById('delete-all-button');
 var toGetHolder = document.getElementById('to-get');
 var boughtHolder = document.getElementById('bought');
 
@@ -83,6 +84,12 @@ listView.deleteItem = function(){
   listController.deleteIngredients(text);
 };
 
+listView.deleteAll = function() {
+  var id = JSON.parse(localStorage.getItem('userData')).id;
+  listController.deleteAllIngredients(id);
+  listController.clearIngredients();
+};
+
 //mark item as bought
 listView.itemBought = function(){
   var listItem = this.parentNode;
@@ -110,6 +117,8 @@ listView.bindItemEvents = function(ListItem, checkboxEventHandler) {
 
 //set click event to the addItem function
 addButton.addEventListener('click', listView.addItem);
+
+deleteAllButton.addEventListener('click', listView.deleteAll);
 
 //press 'enter' to trigger add button
 itemInput.addEventListener('keypress', function(event) {
