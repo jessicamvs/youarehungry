@@ -11,6 +11,8 @@
 
   // create new list item
   listView.createNewItemElement = function(itemString) {
+    // var render = Handlebars.compile($('#listItem-template').html());
+    // return render({item: itemString});
     var listItem = document.createElement('li');
     var checkbox = document.createElement('input');
     var label = document.createElement('label');
@@ -75,7 +77,7 @@
   };
 
   //delete an existing item
-  listView.deleteItem = function(){
+  listView.deleteItem = function() {
     var listItem = this.parentNode;
     var ul = listItem.parentNode;
 
@@ -94,14 +96,14 @@
   };
 
   //mark item as bought
-  listView.itemBought = function(){
+  listView.itemBought = function() {
     var listItem = this.parentNode;
     $boughtHolder.prepend(listItem);
     listView.bindItemEvents(listItem, listView.itemToGet);
   };
 
   //mark item as to get
-  listView.itemToGet = function(){
+  listView.itemToGet = function() {
     var listItem = this.parentNode;
     $toGetHolder.prepend(listItem);
     listView.bindItemEvents(listItem, listView.itemBought);
