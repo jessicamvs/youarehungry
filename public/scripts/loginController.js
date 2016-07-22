@@ -31,22 +31,5 @@
     });
   };
 
-  loginController.fetchIngredients = function(id) {
-    console.log('FETCHING INGREDIENTS NOW');
-    $.get('/ingredients', {userid: id}).done(function(result) {
-      console.log(result.rows);
-
-      var usersIngredients = [];
-
-      result.rows.forEach(function(item) {
-        console.log(item.ingredient);
-        usersIngredients.push(item.ingredient);
-      });
-
-      console.log(usersIngredients);
-      localStorage.setItem('list', JSON.stringify(usersIngredients));
-    });
-  };
-
   module.loginController = loginController;
 })(window);

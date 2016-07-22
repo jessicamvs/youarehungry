@@ -27,6 +27,5 @@
     });
   };
 
-
   module.signupController = signupController;
 })(window);

@@ -5,7 +5,7 @@ $('#searchBox').on('submit', function(e) {
   if(this.search.value) {
     $('#print-results').children().remove();
     var searchTerms = this.search.value;
-    getData.runSearch(searchTerms);
+    searchController.runSearch(searchTerms);
   };
 });
 

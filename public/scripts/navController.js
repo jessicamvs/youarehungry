@@ -13,5 +13,4 @@ $(document).ready(function() {
     console.log('localStorage userData & list removed');
     page('/');
   });
-
 });
