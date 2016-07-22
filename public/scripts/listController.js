@@ -48,7 +48,7 @@
 
       console.log('line 39',usersIngredients);
       localStorage.setItem('list', JSON.stringify(usersIngredients));
-      populateFromDatabase(usersIngredients);
+      listView.populateFromDatabase(usersIngredients);
     });
   };
 

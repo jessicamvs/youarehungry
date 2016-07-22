@@ -4,21 +4,21 @@ viewSelection.index = function(ctx) {
   console.log(ctx.params.id);
   $('#print-selection').show().siblings().hide();
   $('#login-signup').hide();
-  viewSelection.pullRecipe(ctx);
+  searchController.pullRecipe(ctx);
 };
 
-viewSelection.pullRecipe = function(ctx) {
-  $.getJSON({
-    url: 'https://api.yummly.com/v1/api/recipe/' + ctx.params.id,
-  },{
-    _app_id: '3049d607',
-    _app_key: '847fa96c28cfa82d101425ab83cba017',
-  }).done(function(data) {
-    console.log(data);
-    viewSelection.initSelectionPage(data);
-    viewSelection.buttonFunction(data);
-  });
-};
+// viewSelection.pullRecipe = function(ctx) {
+//   $.getJSON({
+//     url: 'https://api.yummly.com/v1/api/recipe/' + ctx.params.id,
+//   },{
+//     _app_id: '3049d607',
+//     _app_key: '847fa96c28cfa82d101425ab83cba017',
+//   }).done(function(data) {
+//     console.log(data);
+//     viewSelection.initSelectionPage(data);
+//     viewSelection.buttonFunction(data);
+//   });
+// };
 
 var render2 = Handlebars.compile($('#recipe-selection').html());
 
@@ -55,7 +55,7 @@ viewSelection.syncUp = function(array) {
   var id = JSON.parse(localStorage.getItem('userData')).id;
   var query = '';
   for (var i = 0; i < array.length; i++) {
-    populateList(array[i]);
+    listView.populateList(array[i]);
     query += '(' + id + ', \'' + array[i] + '\'), ';
   }
   var newQuery = query.slice(0, -2);
