@@ -104,17 +104,20 @@
             </div>
           </section>
           <section id="print-selection"></section>
+
           <section id="list" class="tab-content">
             <div class="css-wide-block-container">
               <h3 class="section-titles">Shopping List</h3>
-              <div class="results-cards">
-                <p>
-                  <input id="new-item" type="text">
+              <div class="list-add-card">
+                <div class="list-items">
+                  <input id="new-item" type="text" placeholder="Add Item">
                   <button id="add-button" class="add css-flex-small-add-button">+ Add Item</button>
-                </p>
+                </div>
+                <div class="list-items">
+                  <ul id="to-get"></ul>
+                  <ul id="bought"></ul>
+                </div>
               </div>
-              <ul id="to-get"></ul>
-              <ul id="bought"></ul>
             </div>
           </section>
         </main>

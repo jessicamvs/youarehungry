@@ -303,7 +303,7 @@ li > input[type="checkbox"] {
 li > label {
   font-size: 15px;
   line-height: 40px;
-  width: 70%;
+  width: inherit;
   padding: 0 0 0 11px;
 }
 

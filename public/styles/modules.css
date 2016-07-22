@@ -16,16 +16,15 @@ form {
 
 .search-card, .list-add-card {
   display: block;
-  margin: 0 auto;
-  width: 70%;
-  /*margin-top: 2em;*/
+  margin: 1em auto;
+  width: 90%;
   background-color: #FFF;
   padding: .5em;
 }
 .list-items {
   display: block;
-  margin: 0 auto;
-  width: 70%;
+  margin: 1em auto;
+  width: 90%;
   background-color: #FFF;
   padding: .5em;
 }
