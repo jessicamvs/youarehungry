@@ -58,7 +58,7 @@ nav[role=navigation] li a {
   padding-bottom: 5px;
 }
 .css-home-logo {
-  padding-bottom: 4em;
+  padding-bottom: 2em;
   width: 80%;
   max-width: 400px;
 }
@@ -148,7 +148,7 @@ p {
 .login-message {
   font-size: .8em;
   text-align: center;
-  margin: 60px auto 18px;
+  margin: 20px auto 18px;
 }
 .login-message a {
   text-decoration: none;
@@ -195,11 +195,16 @@ input {
   margin: 0 auto;
   box-sizing: border-box;
 }
+.css-login-header, .css-signup-header {
+  color: #FFF;
+  text-shadow: 0 1px 0 black;
+}
+
 .submit-button {
   display: block;
   width: 100%;
   padding: 12px 24px;
-  margin: 18px auto;
+  margin: 60px auto 18px;
   font-size: 16px;
   text-align: center;
   color: #FFFFFF;
@@ -251,14 +256,12 @@ input {
 }
 
 .css-home-cta-button{
-  width: 100%;
-	border: 0px;
+	border: 0 auto;
 	background-color: #e74c3c;
 	color:white;
 	font-size:24px;
 	padding:22px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin: 40px auto;
 }
 
 .css-directions-button {
