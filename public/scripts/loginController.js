@@ -4,6 +4,7 @@
   loginController.index = function() {
     $('#login').show().siblings().hide();
     $('.css-home-login-link').hide();
+    $('#mainNav').hide();
     loginController.verifyuser();
   };
 
