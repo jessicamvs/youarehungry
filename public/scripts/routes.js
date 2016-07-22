@@ -8,6 +8,6 @@ page('/search', searchController.index);
 
 page('/list', listController.index);
 
-page('/:id', viewSelection.index);
+page('/:id', recipeView.index);
 
 page();
