@@ -13,17 +13,17 @@
     <title>You Are Hungry!</title>
     <script id="search-results" type="text/x-handlebars-template">
       <article class="results-cards">
-        <a href="/{{id}}"><h1 class="css-section-header">{{recipeName}}</h1></a>
+        <a href="/{{id}}"><h1 class="css-recipe-header">{{recipeName}}</h1></a>
         <section>by {{sourceDisplayName}}</section>
         <a href="/{{id}}"><img src="{{smallImageUrls}}" target="_blank" class="css-full-img"></a>
       </article>
     </script>
     <script id="recipe-selection" type="text/x-handlebars-template">
       <article class="results-cards">
-        <section id="recipe-name">{{name}}</section>
+        <section id="recipe-name"><h1 class="css-recipe-header">{{name}}</h1></section>
         <section id="sourceDisplayName"><a href="{{source.sourceRecipeUrl}}">{{source.sourceDisplayName}}</a></section>
         <section id="sourceSiteUrl"></section>
-        <section id="rating">Rating: <span>{{rating}}</span> out of 5</section>
+        <section id="rating">Rating: <span>{{rating}}</span> out of 5</section><br>
         <section><img id="splash-image" src="null" class="css-full-img"></section>
         <section id="ingredients-results">
           <button id="ingredients-button" type="button">Add Ingredients to Shopping List</button>
@@ -34,6 +34,7 @@
     </script>
   </head>
   <a href=""><img src="img/hungry.png" class="css-home-logo"></a>
+  <a href="/login" class="css-home-login-link">Log In</a>
   <body>
     <div id="pattern" class="pattern">
       <div class="wrap" id="wrap">
@@ -67,9 +68,6 @@
             </form>
           </section>
           <section id="home">
-            <div class="css-home-login-link">
-              <a href="/login" class="css-home-login-link">Log In</a>
-            </div>
             <div class="css-home-flex-content">
               <h1 class="css-feature-section">You Are Hungry! is an app developed for the adventurous home cook who is always looking for new recipes...</h1>
               <div class="css-home-col1">
@@ -88,26 +86,31 @@
           </section>
           <section id="search" class="tab-content">
             <div class="css-wide-block-container">
-              <div>
-              <h3>Search Recipes</h3>
+              <h3 class="section-titles">Search Recipes</h3>
+              <div class="search-card">
               <form id="searchBox">
                 <input name="search" type="text" class="search-box" placeholder="apple pie">
                 <button type="submit">Search</button>
               </form>
+            </div>
               <section id="print-results"></section>
-              </div>
             </div>
           </section>
           <section id="print-selection"></section>
+
           <section id="list" class="tab-content">
             <div class="css-wide-block-container">
-              <h3>Shopping List</h3>
-              <p>
-                <input id="new-item" type="text">
-                <button id="add-button" class="add css-small-button">+ Add Item</button>
-              </p>
-              <ul id="to-get"></ul>
-              <ul id="bought"></ul>
+              <h3 class="section-titles">Shopping List</h3>
+              <div class="list-add-card">
+                <div class="list-items">
+                  <input id="new-item" type="text" placeholder="Add Item">
+                  <button id="add-button" class="add css-flex-small-add-button">+ Add Item</button>
+                </div>
+                <div class="list-items">
+                  <ul id="to-get"></ul>
+                  <ul id="bought"></ul>
+                </div>
+              </div>
             </div>
           </section>
         </main>

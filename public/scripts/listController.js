@@ -4,6 +4,7 @@
   listController.index = function() {
     $('#mainNav').show();
     $('#list').show().siblings().hide();
+    $('.css-home-login-link').hide();
     listController.getId();
   };
 

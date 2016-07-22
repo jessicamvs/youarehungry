@@ -3,6 +3,7 @@
 
   loginController.index = function() {
     $('#login').show().siblings().hide();
+    $('.css-home-login-link').hide();
     loginController.verifyuser();
   };
 
