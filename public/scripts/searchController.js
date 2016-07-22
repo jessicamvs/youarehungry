@@ -41,9 +41,8 @@
         id: ele.id
       };
     });
-    viewData.printResults(newData);
+    searchView.printResults(newData);
   };
-
 
   module.searchController = searchController;
 })(window);
