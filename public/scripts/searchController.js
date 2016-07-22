@@ -2,8 +2,9 @@
   var searchController = {};
 
   searchController.index = function() {
+    $('#mainNav').show();
     $('#search').show().siblings().hide();
-    $('#login-signup').hide();
+    $('.css-home-login-link').hide();
   };
 
   module.searchController = searchController;

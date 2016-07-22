@@ -1,43 +1,32 @@
+
 /*================================forms style*/
 form {
-  justify-content: center;
-  margin: auto;
+  /*justify-content: center;*/
+  /*margin: auto;*/
 }
-
-#login-page, #sign-up-page {
-  display: block;
-}
-
-.name-email-box {
-  display: block;
-  padding: 12px 8px;
-  font-size: 16px;
-  text-align: left;
-  min-width: 340px;
-  margin: 18px auto;
-  color: #303030;
-  background-color: #FFF;
-  border: 0px;
-  cursor: text;
-}
-
-.search-box {
-  margin: auto;
-  width: auto;
-  position: static;
-}
-
 /*Search Results*/
 .results-cards {
   display: block;
-  width: inherit;
+  margin: 0 auto;
+  width: 70%;
   margin-top: 2em;
   background-color: #FFF;
   padding: .5em;
-  border-radius: 4px;
 }
-img.results-cards {
-  align-content: center;
+
+.search-card, .list-add-card {
+  display: block;
+  margin: 1em auto;
+  width: 90%;
+  background-color: #FFF;
+  padding: .5em;
+}
+.list-items {
+  display: block;
+  margin: 1em auto;
+  width: 90%;
+  background-color: #FFF;
+  padding: .5em;
 }
 /*================================shopping list style*/
 .container {
@@ -46,8 +35,8 @@ img.results-cards {
   margin: 0 auto;
 }
 
-.css-small-button {
-  /*display: flex;*/
+.css-flex-small-add-button {
+  display: flex;
   /*color: #FFF;
   font-size: 15px;
   width: auto;*/
@@ -64,56 +53,19 @@ button:hover {
   opacity: 0.7;
 }
 
-h3 {
-  color: #FFF;
-  border-bottom: 2px solid #FFF;
-  padding: 30px 0 10px;
-  margin-bottom: 40px;
-}
 
-.css-section-header {
-  color: #303030;
-  font-size: 1.6em;
-}
 input[type="text"] {
   padding: 12px 8px;
   font-size: 16px;
   line-height: 18px;
   text-align: left;
-  /*min-width: 100%;*/
+  min-width: 50%;
   color: #303030;
   background-color: #FFF;
-  border: 0px;
   cursor: text;
-  /*margin: 0;*/
+  margin: 0;
 }
 
-input[type="text"]:focus {
-  color: #333;
-}
-
-input#new-item {
+#new-item {
   width: 50%;
-}
-
-/* Shopping List */
-
-li {
-  overflow: hidden;
-  word-wrap: break-word;
-  padding: 20px 0;
-  border-bottom: 1px solid #FFF;
-}
-
-li > input[type="checkbox"] {
-  margin: 0 10px;
-  position: relative;
-  top: 15px;
-}
-
-li > label {
-  font-size: 15px;
-  line-height: 40px;
-  width: 70%;
-  padding: 0 0 0 11px;
 }
