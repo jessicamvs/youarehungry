@@ -1,0 +1,113 @@
+html {
+  font-family: 'Helvetica';
+  font-size: 1.2em;
+}
+body {
+  background:
+  linear-gradient(
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.8)
+    ) no-repeat center center fixed, url(https://images.unsplash.com/photo-1452251889946-8ff5ea7b27ab?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=ee0e1e6f2902c4b2338bf54ee31ce2ba) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+nav[role=navigation] {
+  background: rgba(255, 255, 255, 0.3);
+  clear: both;
+  overflow: hidden;
+  border: 0px;
+}
+.js nav[role=navigation] {
+  width: 14em;
+  position: absolute;
+  top: 0;
+  left: -18em;
+}
+nav[role=navigation] li a {
+  display: block;
+  float: right;
+  padding-right: 1em;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.wrap {
+  position: relative;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.wrap.active {
+  left: 14em;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.7;
+}
+p {
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  line-height: 1.6;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul li input[type=text] {
+  display: none;
+}
+li > label {
+  font-size: 15px;
+  line-height: 40px;
+  width: inherit;
+  padding: 0 0 0 11px;
+}
+li {
+  overflow: hidden;
+  word-wrap: break-word;
+  padding: 20px 0;
+  border-bottom: 1px solid #FFFFFF;
+}
+li * {
+  float: left;
+}
+li > input[type="checkbox"] {
+  margin: 0 10px;
+  position: relative;
+  top: 15px;
+}
+input {
+  box-sizing: border-box;
+}
+input[type="text"] {
+  padding: 12px 8px;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: left;
+  max-width: 90%;
+  width: 260px;
+  color: #303030;
+  background-color: #FFFFFF;
+  cursor: text;
+  margin: 0;
+}
+button {
+  display: block;
+  background: none;
+  border: 0px;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.7;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+  padding-right: 10px;
+}
