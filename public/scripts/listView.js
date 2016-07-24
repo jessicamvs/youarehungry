@@ -11,29 +11,9 @@
 
   // create new list item
   listView.createNewItemElement = function(itemString) {
-    // var render = Handlebars.compile($('#listItem-template').html());
-    // return render({item: itemString});
-    var listItem = document.createElement('li');
-    var checkbox = document.createElement('input');
-    var label = document.createElement('label');
-    var editInput = document.createElement('input');
-    var deleteButton = document.createElement('button');
-
-    //each element needs modifying
-    checkbox.type = 'checkbox';
-    editInput.type = 'text';
-
-    deleteButton.innerText = 'Delete';
-    deleteButton.className = 'delete';
-
-    label.innerText = itemString;
-
-    //append element to each list item
-    listItem.appendChild(checkbox);
-    listItem.appendChild(label);
-    listItem.appendChild(deleteButton);
-
-    return listItem;
+    var render = Handlebars.compile($('#listItem-template').html());
+    console.log($(render({item: itemString}))[0]);
+    return $(render({item: itemString}))[0];
   };
 
   //add a new item

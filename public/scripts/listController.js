@@ -52,8 +52,9 @@
   };
 
   listController.addIngredients = function(string) {
-    var query = {values: string};
-    console.log('new query obj', query);
+    var newQuery = string.replace("'s", "''s");
+    console.log('new query: ', newQuery);
+    var query = {values: newQuery};
     $.get('/addToList', query).done(function() {
       console.log('addToList fired');
     });
