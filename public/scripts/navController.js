@@ -11,6 +11,6 @@ $(document).ready(function() {
     localStorage.removeItem('list');
     localStorage.removeItem('userData');
     console.log('localStorage userData & list removed');
-    page('/');
+    window.location.replace('/');
   });
 });
