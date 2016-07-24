@@ -1,18 +1,23 @@
-var viewData = {};
+(function(module) {
 
-$('#searchBox').on('submit', function(e) {
-  e.preventDefault();
-  if(this.search.value) {
-    $('#print-results').children().remove();
-    var searchTerms = this.search.value;
-    searchController.runSearch(searchTerms);
-  };
-});
+  var searchView = {};
 
-var render = Handlebars.compile($('#search-results').html());
-
-viewData.printResults = function(data) {
-  data.forEach(function(ele) {
-    $('#print-results').append(render(ele));
+  $('#searchBox').on('submit', function(e) {
+    e.preventDefault();
+    if(this.search.value) {
+      $('#print-results').children().remove();
+      var searchTerms = this.search.value;
+      searchController.runSearch(searchTerms);
+    };
   });
-};
+
+  var render = Handlebars.compile($('#search-results').html());
+
+  searchView.printResults = function(data) {
+    data.forEach(function(ele) {
+      $('#print-results').append(render(ele));
+    });
+  };
+
+  module.searchView = searchView;
+})(window);
