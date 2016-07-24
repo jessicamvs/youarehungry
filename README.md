@@ -122,6 +122,13 @@ searchController.pullRecipe = function(ctx) {
 + listView.js
   + creates new elements with a delete button and checkbox for each item that is added to the DOM
 
+### Acknowledgments
++ [Yummly API](https://developer.yummly.com/)
++ [Treehouse](https://teamtreehouse.com/library/interactive-web-pages-with-javascript)
++ [Unsplash](https://unsplash.com/)
++ [IcoMoon](https://icomoon.io/)
++ [Invision](https://www.invisionapp.com/do)
+
 ### Authors
 + [Jessica Vasquez-Soltero](https://github.com/jessicamvs "Jessica's Github")
 + [Nassir Isaf](https://github.com/njisaf "Nassir's Github")
