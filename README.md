@@ -132,7 +132,7 @@ getData.runSearch = function(searchPhrase) {
   + creates new elements with a delete button and checkbox for each item that is added to the DOM
 
 ### Authors
-[Jessica Vasquez-Soltero](https://github.com/jessicamvs "Jessica's Github")
-[Nassir Isaf](https://github.com/njisaf "Nassir's Github")
-[Patrick Colgan](https://github.com/patrickjcolgan "Patrick's Github")
-[Lillian Szugyi](https://github.com/lillianszugyi "Lillian's Github")
+-[Jessica Vasquez-Soltero](https://github.com/jessicamvs "Jessica's Github")
+-[Nassir Isaf](https://github.com/njisaf "Nassir's Github")
+-[Patrick Colgan](https://github.com/patrickjcolgan "Patrick's Github")
+-[Lillian Szugyi](https://github.com/lillianszugyi "Lillian's Github")
