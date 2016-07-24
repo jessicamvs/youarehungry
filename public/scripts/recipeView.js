@@ -22,11 +22,11 @@
     console.log('data', data);
     var list = data.ingredientLines;
     console.log('list', list);
-    for (var i = 0; i < list.length; i++) {
+    list.forEach(function(ele) {
       var newLi = document.createElement('li');
-      newLi.textContent = list[i];
+      newLi.textContent = ele;
       $('#ingredients-list').append(newLi);
-    }
+    });
   };
 
   recipeView.buttonFunction = function(data) {
@@ -43,10 +43,11 @@
     console.log('syncup', array);
     var id = JSON.parse(localStorage.getItem('userData')).id;
     var query = '';
-    for (var i = 0; i < array.length; i++) {
-      listView.populateList(array[i]);
-      query += '(' + id + ', \'' + array[i] + '\'), ';
-    }
+    array.forEach(function(ele) {
+      listView.populateList(ele);
+      query += '(' + id + ', \'' + ele + '\'), ';
+    });
+
     var newQuery = query.slice(0, -2);
     console.log('newQuery:', newQuery);
     var newNewQuery = newQuery.replace("'s", "''s");
