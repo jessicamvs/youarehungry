@@ -46,6 +46,8 @@ recipeView.syncUp = function(array) {
     query += '(' + id + ', \'' + array[i] + '\'), ';
   }
   var newQuery = query.slice(0, -2);
-  console.log(newQuery);
-  listController.addIngredients(newQuery);
+  console.log('newQuery:', newQuery);
+  var newNewQuery = newQuery.replace("'s", "''s");
+  console.log('newNewQuery', newNewQuery);
+  listController.addIngredients(newNewQuery);
 };
