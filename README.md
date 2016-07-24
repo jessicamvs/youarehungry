@@ -16,12 +16,10 @@ Nassir
 
 Lillian
 1. most difficult for me:
-2. most proud of: 
+2. most proud of:
 
-# youarehungry
-
-Code Fellows 301n3
-Jessica, Nassir, Patrick, Lillian
+# You Are Hungry
+A recipe search and shopping list app for Code Fellows 301n3 final project. Final app found here: [You Are Hungry!](https://youarehungry.herokuapp.com/ "You Are Hungry!").
 
 ## Problem Statement and MVP
 User wants to search for a recipe, and save ingredients to a list for shopping.
@@ -40,7 +38,7 @@ User wants to search for a recipe, and save ingredients to a list for shopping.
   + Data persists between visits in localStorage
   + User’s shopping list stored in DB
   + Update page (but not DB) when items are deleted from list
-  + User can check off list items as they are found in store
+  + User can check off list items as they are found in store, delete individual items or entire list.
   + User can manually add items to the list **adds to db too??**
 
 ## High Level Components/Functionality
@@ -48,7 +46,7 @@ User wants to search for a recipe, and save ingredients to a list for shopping.
 ### Handlebars for:
   + search-results
   + recipe-selection
-  + viewData.js
+  <!-- + viewData.js -->
 
 ### Server.js
   + Postres
@@ -99,7 +97,7 @@ getData.runSearch = function(searchPhrase) {
   + homeController
   + listController
   + loginController
-  + loginController
+  + navController
   + searchController
   + signupController
 
@@ -130,7 +128,11 @@ getData.runSearch = function(searchPhrase) {
   };
   ```
 ### Individually adding/deleting items to shopping list
-+ list.js
++ listView.js
   + creates new elements with a delete button and checkbox for each item that is added to the DOM
 
-### **HEY LILLIAN, WHAT SHALL WE SAY ABOUT CSS?**
+### Authors
+[Jessica Vasquez-Soltero](https://github.com/jessicamvs "Jessica's Github")
+[Nassir Isaf](https://github.com/njisaf "Nassir's Github")
+[Patrick Colgan](https://github.com/patrickjcolgan "Patrick's Github")
+[Lillian Szugyi](https://github.com/lillianszugyi "Lillian's Github")
