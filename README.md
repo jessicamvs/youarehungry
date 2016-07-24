@@ -11,12 +11,12 @@ Jessica
 2. most proud of:
 
 Nassir
-1. most difficult for me:
-2. most proud of:
+1. most difficult for me: trying to get everything syncing properly with the database. Also, trying to work out how we were going to use the database.
+2. most proud of: After working out how to get ingredients both adding to list and syncing, Patrick and I discovered that we were crashing or hanging the database. This was really affecting the user experience in a negative way. We came up with a clever workaround, concatenating a string of individual ingredients formatted as SQL Value queries.
 
 Lillian
 1. most difficult for me:
-2. most proud of: 
+2. most proud of:
 
 # youarehungry
 
