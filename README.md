@@ -58,7 +58,7 @@ User wants to search for a recipe, and save ingredients to a list for shopping.
 ``` javascript
 searchController.runSearch = function(searchPhrase) {
   $.getJSON('https://api.yummly.com/v1/api/recipes', {
-    _app_id: '3049d607',
+    _app_id: 'APP_ID_HERE',
     _app_key: 'APP_KEY_HERE',
     requirePictures: true,
     q: searchPhrase
@@ -71,7 +71,7 @@ searchController.pullRecipe = function(ctx) {
   $.getJSON({
     url: 'https://api.yummly.com/v1/api/recipe/' + ctx.params.id,
   },{
-    _app_id: '3049d607',
+    _app_id: 'APP_ID_HERE',
     _app_key: 'APP_KEY_HERE',
   }).done(function(data) {
     recipeView.initSelectionPage(data);
