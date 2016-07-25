@@ -29,14 +29,11 @@ User wants to search for a recipe, and save ingredients to a list for shopping.
   + create new list item
 
 ### Server.js
-  + Postres
+  + Postgres
 
   ``` javascript
   app.get('/adduser', function (req, res) {
-    console.log(req.query);
     var data = {email: req.query.email, pass: req.query.pass};
-    console.log(data.email);
-    console.log(data.pass);
 
     var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/YOURDATABASENAMEHERE';
 
@@ -66,7 +63,6 @@ searchController.runSearch = function(searchPhrase) {
     requirePictures: true,
     q: searchPhrase
   }).done(function(data) {
-    console.log(data);
     searchController.transformImg(data);
   });
 };
@@ -78,7 +74,6 @@ searchController.pullRecipe = function(ctx) {
     _app_id: '3049d607',
     _app_key: 'APP_KEY_HERE',
   }).done(function(data) {
-    console.log(data);
     recipeView.initSelectionPage(data);
     recipeView.buttonFunction(data);
   });
@@ -96,23 +91,18 @@ searchController.pullRecipe = function(ctx) {
   ``` javascript
   listController.getId = function() {
     var id = JSON.parse(localStorage.getItem('userData')).id;
-    console.log('list controller', id);
     listController.clearIngredients();
     listController.fetchIngredients(id);
   };
 
   listController.fetchIngredients = function(id) {
-    console.log('FETCHING INGREDIENTS NOW');
     var usersIngredients = [];
     $.get('/ingredients', {userid: id}).done(function(result) {
-      console.log(result.rows);
 
       result.rows.forEach(function(item) {
-        console.log(item.ingredient);
         usersIngredients.push(item.ingredient);
       });
 
-      console.log('line 39',usersIngredients);
       localStorage.setItem('list', JSON.stringify(usersIngredients));
       populateFromDatabase(usersIngredients);
     });

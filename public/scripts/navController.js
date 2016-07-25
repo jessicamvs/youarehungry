@@ -10,7 +10,6 @@ $(document).ready(function() {
     e.preventDefault();
     localStorage.removeItem('list');
     localStorage.removeItem('userData');
-    console.log('localStorage userData & list removed');
     window.location.replace('/');
   });
 });

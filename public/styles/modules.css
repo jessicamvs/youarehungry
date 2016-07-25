@@ -20,7 +20,7 @@ h1.css-feature-section {
 }
 .login-message a {
   text-decoration: none;
-  color: #FFF;
+  color: #FFFFFF;
 }
 .name-email-box {
   display: block;
@@ -81,7 +81,7 @@ h1.css-feature-section {
 	width: 100%;
 	border: 0px;
 	background-color: #e74c3c;
-  color: #FFF;
+  color: #FFFFFF;
 	font-size:24px;
 	padding:22px 0;
   margin-top:-4px;

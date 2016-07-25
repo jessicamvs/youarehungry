@@ -26,7 +26,7 @@
   flex-flow: row wrap;
   justify-content:space-around;
   font-family: sans-serif;
-  color: #fff;
+  color: #FFFFFF;
   margin: 40px auto;
   background: rgba(255,255,255, 0.3);
   width: 100%;
@@ -70,7 +70,7 @@
   width: 90%;
   max-width: 800px;
   margin-top: 2em;
-  background-color: #FFF;
+  background-color: #FFFFFF;
   padding: .5em;
 }
 .search-card {
@@ -84,14 +84,14 @@
   display: block;
   margin: 1em auto;
   width: 90%;
-  background-color: #FFF;
+  background-color: #FFFFFF;
   padding: .5em;
 }
 .list-items {
   display: block;
   margin: 1em auto;
   width: 90%;
-  background-color: #FFF;
+  background-color: #FFFFFF;
   padding: .5em;
 }
 .css-full-img {

@@ -14,7 +14,6 @@
       requirePictures: true,
       q: searchPhrase
     }).done(function(data) {
-      console.log(data);
       searchController.transformImg(data);
     });
   };
@@ -26,7 +25,6 @@
       _app_id: '3049d607',
       _app_key: '847fa96c28cfa82d101425ab83cba017',
     }).done(function(data) {
-      console.log(data);
       recipeView.initSelectionPage(data);
       recipeView.buttonFunction(data);
     });

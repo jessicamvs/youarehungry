@@ -8,28 +8,19 @@
   var $toGetHolder = $('#to-get');
   var $boughtHolder = $('#bought');
 
-
-  // create new list item
   listView.createNewItemElement = function(itemString) {
     var render = Handlebars.compile($('#listItem-template').html());
-    console.log($(render({item: itemString}))[0]);
     return $(render({item: itemString}))[0];
   };
 
-  //add a new item
   listView.addItem = function() {
-    //create a new li with the input text from new item
     var listItem = listView.createNewItemElement($itemInput.val());
 
     if ($itemInput.val() === '') {
-      console.log('RUNNING ADD ITEM NO ENTRY');
       alert('Please enter an item.');
     } else {
-      //append list item to $toGetHolder
-      console.log('SENDING TO DB?');
       $toGetHolder.prepend(listItem);
       listView.bindItemEvents(listItem, listView.itemBought);
-      console.log('ingredient to add: ', $itemInput.val());
       var id = JSON.parse(localStorage.getItem('userData')).id;
       var query = '(' + id + ', \'' + $itemInput.val() + '\')';
       listController.addIngredients(query);
@@ -38,34 +29,25 @@
   };
 
   listView.populateFromDatabase = function(data) {
-    console.log('running populateFromDatabase', data);
     data.forEach(function(ele) {
-      console.log(ele);
       var listItem = listView.createNewItemElement(ele);
       $toGetHolder.prepend(listItem);
       listView.bindItemEvents(listItem, listView.itemBought);
     });
   };
 
-  // new function to handle list population from recipe page. Can we DRY it?
   listView.populateList = function(item) {
-    //create a new li with the input text from new item
-    console.log('populateList', item);
     var listItem = listView.createNewItemElement(item);
     $toGetHolder.prepend(listItem);
     listView.bindItemEvents(listItem, listView.itemBought);
   };
 
-  //delete an existing item
   listView.deleteItem = function() {
     var listItem = this.parentNode;
     var ul = listItem.parentNode;
 
     ul.removeChild(listItem);
     var text = $(this).prev().text();
-    console.log('In deleteItem function');
-    console.log(text);
-    console.log(typeof text);
     listController.deleteIngredients(text);
   };
 
@@ -75,14 +57,12 @@
     listController.clearIngredients();
   };
 
-  //mark item as bought
   listView.itemBought = function() {
     var listItem = this.parentNode;
     $boughtHolder.prepend(listItem);
     listView.bindItemEvents(listItem, listView.itemToGet);
   };
 
-  //mark item as to get
   listView.itemToGet = function() {
     var listItem = this.parentNode;
     $toGetHolder.prepend(listItem);
@@ -93,19 +73,15 @@
     var checkbox = ListItem.querySelector('input[type=checkbox]');
     var deleteButton = ListItem.querySelector('button.delete');
 
-    //bind deleteItem to deleteButton
     deleteButton.addEventListener('click', listView.deleteItem);
 
-    //bind checkboxEventHandler to checkbox
     checkbox.addEventListener('change', checkboxEventHandler);
   };
 
-  //set click event to the addItem function
   $addButton.on('click', listView.addItem);
 
   $deleteAllButton.on('click', listView.deleteAll);
 
-  //press 'enter' to trigger add button
   $itemInput.on('keypress', function(event) {
     if (event.keyCode == 13) {
       $addButton.click();
@@ -114,12 +90,10 @@
     return true;
   });
 
-  //cycle over $toGetHolder ul list items
   $toGetHolder.children().each(function(ele) {
     listView.bindItemEvents(ele, listView.itemBought);
   });
 
-  //cycle over boughtHolder ul list items
   $boughtHolder.children().each(function(ele) {
     listView.bindItemEvents(ele, listView.itemToGet);
   });

@@ -4,7 +4,6 @@ var express = require('express'),
   app = express();
 
 app.get('/data', function (req, res) {
-  console.log(req.query.email);
   var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Jessica';
 
   var client = new pg.Client(connectionString);
@@ -24,10 +23,7 @@ app.get('/data', function (req, res) {
 });
 
 app.get('/adduser', function (req, res) {
-  console.log(req.query);
   var data = {email: req.query.email, pass: req.query.pass};
-  console.log(data.email);
-  console.log(data.pass);
 
   var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Jessica';
 
@@ -48,8 +44,6 @@ app.get('/adduser', function (req, res) {
 });
 
 app.get('/ingredients', function (req, res) {
-  console.log(req.query.userid);
-  console.log('hello lillianszugyi');
 
   var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Jessica';
 
@@ -70,8 +64,6 @@ app.get('/ingredients', function (req, res) {
 });
 
 app.get('/deleteFromList', function (req, res) {
-  console.log('DELETING INGREDIENTS');
-  console.log('ingredient: ' + req.query.ingredient);
 
   var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Jessica';
 
@@ -91,8 +83,6 @@ app.get('/deleteFromList', function (req, res) {
 });
 
 app.get('/deleteAllFromList', function (req, res) {
-  console.log('DELETING ALL INGREDIENTS');
-  console.log('id: ' + req.query.id);
   var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Jessica';
 
   var client = new pg.Client(connectionString);
@@ -111,8 +101,6 @@ app.get('/deleteAllFromList', function (req, res) {
 });
 
 app.get('/addToList', function (req, res) {
-  console.log('/addtolist req', req.query.values);
-  console.log('ADDING INGREDIENTS');
 
   var connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/Jessica';
 
@@ -134,10 +122,8 @@ app.get('/addToList', function (req, res) {
 app.use(express.static(__dirname + '/public/'));
 
 app.get('*', function(request, response) {
-  console.log('New request:', request.url);
   response.sendFile('/public/index.html', { root: '.' });
 });
 
 app.listen(port, function() {
-  console.log('Server started on port ' + port + '!');
 });
