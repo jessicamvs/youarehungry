@@ -1,27 +1,118 @@
-nav ul {
-  padding: 0;
-  display: none;
+.css-nav-list {
+  border: 0px;
 }
-
-a, ul {
-  display:inline;
-  list-style:none;
+.css-home-logo {
+  padding-bottom: 2em;
+  width: 80%;
+  max-width: 400px;
+}
+.css-home-login-link {
+  position: absolute;
+  right: -1px;
+  width: 80%;
+  text-align: right;
   text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.1em;
+  font-family: sans-serif;
+  color: #FFFFFF;
+  margin: 3%;
+  padding-bottom: 5px;
 }
-a:hover {
-  opacity: 0.7;
+.css-home-flex-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content:space-around;
+  font-family: sans-serif;
+  color: #FFFFFF;
+  margin: 40px auto;
+  background: rgba(255,255,255, 0.3);
+  width: 100%;
+  max-width: 960px;
 }
-
-@media screen and (min-width: 600px) {
-  .icon-spoon-knife {
-    display: none;
+.css-home-column {
+  width: 340px;
+  margin: 0 auto;
+  padding: 1.5em;
+  font-size: 1.2em;
+  text-shadow: 0 1px 0 black;
+}
+.css-login-header, .css-signup-header {
+  color: #FFFFFF;
+  text-shadow: 0 1px 0 black;
+}
+.section-titles {
+  color: #FFFFFF;
+  margin: 20px;
+  padding: 30px 0 10px;
+}
+.css-recipe-header {
+  color: #303030;
+  font-size: 1.6em;
+  margin: 10px auto;
+}
+.css-wide-block-container {
+  display: block;
+  font-family: sans-serif;
+  color: #303030;
+  margin: 40px auto;
+  background: rgba(255,255,255, 0.3);
+  width: 100%;
+  max-width: 800px;
+  border-bottom: 20px;
+  padding-bottom: 50px;
+}
+.results-cards {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 800px;
+  margin-top: 2em;
+  background-color: #FFFFFF;
+  padding: .5em;
+}
+.search-card {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  background-color: transparent;
+  padding-bottom: 2em;
+}
+.list-add-card {
+  display: block;
+  margin: 1em auto;
+  width: 90%;
+  background-color: #FFFFFF;
+  padding: .5em;
+}
+.list-items {
+  display: block;
+  margin: 1em auto;
+  width: 90%;
+  background-color: #FFFFFF;
+  padding: .5em;
+}
+.css-full-img {
+  width: 100%;
+}
+i.icon-search.large-icon, i.icon-clipboard.large-icon {
+  font-size: 3em;
+}
+a.menu-link {
+  font-size: 2em;
+  text-decoration: none;
+  color: #FFFFFF;
+  padding-left: .85em;
+}
+.css-center {
+  padding-bottom: 2em;
+  width: 100%;
+  text-align: center;
+}
+@media only screen and (max-width: 580px) {
+  .css-home-login-link {
+      margin: 4.5%;
+    }
   }
-
-  nav ul {
-    display: unset;
-  }
-}
-
-footer {
-  margin-top: 5em;
-}
