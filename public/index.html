@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/modules.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/icon.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="vendors/scripts/page.js"></script>
+    <title>You Are Hungry!</title>
+    <script id="search-results" type="text/x-handlebars-template">
+      <article class="results-cards">
+        <a href="/{{id}}"><h1 class="css-recipe-header">{{recipeName}}</h1></a>
+        <section>by {{sourceDisplayName}}</section>
+        <a href="/{{id}}"><img src="{{smallImageUrls}}" target="_blank" class="css-full-img"></a>
+      </article>
+    </script>
+    <script id="recipe-selection" type="text/x-handlebars-template">
+      <article class="results-cards">
+        <section id="recipe-name"><h1 class="css-recipe-header">{{name}}</h1></section>
+        <section id="sourceDisplayName"><a href="{{source.sourceRecipeUrl}}">{{source.sourceDisplayName}}</a></section>
+        <section id="sourceSiteUrl"></section>
+        <section id="rating">Rating: <span>{{rating}}</span> out of 5</section><br>
+        <section><img id="splash-image" src="null" class="css-full-img"></section>
+        <section id="ingredients-results">
+          <button id="ingredients-button" type="button" class="css-flex-small-ingredients-button">Add Ingredients to Shopping List</button>
+          <ul id="ingredients-list"></ul>
+        </section>
+        <a href="{{source.sourceRecipeUrl}}" target="_blank"><button class="css-directions-button">READ INSTRUCTIONS</button></a>
+      </article>
+    </script>
+    <script id="listItem-template" type="text/x-handlebars-template">
+      <li>
+        <input type="checkbox">
+        <label>{{item}}</label>
+        <button class="delete">Delete</button>
+      </li>
+    </script>
+  </head>
+  <img src="img/hungry.png" class="css-home-logo">
+  <a href="/login" class="css-home-login-link">Log In</a>
+  <body>
+    <div id="pattern" class="pattern">
+      <div class="wrap" id="wrap">
+        <header id="mainNav">
+          <a href="" class="menu-link"><i class="icon-spoon-knife"></i></a>
+          <nav id="menu" role="navigation">
+            <ul>
+              <li class="css-nav-list"><a href="/search"> SEARCH</a></li>
+              <li class="css-nav-list"><a href="/list"> SHOPPING LIST</a></li>
+              <li id="logout-nav-button" class="css-nav-list"><a href=""> LOG OUT</a></li>
+            </ul>
+          </nav>
+        </header>
+        <main>
+          <section id="login">
+            <form id="login-page" class="css-home-form-div">
+              <h1 class="css-login-header">Log In</h1>
+              <input name="email" type="email" class="name-email-box" placeholder="Email">
+              <input name="password" type="password" class="name-email-box" placeholder="Password">
+              <button type="submit" class="submit-button">LOG IN</button>
+              <p class="login-message">Don't have an account? <span><a href="/signup">SIGN UP</a></span></p>
+            </form>
+          </section>
+          <section id="signup">
+            <form id="sign-up-page" class="css-home-form-div">
+              <h1 class="css-signup-header">Sign Up</h1>
+              <input name="email" type="email" class="name-email-box" placeholder="Email">
+              <input type="password" class="name-email-box" name="password" value="" placeholder="Password">
+              <button type="submit" class="submit-button">JOIN</button>
+              <p class="login-message">Already have an account? <span><a href="/login">LOG IN</a></span></p>
+            </form>
+          </section>
+          <section id="home">
+            <div class="css-home-flex-content">
+              <h1 class="css-feature-section">You Are Hungry! is an app developed for the adventurous home cook who is always looking for new recipes...</h1>
+              <div class="css-home-column">
+                <div class="css-center"><i class="icon-search large-icon"></i></div>
+                <p>Enter any ingredient, recipe name, or keyword and You Are Hungry! will display the top 10 results.</p>
+              </div>
+              <div class="css-home-column">
+                <div class="css-center"><i class="icon-clipboard large-icon"></i></div>
+                <p>Automagically generated shopping list!? Yes, please! You Are Hungry! remembers your list so you never forget a thing.</p>
+              </div>
+              <div class="css-center">
+                <h2>It's free and easy to use.</h2>
+                <a href="/signup"><button type="button" class="css-home-cta-button">TRY IT NOW</button></a>
+              </div>
+            </div>
+          </section>
+
+          <section id="search" class="tab-content">
+            <div class="css-wide-block-container">
+              <h3 class="section-titles">Search Recipes</h3>
+              <div class="search-card">
+                <form id="searchBox">
+                  <input name="search" type="text" class="search-box" placeholder="apple pie">
+                  <button type="submit" class="search-button">Search</button>
+                </form>
+              </div>
+              <section id="print-results"></section>
+            </div>
+          </section>
+          <section id="print-selection"></section>
+
+          <section id="list" class="tab-content">
+            <div class="css-wide-block-container">
+              <h3 class="section-titles">Shopping List</h3>
+              <div class="list-add-card">
+                <div class="list-items">
+                  <input id="new-item" type="text" placeholder="Add Item">
+                  <button id="add-button" class="add">+ Add Item</button>
+                  <div class="">
+                    <button id="delete-all-button" class="css-flex-small-delete-button"> Delete List</button>
+                  </div>
+                </div>
+                <div class="list-items">
+                  <ul id="to-get"></ul>
+                  <ul id="bought"></ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer>
+          <a href="/">&copy; 2016 You Are Hungry!</a>
+          <a class="icon-github" title="You Are Hungry Github Repo" href="https://github.com/jessicamvs/youarehungry" target="_blank"></a>
+        </footer>
+      </div>
+    </div>
+    <script src="scripts/navController.js"></script>
+    <script src="scripts/homeController.js"></script>
+    <script src="scripts/searchController.js"></script>
+    <script src="scripts/listView.js"></script>
+    <script src="scripts/listController.js"></script>
+    <script src="scripts/loginController.js"></script>
+    <script src="scripts/signupController.js"></script>
+    <script src="/scripts/searchView.js"></script>
+    <script src="/scripts/recipeView.js"></script>
+    <script src="scripts/routes.js"></script>
+  </body>
+</html>
